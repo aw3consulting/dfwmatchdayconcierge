@@ -12,9 +12,18 @@ function buildMailto(subject, body) {
   return `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
 
+function setServiceFromQuery(form) {
+  const params = new URLSearchParams(window.location.search);
+  const service = params.get('service');
+  if (!service) return;
+  const select = form.querySelector('select[name="service"]');
+  if (select && serviceSubjects[service]) select.value = service;
+}
+
 function wireInquiryForm() {
   const form = document.querySelector('[data-inquiry-form]');
   if (!form) return;
+  setServiceFromQuery(form);
   form.addEventListener('submit', event => {
     event.preventDefault();
     const data = new FormData(form);
