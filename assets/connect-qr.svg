@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" role="img" aria-labelledby="title desc">
+  <title id="title">DFW Matchday Concierge Connect QR</title>
+  <desc id="desc">QR code destination placeholder for https://dfwmatchdayconcierge.com/connect</desc>
+  <rect width="220" height="220" rx="18" fill="#fff"/>
+  <path fill="#000" d="M18 18h54v54H18zM148 18h54v54h-54zM18 148h54v54H18z"/>
+  <path fill="#fff" d="M30 30h30v30H30zM160 30h30v30h-30zM30 160h30v30H30z"/>
+  <path fill="#000" d="M39 39h12v12H39zM169 39h12v12h-12zM39 169h12v12H39zM86 20h11v11H86zM105 20h11v11h-11zM124 20h11v11h-11zM86 42h11v11H86zM105 42h30v11h-30zM84 65h11v11H84zM106 65h11v11h-11zM128 65h11v11h-11zM150 85h11v11h-11zM172 85h11v11h-11zM194 85h11v11h-11zM84 86h33v11H84zM128 86h11v11h-11zM18 88h11v11H18zM40 88h22v11H40zM84 108h11v11H84zM106 108h11v11h-11zM128 108h33v11h-33zM172 108h11v11h-11zM194 108h11v11h-11zM18 110h11v11H18zM40 110h11v11H40zM62 110h11v11H62zM84 130h22v11H84zM118 130h11v11h-11zM150 130h11v11h-11zM172 130h33v11h-33zM84 150h11v11H84zM106 150h33v11h-33zM150 150h11v11h-11zM172 150h11v11h-11zM194 150h11v11h-11zM84 172h11v11H84zM106 172h11v11h-11zM128 172h11v11h-11zM150 172h33v11h-33zM194 172h11v11h-11zM84 194h33v11H84zM128 194h11v11h-11zM150 194h11v11h-11zM172 194h33v11h-33z"/>
+  <rect x="70" y="72" width="80" height="76" rx="28" fill="#fff"/>
+  <g fill="none" stroke="#000" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M93 91h34q7 0 11 6v22q0 18-28 30q-28-12-28-30V97q4-6 11-6z"/>
+    <path d="M90 103H75l5 7h11M88 116H78l5 6h8M130 103h15l-5 7h-11M132 116h10l-5 6h-8"/>
+    <path d="M100 84l4-8l6 7l7-8l6 8l6-7l4 8M99 88h35"/>
+  </g>
+  <text x="110" y="121" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="22" fill="#000" font-weight="700">DFW</text>
+</svg>
