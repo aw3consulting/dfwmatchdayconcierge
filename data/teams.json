@@ -1,0 +1,11 @@
+{
+  "teams": [
+    {"slug":"netherlands","name":"Netherlands","group":"F"},
+    {"slug":"japan","name":"Japan","group":"F"},
+    {"slug":"sweden","name":"Sweden","group":"F"},
+    {"slug":"argentina","name":"Argentina","group":"J"},
+    {"slug":"austria","name":"Austria","group":"J"},
+    {"slug":"england","name":"England","group":"L"},
+    {"slug":"croatia","name":"Croatia","group":"L"}
+  ]
+}
