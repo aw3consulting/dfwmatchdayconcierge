@@ -1,0 +1,7 @@
+{
+  "groups": [
+    {"slug":"group-f","name":"Group F","teams":["Netherlands","Japan","Sweden"]},
+    {"slug":"group-j","name":"Group J","teams":["Argentina","Austria"]},
+    {"slug":"group-l","name":"Group L","teams":["England","Croatia"]}
+  ]
+}
