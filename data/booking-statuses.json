@@ -1,0 +1,20 @@
+{
+  "booking_statuses": [
+    {"id": "inquiry-received", "label": "Inquiry Received", "type": "intake"},
+    {"id": "quote-pending", "label": "Quote Pending", "type": "operator"},
+    {"id": "quote-sent", "label": "Quote Sent", "type": "operator"},
+    {"id": "payment-pending", "label": "Payment Pending", "type": "payment"},
+    {"id": "confirmed", "label": "Confirmed", "type": "booking"},
+    {"id": "assigned", "label": "Assigned", "type": "dispatch"},
+    {"id": "driver-en-route", "label": "Driver En Route", "type": "tracking"},
+    {"id": "delivery-en-route", "label": "Delivery En Route", "type": "tracking"},
+    {"id": "picked-up", "label": "Picked Up", "type": "tracking"},
+    {"id": "delivered", "label": "Delivered", "type": "tracking"},
+    {"id": "matchday-active", "label": "Matchday Active", "type": "tracking"},
+    {"id": "return-scheduled", "label": "Return Scheduled", "type": "tracking"},
+    {"id": "completed", "label": "Completed", "type": "closeout"},
+    {"id": "closed", "label": "Closed", "type": "closeout"},
+    {"id": "restricted", "label": "Restricted", "type": "control"},
+    {"id": "declined", "label": "Declined", "type": "control"}
+  ]
+}
