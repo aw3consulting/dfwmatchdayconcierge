@@ -2,10 +2,15 @@
   "teams": [
     {"slug":"netherlands","name":"Netherlands","group":"F"},
     {"slug":"japan","name":"Japan","group":"F"},
+    {"slug":"tunisia","name":"Tunisia","group":"F"},
     {"slug":"sweden","name":"Sweden","group":"F"},
     {"slug":"argentina","name":"Argentina","group":"J"},
+    {"slug":"algeria","name":"Algeria","group":"J"},
     {"slug":"austria","name":"Austria","group":"J"},
+    {"slug":"jordan","name":"Jordan","group":"J"},
     {"slug":"england","name":"England","group":"L"},
-    {"slug":"croatia","name":"Croatia","group":"L"}
+    {"slug":"croatia","name":"Croatia","group":"L"},
+    {"slug":"ghana","name":"Ghana","group":"L"},
+    {"slug":"panama","name":"Panama","group":"L"}
   ]
 }
