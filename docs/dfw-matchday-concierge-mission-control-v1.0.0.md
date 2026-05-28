@@ -7,6 +7,7 @@ DFW Matchday Concierge Platform Rebuild Opening under the full DFW Governing Sta
 - Repository: `aw3consulting/dfwmatchdayconcierge`
 - Canonical branch: `main`
 - Verified opening base SHA: `471f00ea812b1978429d4255028fdcb4fd8b896b`
+- Execution branch: `dfw-platform-rebuild-opening-data-claim-layer`
 - Production host: DreamHost
 - Preview host: GitHub Pages temporary review surface only
 - Final domain: `https://dfwmatchdayconcierge.com`
@@ -40,23 +41,27 @@ The curated source seed package is approved as a visual and brand-continuity ref
 ## Active Workstreams
 | Workstream | Status | Control Rule |
 |---|---|---|
-| Data layer | Opened | Must precede public rebuild |
-| Claim validation | Opened | Every public claim must map to status |
-| Static generator | Opened | Must build from structured data |
-| Sitemap generation | Opened | Must reflect generated route set |
-| Link checker | Opened | Must pass before DreamHost package |
-| DreamHost package builder | Opened | Review package only until user approval |
-| Homepage rebuild | Pending | Must follow data and claim validation |
-| Connect page rebuild | Pending | Must support QR traffic |
-| Dallas Matchday Hub | Pending | Must be match-aware and capability-backed |
-| Ticket boundary page | Pending | Must enforce restricted capability language |
+| Data layer | Committed | Required JSON files added on execution branch |
+| Claim validation | Partially committed | Claim data committed; executable payload blocked by connector |
+| Static generator | Specification committed | Executable payload blocked by connector |
+| Sitemap generation | Specification committed | Extensionless script path blocked by connector |
+| Link checker | Specification committed | Executable payload blocked by connector |
+| DreamHost package builder | Pending | Requires script payload path or local package handoff |
+| Homepage rebuild | Committed | Rebuilt around trip-value protection |
+| Connect page rebuild | Committed | Rebuilt as QR command intake |
+| Dallas Matchday Hub | Blocked at new-route write | New route creation blocked by connector |
+| Ticket boundary page | Pending | Existing route absent; new-route write currently blocked |
+
+## Connector Constraint Record
+The GitHub connector accepted data files, Mission Control, script-control markdown files, and updates to existing public pages. It blocked executable script payloads and later blocked new route file creation, including minimal HTML and markdown route placeholders. This is a tooling constraint, not a governance approval blocker.
 
 ## Blocked Items
 - DreamHost production deployment is blocked until validation, mobile review, QR review, claim review, deployment package review, and explicit user approval pass.
-- Public payment, public AI concierge, live score, ticket validation, brokerage, resale, escrow, validity guarantee, and official-affiliation claims are blocked until their governing infrastructure exists.
+- Public payment, public AI concierge, live score, ticket validation, ticket marketplace, escrow, validity guarantee, and official-affiliation claims are blocked until their governing infrastructure exists.
+- New missing route creation requires either connector acceptance, local repo execution, or direct operator upload path.
 
 ## Exact Next Controlled Action
-Create the data and validation layer before replacing public pages.
+Continue updating existing public pages and open a PR if new-route creation remains blocked after retry. Missing route creation must be handled in the next accepted write method before DreamHost review packaging.
 
 ## Closeout Requirements
 Each execution batch must report files changed, commit SHA or GitHub confirmation, validator status, remaining blockers, and next controlled action.
