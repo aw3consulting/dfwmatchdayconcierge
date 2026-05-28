@@ -1,0 +1,42 @@
+{
+  "routes": [
+    {
+      "id": "dfw-airport-to-arlington-stadium",
+      "label": "DFW Airport to Arlington Stadium",
+      "category": "airport-stadium",
+      "audiences": ["media-corporate", "local-international-fans"],
+      "upsells": ["food-stop", "cooler-setup", "hotel-transfer"]
+    },
+    {
+      "id": "love-field-to-dallas-hotel",
+      "label": "Love Field to Dallas Hotel",
+      "category": "airport-hotel",
+      "audiences": ["local-international-fans"]
+    },
+    {
+      "id": "dallas-to-arlington-stadium",
+      "label": "Dallas to Arlington Stadium",
+      "category": "city-stadium",
+      "upsells": ["return-trip", "food-stop", "Fan Experience"]
+    },
+    {
+      "id": "fort-worth-to-arlington-stadium",
+      "label": "Fort Worth to Arlington Stadium",
+      "category": "city-stadium",
+      "upsells": ["Stockyards", "return-trip"]
+    },
+    {
+      "id": "hotel-stadium-airport-loop",
+      "label": "Hotel-Stadium-Airport Loop",
+      "category": "full-loop",
+      "audiences": ["media-corporate", "local-international-fans"],
+      "upsells": ["luggage", "food", "airport-return"]
+    },
+    {
+      "id": "fifa-fan-experience-route",
+      "label": "FIFA Fan Experience Route",
+      "category": "fan-activity",
+      "upsells": ["food", "nightlife", "shared-ride"]
+    }
+  ]
+}
