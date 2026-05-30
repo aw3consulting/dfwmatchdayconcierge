@@ -1,0 +1,28 @@
+{
+  "team_hubs": [
+    {
+      "team": "Japan",
+      "slug": "japan",
+      "languages": ["en", "ja"],
+      "fan_priority": "high",
+      "booking_widget": ["ride-route", "shared-ride", "matchday-package", "food-snack-drink", "cooler-setup"],
+      "information_layer": ["team matches", "group standings", "advancement watch", "Japanese food recommendations", "DFW attractions", "stadium routes"]
+    },
+    {
+      "team": "Argentina",
+      "slug": "argentina",
+      "languages": ["en", "es"],
+      "fan_priority": "high",
+      "booking_widget": ["ride-route", "shared-ride", "matchday-package", "food-snack-drink"],
+      "information_layer": ["team matches", "group standings", "advancement watch", "Argentinian food recommendations", "Dallas nightlife", "stadium routes"]
+    },
+    {
+      "team": "Netherlands",
+      "slug": "netherlands",
+      "languages": ["en", "nl"],
+      "fan_priority": "medium",
+      "booking_widget": ["ride-route", "shared-ride", "Fan Experience", "Stockyards add-on"],
+      "information_layer": ["team matches", "group standings", "advancement watch", "Dutch food recommendations"]
+    }
+  ]
+}

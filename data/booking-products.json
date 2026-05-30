@@ -1,0 +1,62 @@
+{
+  "booking_products": [
+    {
+      "id": "ride-route",
+      "label": "Ride Route",
+      "category": "transport",
+      "capability_status": "live",
+      "audiences": ["media-corporate", "local-international-fans"],
+      "examples": ["airport to hotel", "hotel to stadium", "stadium return", "Fan Experience route"]
+    },
+    {
+      "id": "shared-ride",
+      "label": "Shared Ride",
+      "category": "transport",
+      "capability_status": "operator-assisted",
+      "audiences": ["local-international-fans", "media-corporate"],
+      "matching_fields": ["team", "match", "pickup-area", "time-window", "language", "seats-needed"]
+    },
+    {
+      "id": "matchday-package",
+      "label": "Matchday Package",
+      "category": "concierge",
+      "capability_status": "operator-assisted",
+      "includes": ["ride", "food", "cooler", "stops", "luggage", "return movement"]
+    },
+    {
+      "id": "food-snack-drink",
+      "label": "Food, Snacks and Drinks",
+      "category": "delivery",
+      "capability_status": "operator-assisted",
+      "includes": ["food pickup", "snacks", "water", "coffee", "sports drinks"]
+    },
+    {
+      "id": "cooler-setup",
+      "label": "Cooler Setup",
+      "category": "delivery",
+      "capability_status": "operator-assisted",
+      "includes": ["cooler", "ice", "cups", "water", "snack pack"]
+    },
+    {
+      "id": "essentials-otc",
+      "label": "Essentials and OTC",
+      "category": "delivery",
+      "capability_status": "operator-assisted",
+      "restriction_note": "Purchase-and-delivery support only. No medical advice or medical claims."
+    },
+    {
+      "id": "catering-large-group",
+      "label": "Catering and Large Group Support",
+      "category": "group-support",
+      "capability_status": "operator-assisted",
+      "audiences": ["media-corporate", "local-international-fans"]
+    },
+    {
+      "id": "dedicated-driver",
+      "label": "Dedicated Driver Request",
+      "category": "premium-routing",
+      "capability_status": "operator-assisted",
+      "audiences": ["media-corporate"]
+    }
+  ]
+}
