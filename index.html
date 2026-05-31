@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>DFW Matchday Concierge | DFW World Cup Matchday Operating System</title>
-<meta name="description" content="World Cup matchday rides, airport routes, fan planning, media movement, shared rides, food, catering, luggage coordination, and concierge support across Dallas/Fort Worth.">
-<link rel="stylesheet" href="assets/os-shell.css?v=1">
+<meta name="description" content="Independent Dallas/Fort Worth matchday planning, inquiry, command hub preview, and operator-assisted concierge coordination for VIP guests, team-family support, media, corporate groups, and fans.">
+<link rel="stylesheet" href="assets/os-shell.css?v=2">
 </head>
 <body>
 <header class="topbar">
@@ -14,12 +14,14 @@
 <img src="assets/brand-logo.svg" alt="DFW Matchday Concierge logo">
 <div><strong>DFW</strong><span>Matchday Concierge</span></div>
 </a>
-<nav class="links">
+<nav class="links" aria-label="Primary navigation">
+<a href="vip/">VIP</a>
+<a href="team-family/">Team Family</a>
 <a href="media-corporate/">Media / Corporate</a>
-<a href="teams/dallas-qualifiers/">Team Hubs</a>
-<a href="connect/">Ask Concierge</a>
+<a href="fans/">Fan Hubs</a>
+<a href="command-hub-preview/">Hub Preview</a>
 </nav>
-<a class="cta" href="connect/">Book Matchday Help</a>
+<a class="cta" href="connect/">Start Inquiry</a>
 </div>
 </header>
 
@@ -28,73 +30,72 @@
 <div class="container hero-grid">
 <div>
 <p class="eyebrow">DFW World Cup Matchday Operating System</p>
-<h1>Welcome to Dallas/Fort Worth for World Cup matchday.</h1>
-<p class="lead">Private rides, shared rides, airport movement, fan planning, media logistics, food, catering, luggage coordination, and concierge support for arriving and international guests.</p>
+<h1>Welcome to Dallas/Fort Worth for matchday.</h1>
+<p class="lead">Choose your lane and build the command hub for your route, team, schedule, food, luggage, group, and concierge needs.</p>
+<div class="button-row">
+<a class="btn primary" href="connect/">Start Inquiry</a>
+<a class="btn" href="command-hub-preview/">Preview Command Hub</a>
+</div>
+<div class="boundary">Independent concierge planning and coordination service. Final availability, pricing, payment terms, vehicle assignment, provider routing, and service confirmation require operator review.</div>
+</div>
+<aside class="booking-widget" aria-label="AI-assisted intake preview shell">
+<p class="eyebrow">AI-Assisted Intake Preview</p>
+<h2>Build the planning preview.</h2>
+<div class="booking-grid">
+<div class="booking-option"><strong>1. Choose Lane</strong><span>VIP, Team Family, Media / Corporate, or Fan Hub.</span></div>
+<div class="booking-option"><strong>2. Share Trip Box</strong><span>Arrival, hotel area, matchday, timing, group size.</span></div>
+<div class="booking-option"><strong>3. Add Needs</strong><span>Route, food, cooler, luggage, sightseeing, privacy.</span></div>
+<div class="booking-option"><strong>4. Operator Review</strong><span>Quote, payment/deposit, assignment, or referral.</span></div>
+</div>
+<div class="button-row"><a class="btn primary" href="connect/">Send Planning Request</a></div>
+<p class="shell-note">Planning preview only. This shell does not confirm booking, pricing, vehicle assignment, security, payment, or official access.</p>
+</aside>
+</div>
+</section>
 
+<section class="section" id="lanes">
+<div class="container">
+<div class="section-head">
+<div>
+<p class="eyebrow">Choose Your Lane</p>
+<h2>Four controlled matchday paths.</h2>
+</div>
+<p>Each lane has a clear claim boundary so visitors understand what is live, what requires operator review, and what remains restricted.</p>
+</div>
 <div class="lane-grid">
 <article class="lane-card">
-<p class="eyebrow">Highest monetization lane</p>
-<h2>Media / Corporate</h2>
-<p>Broadcast crews, sponsors, executives, officials, hospitality groups, recurring routes, catering, luggage, and dispatch support.</p>
-<div class="pill-row">
-<span class="pill">Airport Transfers</span>
-<span class="pill">Multi-Vehicle</span>
-<span class="pill">Catering</span>
-<span class="pill">Dedicated Driver</span>
-</div>
-<div class="button-row">
-<a class="btn primary" href="media-corporate/">Open Hub</a>
-<a class="btn" href="connect/">Request Quote</a>
-</div>
+<span class="badge warn">Operator Review Required</span>
+<h2>VIP Guest Concierge</h2>
+<p>Private scheduled matchday planning with Black 2026 Chevrolet Tahoe eligibility for approved bookings.</p>
+<div class="pill-row"><span class="pill">Privacy</span><span class="pill">Tahoe Review</span><span class="pill">Itinerary</span></div>
+<p class="shell-note">Tahoe and operator assignment require review, quote, payment/deposit approval, and availability confirmation.</p>
+<div class="button-row"><a class="btn primary" href="vip/">Request VIP Review</a></div>
 </article>
-
 <article class="lane-card">
-<p class="eyebrow">Local + International Fans</p>
-<h2>Team Matchday Hubs</h2>
-<p>Choose your team, language, routes, food, Fan Experience plan, shared rides, and matchday package.</p>
-<div class="pill-row">
-<span class="pill">Shared Ride</span>
-<span class="pill">Fan Experience</span>
-<span class="pill">Food + Drinks</span>
-<span class="pill">Matchday Package</span>
-</div>
-<div class="button-row">
-<a class="btn primary" href="teams/dallas-qualifiers/">Choose Team</a>
-<a class="btn" href="connect/">Ask Concierge</a>
-</div>
+<span class="badge">Privacy-Sensitive</span>
+<h2>Team Family Support</h2>
+<p>Representative-friendly support for privacy-sensitive family, team-adjacent, or federation-linked planning.</p>
+<div class="pill-row"><span class="pill">Coordinator</span><span class="pill">Disclosure Control</span><span class="pill">Family Plan</span></div>
+<p class="shell-note">No official team relationship, access, or credential validation is claimed.</p>
+<div class="button-row"><a class="btn primary" href="team-family/">Request Private Support</a></div>
+</article>
+<article class="lane-card">
+<span class="badge warn">Quote Required</span>
+<h2>Media / Corporate</h2>
+<p>Coordinator-led support for crews, sponsors, executives, groups, equipment, catering, and recurring schedules.</p>
+<div class="pill-row"><span class="pill">Groups</span><span class="pill">Schedules</span><span class="pill">Quote</span></div>
+<p class="shell-note">Fleet, provider, invoice, and assignment availability require operator review.</p>
+<div class="button-row"><a class="btn primary" href="media-corporate/">Request Corporate Quote</a></div>
+</article>
+<article class="lane-card">
+<span class="badge ok">Free Guidance + Activated Planning</span>
+<h2>Team Fan Hubs</h2>
+<p>Team, language, route, food, Fan Experience, shared ride, sightseeing, and activated planning support.</p>
+<div class="pill-row"><span class="pill">Team</span><span class="pill">Language</span><span class="pill">Fan Routes</span></div>
+<p class="shell-note">Shared ride matching and fulfillment are operator-confirmed and not guaranteed automatically.</p>
+<div class="button-row"><a class="btn primary" href="fans/">Open Fan Hubs</a></div>
 </article>
 </div>
-</div>
-
-<aside class="booking-widget">
-<p class="eyebrow">Book Matchday Help</p>
-<h2>What do you need today?</h2>
-<div class="booking-grid">
-<div class="booking-option"><strong>Ride Route</strong><span>Airport, hotel, stadium, Fan Experience</span></div>
-<div class="booking-option"><strong>Shared Ride</strong><span>Fans, couples, small groups</span></div>
-<div class="booking-option"><strong>Food + Drinks</strong><span>Pickup, snacks, coffee, cooler</span></div>
-<div class="booking-option"><strong>Catering</strong><span>Media and large groups</span></div>
-<div class="booking-option"><strong>Essentials + OTC</strong><span>Convenience requests</span></div>
-<div class="booking-option"><strong>Luggage</strong><span>Airport and hotel coordination</span></div>
-<div class="booking-option"><strong>Stockyards Add-On</strong><span>Fort Worth upsell</span></div>
-<div class="booking-option"><strong>Ask Concierge</strong><span>Tell us what you need</span></div>
-</div>
-
-<div class="field-grid">
-<div class="field"><label>Audience</label><select><option>Fan</option><option>Media / Corporate</option></select></div>
-<div class="field"><label>Location</label><input placeholder="Hotel, airport, area"></div>
-<div class="field"><label>Matchday Need</label><input placeholder="Ride, package, food"></div>
-<div class="field"><label>Passengers</label><input placeholder="1-20+"></div>
-<div class="field"><label>Pickup Time</label><input placeholder="Matchday timing"></div>
-<div class="field"><label>Language</label><input placeholder="English, 日本語, Español"></div>
-<div class="field wide"><label>Notes</label><textarea placeholder="Tell us what you need for matchday."></textarea></div>
-</div>
-
-<div class="button-row">
-<a class="btn primary" href="connect/">Send Matchday Inquiry</a>
-<a class="btn" href="media-corporate/">Corporate Request</a>
-</div>
-</aside>
 </div>
 </section>
 
@@ -103,13 +104,12 @@
 <div class="section-head">
 <div>
 <p class="eyebrow">DFW Geography</p>
-<h2>Understand the matchday map immediately.</h2>
+<h2>Understand the matchday box immediately.</h2>
 </div>
-<p>Fans and media should instantly understand Dallas, Arlington, Fort Worth, airports, Fan Experience locations, and the routes between them.</p>
+<p>Use the map shell for planning orientation across airports, Dallas, Arlington, Fort Worth, Stockyards, Fan Experience, hotel areas, and stadium movement.</p>
 </div>
-
 <div class="map-panel">
-<div class="map-canvas">
+<div class="map-canvas" aria-label="DFW planning map shell">
 <div class="node n-dfw">DFW Airport</div>
 <div class="node n-love">Love Field</div>
 <div class="node n-dallas">Dallas</div>
@@ -117,45 +117,11 @@
 <div class="node n-fw">Fort Worth</div>
 <div class="node n-stadium">Stadium</div>
 <div class="node n-fan">Fan Experience</div>
-<div class="line l1"></div>
-<div class="line l2"></div>
-<div class="line l3"></div>
+<div class="node n-stockyards">Stockyards</div>
+<div class="node n-hotel">Hotel Area</div>
+<div class="line l1"></div><div class="line l2"></div><div class="line l3"></div><div class="line l4"></div>
 </div>
-</div>
-</div>
-</section>
-
-<section class="section">
-<div class="container">
-<div class="section-head">
-<div>
-<p class="eyebrow">Most Requested Routes</p>
-<h2>Airport, hotel, stadium, and fan movement.</h2>
-</div>
-<p>Every route card becomes a monetizable booking path with add-ons after intent.</p>
-</div>
-
-<div class="route-grid">
-<article class="route-card">
-<strong>DFW Airport → Arlington Stadium</strong>
-<p>Airport arrival, luggage, stadium drop-off, and return scheduling.</p>
-<div class="route-meta"><span class="pill">Cooler Setup</span><span class="pill">Hotel Stop</span></div>
-<div class="button-row"><a class="btn primary" href="connect/">Book Route</a></div>
-</article>
-
-<article class="route-card">
-<strong>Dallas → Stadium Round Trip</strong>
-<p>Pre-match arrival, post-match pickup, and return movement.</p>
-<div class="route-meta"><span class="pill">Food Stop</span><span class="pill">Shared Ride</span></div>
-<div class="button-row"><a class="btn primary" href="connect/">Build Trip</a></div>
-</article>
-
-<article class="route-card">
-<strong>Fort Worth → Matchday + Stockyards</strong>
-<p>Turn a ride into a fan day across Arlington and Fort Worth.</p>
-<div class="route-meta"><span class="pill">Sightseeing</span><span class="pill">Return Route</span></div>
-<div class="button-row"><a class="btn primary" href="connect/">Plan Day</a></div>
-</article>
+<p class="shell-note">Map visuals support planning orientation only. Live routing, live traffic, official road closure updates, and real-time dispatch require verified implementation before publication.</p>
 </div>
 </div>
 </section>
@@ -164,22 +130,24 @@
 <div class="container">
 <div class="section-head">
 <div>
-<p class="eyebrow">Booking Tracking</p>
-<h2>Operator-confirmed workflow.</h2>
+<p class="eyebrow">Command Hub Workflow</p>
+<h2>Planning, quote, payment, confirmation, assignment.</h2>
 </div>
-<p>Every booking moves through visible statuses instead of fake automation claims.</p>
+<p>The shell keeps activated planning separate from confirmed service.</p>
 </div>
-
 <div class="status-panel">
 <div class="status-steps">
 <div class="status active">Inquiry</div>
-<div class="status active">Quote</div>
+<div class="status active">Intake</div>
+<div class="status pending">Operator Review</div>
+<div class="status">Quote</div>
 <div class="status">Payment</div>
+<div class="status">Confirmed</div>
 <div class="status">Assigned</div>
-<div class="status">Matchday</div>
-<div class="status">Complete</div>
+<div class="status">Service / Referral</div>
 </div>
 </div>
+<div class="button-row"><a class="btn primary" href="command-hub-preview/">View Hub Preview</a><a class="btn" href="command-hub/">View Activated Shell</a></div>
 </div>
 </section>
 
@@ -187,36 +155,23 @@
 <div class="container">
 <div class="section-head">
 <div>
-<p class="eyebrow">Location-Aware Upsells</p>
-<h2>Answer questions before the guest asks them.</h2>
+<p class="eyebrow">Status Badge System</p>
+<h2>Every claim has a boundary.</h2>
 </div>
-<p>Recommendations should generate additional movement, food, sightseeing, and concierge requests.</p>
+<p>No service, route, hub, payment state, or referral zone appears without a status mapping.</p>
 </div>
-
-<div class="rec-grid">
-<article class="rec-card">
-<h3>Staying in Dallas?</h3>
-<p>Add Arlington timing, Fan Experience, and Fort Worth Stockyards.</p>
-<a class="btn" href="connect/">Explore Add-Ons</a>
-</article>
-
-<article class="rec-card">
-<h3>Staying in Arlington?</h3>
-<p>Add Dallas nightlife, airport return, and post-match food stops.</p>
-<a class="btn" href="connect/">Build Matchday</a>
-</article>
-
-<article class="rec-card">
-<h3>International Fans</h3>
-<p>Choose your team, language, food recommendations, and routes.</p>
-<a class="btn" href="teams/dallas-qualifiers/">Open Team Hubs</a>
-</article>
-
-<article class="rec-card">
-<h3>Media + Corporate</h3>
-<p>Move crews, executives, luggage, catering, and recurring schedules.</p>
-<a class="btn" href="media-corporate/">Open Corporate Hub</a>
-</article>
+<div class="badge-grid">
+<span class="badge ok">Live Capability</span>
+<span class="badge">Operator-Assisted</span>
+<span class="badge warn">Development</span>
+<span class="badge restricted">Restricted</span>
+<span class="badge">Referral / Third-Party</span>
+<span class="badge">Information Only</span>
+<span class="badge">Planning Value</span>
+<span class="badge warn">Operator Review Required</span>
+<span class="badge warn">Quote Required</span>
+<span class="badge warn">Payment Pending</span>
+<span class="badge ok">Confirmed</span>
 </div>
 </div>
 </section>
@@ -225,7 +180,7 @@
 <footer class="footer">
 <div class="container">
 <strong>DFW Matchday Concierge</strong><br>
-<small>214-892-6827 • concierge@dfwmatchdayconcierge.com • Independent concierge service. No official tournament affiliation claimed.</small>
+<small>214-892-6827 • concierge@dfwmatchdayconcierge.com • Independent concierge planning and coordination service. No official tournament affiliation claimed. DreamHost production deployment remains blocked until validation, mobile review, QR review, claim review, and user approval pass.</small>
 </div>
 </footer>
 </body>
