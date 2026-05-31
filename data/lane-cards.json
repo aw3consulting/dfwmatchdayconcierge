@@ -1,13 +1,13 @@
 {
-  "version": "1.0.0",
-  "governance": "DFW bounded frontend shell implementation",
+  "version": "1.0.1",
+  "governance": "DFW bounded frontend shell implementation with executive vehicle class correction",
   "lanes": [
     {
       "id": "vip",
       "name": "VIP Guest Concierge",
       "badge": "Operator Review Required",
-      "description": "Private scheduled matchday planning with Black 2026 Chevrolet Tahoe eligibility for approved bookings.",
-      "boundary": "Tahoe and operator assignment require review, quote, payment/deposit approval, and availability confirmation.",
+      "description": "Private scheduled matchday planning with Black Executive Vehicle Class eligibility for approved VIP and executive bookings.",
+      "boundary": "Vehicle class and operator assignment require review, quote, payment/deposit approval, and availability confirmation.",
       "href": "vip/"
     },
     {
