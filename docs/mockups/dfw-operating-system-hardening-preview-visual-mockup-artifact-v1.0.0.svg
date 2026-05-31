@@ -1,0 +1,259 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="5600" viewBox="0 0 1800 5600" role="img" aria-labelledby="title desc">
+  <title id="title">DFW Operating System Hardening Preview Visual Mockup Artifact v1.0.0</title>
+  <desc id="desc">Governed visual mockup board for the DFW Matchday Concierge World Cup Matchday Operating System. This artifact is for review only and does not authorize frontend implementation.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/>
+      <stop offset="0.48" stop-color="#111827"/>
+      <stop offset="1" stop-color="#030712"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#eef2f7"/>
+    </linearGradient>
+    <linearGradient id="premium" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#111827"/>
+      <stop offset="1" stop-color="#374151"/>
+    </linearGradient>
+    <style>
+      .bg { fill: url(#bg); }
+      .title { font-family: Arial, Helvetica, sans-serif; font-size: 42px; font-weight: 800; fill: #ffffff; }
+      .subtitle { font-family: Arial, Helvetica, sans-serif; font-size: 20px; fill: #cbd5e1; }
+      .note { font-family: Arial, Helvetica, sans-serif; font-size: 16px; fill: #94a3b8; }
+      .frame { fill: url(#card); stroke: #cbd5e1; stroke-width: 2; rx: 26; }
+      .frame-dark { fill: #0f172a; stroke: #64748b; stroke-width: 2; rx: 26; }
+      .frame-title { font-family: Arial, Helvetica, sans-serif; font-size: 24px; font-weight: 800; fill: #0f172a; }
+      .frame-title-light { font-family: Arial, Helvetica, sans-serif; font-size: 24px; font-weight: 800; fill: #ffffff; }
+      .label { font-family: Arial, Helvetica, sans-serif; font-size: 15px; font-weight: 700; fill: #1f2937; }
+      .label-light { font-family: Arial, Helvetica, sans-serif; font-size: 15px; font-weight: 700; fill: #e5e7eb; }
+      .small { font-family: Arial, Helvetica, sans-serif; font-size: 13px; fill: #475569; }
+      .small-light { font-family: Arial, Helvetica, sans-serif; font-size: 13px; fill: #cbd5e1; }
+      .micro { font-family: Arial, Helvetica, sans-serif; font-size: 11px; fill: #64748b; }
+      .micro-light { font-family: Arial, Helvetica, sans-serif; font-size: 11px; fill: #94a3b8; }
+      .badge { fill: #dbeafe; stroke: #93c5fd; stroke-width: 1; rx: 14; }
+      .badge-text { font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 800; fill: #1d4ed8; }
+      .badge-warn { fill: #fff7ed; stroke: #fdba74; stroke-width: 1; rx: 14; }
+      .badge-warn-text { font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 800; fill: #c2410c; }
+      .badge-ok { fill: #ecfdf5; stroke: #86efac; stroke-width: 1; rx: 14; }
+      .badge-ok-text { font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 800; fill: #047857; }
+      .line { stroke: #94a3b8; stroke-width: 2; }
+      .route { stroke: #2563eb; stroke-width: 4; stroke-linecap: round; opacity: 0.55; }
+      .node { fill: #ffffff; stroke: #2563eb; stroke-width: 3; }
+      .button { fill: #2563eb; rx: 16; }
+      .button-text { font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: 800; fill: #ffffff; }
+      .outline-button { fill: #ffffff; stroke: #2563eb; stroke-width: 2; rx: 16; }
+      .outline-button-text { font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: 800; fill: #1d4ed8; }
+      .chip { fill: #f8fafc; stroke: #cbd5e1; rx: 14; }
+      .chip-text { font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 700; fill: #334155; }
+      .phone { fill: #111827; stroke: #475569; stroke-width: 2; rx: 34; }
+      .phone-screen { fill: #f8fafc; rx: 24; }
+      .redline { stroke: #ef4444; stroke-width: 2; stroke-dasharray: 7 7; }
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1800" height="5600"/>
+
+  <text class="title" x="80" y="90">DFW Operating System Hardening Preview Visual Mockup Artifact v1.0.0</text>
+  <text class="subtitle" x="80" y="130">Review artifact only. Docs-contained SVG. No frontend implementation. No DreamHost production authorization.</text>
+  <rect class="badge-warn" x="80" y="158" width="270" height="32"/><text class="badge-warn-text" x="100" y="179">FRONTEND CODE BLOCKED</text>
+  <rect class="badge-warn" x="370" y="158" width="320" height="32"/><text class="badge-warn-text" x="390" y="179">DREAMHOST DEPLOYMENT BLOCKED</text>
+  <rect class="badge" x="710" y="158" width="310" height="32"/><text class="badge-text" x="730" y="179">OPERATOR REVIEW REQUIRED</text>
+  <rect class="badge-ok" x="1040" y="158" width="240" height="32"/><text class="badge-ok-text" x="1060" y="179">MOCKUP ONLY</text>
+  <text class="note" x="80" y="225">Global rule: DFW Matchday Concierge is an independent concierge planning and coordination service. Final availability, pricing, payment terms, vehicle assignment, third-party provider routing, and service confirmation require operator review.</text>
+
+  <!-- Frame 01 Desktop Homepage -->
+  <rect class="frame" x="80" y="280" width="1640" height="520"/>
+  <text class="frame-title" x="120" y="330">01 Desktop Homepage Funnel</text>
+  <rect class="chip" x="1350" y="305" width="270" height="34"/><text class="chip-text" x="1370" y="327">Operating System, not ride page</text>
+  <rect x="120" y="360" width="1560" height="54" fill="#ffffff" stroke="#cbd5e1" rx="16"/>
+  <rect x="145" y="376" width="120" height="22" fill="#111827" rx="5"/><text class="small-light" x="154" y="392">APPROVED LOGO</text>
+  <text class="small" x="310" y="392">VIP</text><text class="small" x="380" y="392">Team Family</text><text class="small" x="500" y="392">Media / Corporate</text><text class="small" x="660" y="392">Fan Hubs</text>
+  <rect class="button" x="1440" y="370" width="180" height="34"/><text class="button-text" x="1475" y="392">Start Inquiry</text>
+  <text class="label" x="130" y="455">DFW World Cup Matchday Operating System</text>
+  <text class="frame-title" x="130" y="495">Welcome to Dallas/Fort Worth for matchday.</text>
+  <text class="small" x="130" y="523">Choose your lane and build the command hub for your route, team, schedule, food, luggage, group, and concierge needs.</text>
+  <rect class="button" x="130" y="550" width="160" height="40"/><text class="button-text" x="165" y="575">Start Inquiry</text>
+  <rect class="outline-button" x="310" y="550" width="160" height="40"/><text class="outline-button-text" x="344" y="575">Ask Concierge</text>
+  <rect class="frame" x="130" y="620" width="360" height="130"/><text class="label" x="155" y="652">VIP Guest Concierge</text><text class="small" x="155" y="680">Private, reviewed, Tahoe eligible</text><rect class="badge" x="155" y="700" width="190" height="28"/><text class="badge-text" x="170" y="719">Operator Review</text>
+  <rect class="frame" x="510" y="620" width="360" height="130"/><text class="label" x="535" y="652">Team Family Support</text><text class="small" x="535" y="680">Privacy and representative handling</text><rect class="badge" x="535" y="700" width="180" height="28"/><text class="badge-text" x="550" y="719">Privacy Sensitive</text>
+  <rect class="frame" x="890" y="620" width="360" height="130"/><text class="label" x="915" y="652">Media / Corporate</text><text class="small" x="915" y="680">Groups, crews, schedules, quote</text><rect class="badge-warn" x="915" y="700" width="140" height="28"/><text class="badge-warn-text" x="930" y="719">Quote Required</text>
+  <rect class="frame" x="1270" y="620" width="360" height="130"/><text class="label" x="1295" y="652">Team Fan Hubs</text><text class="small" x="1295" y="680">Free guidance plus activation</text><rect class="badge-ok" x="1295" y="700" width="220" height="28"/><text class="badge-ok-text" x="1310" y="719">Guidance + Planning</text>
+
+  <!-- Frame 02 Mobile Homepage -->
+  <rect class="frame" x="80" y="850" width="520" height="720"/>
+  <text class="frame-title" x="120" y="900">02 Mobile Homepage</text>
+  <rect class="phone" x="210" y="930" width="250" height="570"/>
+  <rect class="phone-screen" x="225" y="950" width="220" height="530"/>
+  <rect x="245" y="970" width="80" height="18" fill="#111827" rx="4"/><text class="micro-light" x="252" y="983">LOGO</text>
+  <rect class="button" x="335" y="966" width="90" height="26"/><text class="micro-light" x="350" y="984">Start</text>
+  <text class="label" x="245" y="1025">Welcome to DFW</text>
+  <text class="micro" x="245" y="1048">Matchday operating system</text>
+  <rect class="button" x="245" y="1064" width="180" height="32"/><text class="button-text" x="290" y="1085">Start Inquiry</text>
+  <rect class="chip" x="245" y="1115" width="180" height="44"/><text class="chip-text" x="260" y="1142">VIP Guest Concierge</text>
+  <rect class="chip" x="245" y="1168" width="180" height="44"/><text class="chip-text" x="260" y="1195">Team Family Support</text>
+  <rect class="chip" x="245" y="1221" width="180" height="44"/><text class="chip-text" x="260" y="1248">Media / Corporate</text>
+  <rect class="chip" x="245" y="1274" width="180" height="44"/><text class="chip-text" x="260" y="1301">Team Fan Hubs</text>
+  <rect x="245" y="1335" width="180" height="42" fill="#dbeafe" stroke="#93c5fd" rx="12"/><text class="micro" x="260" y="1360">Location or hotel area</text>
+  <rect x="245" y="1390" width="180" height="54" fill="#eef2f7" stroke="#cbd5e1" rx="12"/><text class="micro" x="260" y="1420">DFW map card</text>
+  <text class="micro" x="230" y="1530">Mobile acceptance: inquiry within three taps.</text>
+
+  <!-- Frame 03 Four Lane Detail -->
+  <rect class="frame" x="640" y="850" width="1080" height="720"/>
+  <text class="frame-title" x="680" y="900">03 Four-Lane Selector Detail</text>
+  <text class="small" x="680" y="930">Choose the matchday lane that best fits your trip.</text>
+  <rect class="frame-dark" x="680" y="970" width="470" height="230"/><text class="frame-title-light" x="710" y="1010">VIP Guest Concierge</text><text class="small-light" x="710" y="1045">Black 2026 Chevrolet Tahoe eligibility for approved bookings.</text><rect class="badge-warn" x="710" y="1070" width="210" height="30"/><text class="badge-warn-text" x="725" y="1090">Operator Review Required</text><text class="micro-light" x="710" y="1130">Tahoe and operator assignment are never guaranteed before confirmation.</text>
+  <rect class="frame" x="1180" y="970" width="470" height="230"/><text class="frame-title" x="1210" y="1010">Team Family Support</text><text class="small" x="1210" y="1045">Privacy-sensitive family, team-adjacent, or federation-linked planning.</text><rect class="badge" x="1210" y="1070" width="180" height="30"/><text class="badge-text" x="1225" y="1090">Privacy Sensitive</text><text class="micro" x="1210" y="1130">No official team relationship or credential validation is claimed.</text>
+  <rect class="frame" x="680" y="1230" width="470" height="230"/><text class="frame-title" x="710" y="1270">Media / Corporate</text><text class="small" x="710" y="1305">Crews, sponsors, executives, groups, equipment, and catering.</text><rect class="badge-warn" x="710" y="1330" width="145" height="30"/><text class="badge-warn-text" x="725" y="1350">Quote Required</text><text class="micro" x="710" y="1390">Fleet, provider, invoice, and assignment availability require review.</text>
+  <rect class="frame" x="1180" y="1230" width="470" height="230"/><text class="frame-title" x="1210" y="1270">Team Fan Hubs</text><text class="small" x="1210" y="1305">Team, language, route, Fan Experience, food, shared ride.</text><rect class="badge-ok" x="1210" y="1330" width="230" height="30"/><text class="badge-ok-text" x="1225" y="1350">Free Guidance + Planning</text><text class="micro" x="1210" y="1390">Shared ride matching is not automatic or guaranteed.</text>
+
+  <!-- Frame 04 AI Intake -->
+  <rect class="frame" x="80" y="1620" width="800" height="560"/>
+  <text class="frame-title" x="120" y="1670">04 AI Inquiry Starter</text>
+  <text class="small" x="120" y="1700">Build your matchday planning preview.</text>
+  <rect x="120" y="1730" width="700" height="46" fill="#eff6ff" stroke="#93c5fd" rx="16"/><text class="label" x="145" y="1760">Lane -> Trip -> Needs -> Privacy -> Review</text>
+  <rect class="chip" x="120" y="1805" width="160" height="42"/><text class="chip-text" x="145" y="1831">VIP</text>
+  <rect class="chip" x="300" y="1805" width="160" height="42"/><text class="chip-text" x="325" y="1831">Team Family</text>
+  <rect class="chip" x="480" y="1805" width="160" height="42"/><text class="chip-text" x="505" y="1831">Corporate</text>
+  <rect class="chip" x="660" y="1805" width="160" height="42"/><text class="chip-text" x="685" y="1831">Fan Hub</text>
+  <rect x="120" y="1875" width="310" height="48" fill="#ffffff" stroke="#cbd5e1" rx="14"/><text class="small" x="140" y="1905">Self or coordinator?</text>
+  <rect x="450" y="1875" width="370" height="48" fill="#ffffff" stroke="#cbd5e1" rx="14"/><text class="small" x="470" y="1905">Sensitive status disclosure preference</text>
+  <rect x="120" y="1950" width="700" height="80" fill="#ffffff" stroke="#cbd5e1" rx="16"/><text class="small" x="145" y="1980">Arrival, departure, airport, hotel area, matchday interest</text><text class="micro" x="145" y="2006">No exact sensitive details before secure access.</text>
+  <rect class="button" x="120" y="2055" width="210" height="42"/><text class="button-text" x="150" y="2082">Submit for Review</text>
+  <text class="micro" x="350" y="2082">Planning preview only. Operator review required for confirmation.</text>
+
+  <!-- Frame 05 Verified Hub Preview -->
+  <rect class="frame" x="920" y="1620" width="800" height="560"/>
+  <text class="frame-title" x="960" y="1670">05 Verified Hub Preview</text>
+  <rect class="badge" x="1390" y="1645" width="230" height="30"/><text class="badge-text" x="1405" y="1665">Secure Access</text>
+  <rect x="960" y="1715" width="320" height="160" fill="#ffffff" stroke="#cbd5e1" rx="18"/><text class="label" x="985" y="1750">Intake Summary</text><text class="small" x="985" y="1780">Lane, dates, airport, hotel area</text><text class="small" x="985" y="1810">Matchday and service categories</text>
+  <rect x="1300" y="1715" width="360" height="160" fill="#ffffff" stroke="#cbd5e1" rx="18"/><text class="label" x="1325" y="1750">Missing Details</text><text class="small" x="1325" y="1780">Guest count, luggage, exact pickup</text><text class="small" x="1325" y="1810">Payment readiness, privacy preference</text>
+  <rect x="960" y="1900" width="700" height="110" fill="#eff6ff" stroke="#93c5fd" rx="18"/><text class="label" x="985" y="1935">Recommended Widgets</text><text class="small" x="985" y="1965">Arrival Plan | Matchday Movement | Food + Cooler | Luggage | Route Map | Quote Status</text>
+  <rect class="button" x="960" y="2040" width="300" height="42"/><text class="button-text" x="990" y="2067">Activate Command Hub</text>
+  <text class="micro" x="1280" y="2066">Preview is not a confirmed booking.</text>
+
+  <!-- Frame 06 Activated Hub -->
+  <rect class="frame" x="80" y="2230" width="1640" height="620"/>
+  <text class="frame-title" x="120" y="2280">06 Activated Personal Matchday Command Hub</text>
+  <rect class="badge-warn" x="1260" y="2255" width="260" height="30"/><text class="badge-warn-text" x="1275" y="2275">Activated Planning, not confirmation</text>
+  <line class="line" x1="140" y1="2345" x2="1560" y2="2345"/>
+  <circle class="node" cx="160" cy="2345" r="13"/><text class="micro" x="125" y="2378">Inquiry</text>
+  <circle class="node" cx="360" cy="2345" r="13"/><text class="micro" x="320" y="2378">Intake</text>
+  <circle class="node" cx="560" cy="2345" r="13"/><text class="micro" x="510" y="2378">Operator Review</text>
+  <circle class="node" cx="760" cy="2345" r="13"/><text class="micro" x="720" y="2378">Quote</text>
+  <circle class="node" cx="960" cy="2345" r="13"/><text class="micro" x="915" y="2378">Payment</text>
+  <circle class="node" cx="1160" cy="2345" r="13"/><text class="micro" x="1120" y="2378">Confirmed</text>
+  <circle class="node" cx="1360" cy="2345" r="13"/><text class="micro" x="1320" y="2378">Assigned</text>
+  <circle class="node" cx="1560" cy="2345" r="13"/><text class="micro" x="1515" y="2378">Service or Referral</text>
+  <rect class="frame" x="120" y="2425" width="350" height="150"/><text class="label" x="150" y="2460">Itinerary Builder</text><text class="small" x="150" y="2490">Requested, quoted, confirmed states</text>
+  <rect class="frame" x="500" y="2425" width="350" height="150"/><text class="label" x="530" y="2460">Guest Details</text><text class="small" x="530" y="2490">Protected activated-hub data</text>
+  <rect class="frame" x="880" y="2425" width="350" height="150"/><text class="label" x="910" y="2460">Quote + Payment</text><text class="small" x="910" y="2490">Separate status panels</text>
+  <rect class="frame" x="1260" y="2425" width="350" height="150"/><text class="label" x="1290" y="2460">Operator Next Steps</text><text class="small" x="1290" y="2490">Service or referral routing</text>
+  <text class="micro" x="120" y="2645">Boundary: Activated planning does not equal confirmed service. Requested items must remain visually unconfirmed until operator approval and payment terms are complete.</text>
+
+  <!-- Hub Specific Frames Row -->
+  <rect class="frame-dark" x="80" y="2910" width="520" height="520"/>
+  <text class="frame-title-light" x="120" y="2960">07 VIP Guest Concierge Hub</text>
+  <rect class="badge-warn" x="120" y="2985" width="220" height="30"/><text class="badge-warn-text" x="135" y="3005">Operator Review Required</text>
+  <rect x="120" y="3035" width="430" height="90" fill="#111827" stroke="#94a3b8" rx="16"/><text class="label-light" x="145" y="3065">Black 2026 Chevrolet Tahoe</text><text class="small-light" x="145" y="3095">Subject to confirmation. Capacity reviewed by luggage and comfort.</text>
+  <rect x="120" y="3150" width="200" height="80" fill="#1f2937" stroke="#64748b" rx="14"/><text class="small-light" x="140" y="3190">Airport / FBO</text>
+  <rect x="350" y="3150" width="200" height="80" fill="#1f2937" stroke="#64748b" rx="14"/><text class="small-light" x="370" y="3190">Stadium Plan</text>
+  <rect x="120" y="3250" width="200" height="80" fill="#1f2937" stroke="#64748b" rx="14"/><text class="small-light" x="140" y="3290">Food / Cooler</text>
+  <rect x="350" y="3250" width="200" height="80" fill="#1f2937" stroke="#64748b" rx="14"/><text class="small-light" x="370" y="3290">Security Interest</text>
+  <text class="micro-light" x="120" y="3370">No ads. No guaranteed Tahoe. No official access claim.</text>
+
+  <rect class="frame" x="640" y="2910" width="520" height="520"/>
+  <text class="frame-title" x="680" y="2960">08 Team Family Support Hub</text>
+  <rect class="badge" x="680" y="2985" width="170" height="30"/><text class="badge-text" x="695" y="3005">Privacy Sensitive</text>
+  <rect x="680" y="3035" width="430" height="90" fill="#ffffff" stroke="#cbd5e1" rx="16"/><text class="label" x="705" y="3065">Coordinator / Representative</text><text class="small" x="705" y="3095">Hub owner separate from principal client.</text>
+  <rect x="680" y="3150" width="200" height="80" fill="#f8fafc" stroke="#cbd5e1" rx="14"/><text class="small" x="700" y="3190">Family Itinerary</text>
+  <rect x="910" y="3150" width="200" height="80" fill="#f8fafc" stroke="#cbd5e1" rx="14"/><text class="small" x="930" y="3190">VIP Escalation</text>
+  <rect x="680" y="3250" width="200" height="80" fill="#f8fafc" stroke="#cbd5e1" rx="14"/><text class="small" x="700" y="3290">Payment Authority</text>
+  <rect x="910" y="3250" width="200" height="80" fill="#f8fafc" stroke="#cbd5e1" rx="14"/><text class="small" x="930" y="3290">Operator Review</text>
+  <text class="micro" x="680" y="3370">No ads. No forced public disclosure. No team authorization claim.</text>
+
+  <rect class="frame" x="1200" y="2910" width="520" height="520"/>
+  <text class="frame-title" x="1240" y="2960">09 Media / Corporate Hub</text>
+  <rect class="badge-warn" x="1240" y="2985" width="140" height="30"/><text class="badge-warn-text" x="1255" y="3005">Quote Required</text>
+  <rect x="1240" y="3035" width="430" height="90" fill="#ffffff" stroke="#cbd5e1" rx="16"/><text class="label" x="1265" y="3065">Organization + Coordinator</text><text class="small" x="1265" y="3095">Company card, route, equipment, catering.</text>
+  <rect x="1240" y="3150" width="200" height="80" fill="#f8fafc" stroke="#cbd5e1" rx="14"/><text class="small" x="1260" y="3190">Schedule Builder</text>
+  <rect x="1470" y="3150" width="200" height="80" fill="#f8fafc" stroke="#cbd5e1" rx="14"/><text class="small" x="1490" y="3190">Vehicle Count</text>
+  <rect x="1240" y="3250" width="200" height="80" fill="#f8fafc" stroke="#cbd5e1" rx="14"/><text class="small" x="1260" y="3290">Catering Request</text>
+  <rect x="1470" y="3250" width="200" height="80" fill="#f8fafc" stroke="#cbd5e1" rx="14"/><text class="small" x="1490" y="3290">Assignment Status</text>
+  <text class="micro" x="1240" y="3370">No ads. No fleet or invoice guarantee.</text>
+
+  <!-- Fan Hub and Map -->
+  <rect class="frame" x="80" y="3480" width="800" height="620"/>
+  <text class="frame-title" x="120" y="3530">10 Team Fan Hub</text>
+  <rect class="badge-ok" x="575" y="3505" width="240" height="30"/><text class="badge-ok-text" x="590" y="3525">Free Guidance + Activated Planning</text>
+  <rect x="120" y="3575" width="700" height="70" fill="#ffffff" stroke="#cbd5e1" rx="16"/><text class="label" x="145" y="3618">Team Selector + Language Selector</text>
+  <rect x="120" y="3670" width="210" height="110" fill="#f8fafc" stroke="#cbd5e1" rx="16"/><text class="small" x="145" y="3715">Route Guidance</text>
+  <rect x="365" y="3670" width="210" height="110" fill="#f8fafc" stroke="#cbd5e1" rx="16"/><text class="small" x="390" y="3715">Fan Experience</text>
+  <rect x="610" y="3670" width="210" height="110" fill="#f8fafc" stroke="#cbd5e1" rx="16"/><text class="small" x="635" y="3715">Shared Ride Interest</text>
+  <rect x="120" y="3810" width="210" height="110" fill="#f8fafc" stroke="#cbd5e1" rx="16"/><text class="small" x="145" y="3855">Food + Drinks</text>
+  <rect x="365" y="3810" width="210" height="110" fill="#f8fafc" stroke="#cbd5e1" rx="16"/><text class="small" x="390" y="3855">Sightseeing</text>
+  <rect x="610" y="3810" width="210" height="110" fill="#fff7ed" stroke="#fdba74" rx="16"/><text class="small" x="635" y="3855">Safe Ad / Referral Zone</text>
+  <text class="micro" x="120" y="3975">Boundary: Free guidance supports planning. Fulfillment and shared ride matching are confirmed separately.</text>
+
+  <rect class="frame" x="920" y="3480" width="800" height="620"/>
+  <text class="frame-title" x="960" y="3530">11 DFW Map / Location Panel</text>
+  <rect x="960" y="3570" width="700" height="390" fill="#eff6ff" stroke="#93c5fd" rx="24"/>
+  <line class="route" x1="1040" y1="3690" x2="1230" y2="3810"/>
+  <line class="route" x1="1140" y1="3750" x2="1330" y2="3810"/>
+  <line class="route" x1="1080" y1="3910" x2="1330" y2="3810"/>
+  <line class="route" x1="1330" y1="3810" x2="1530" y2="3720"/>
+  <circle class="node" cx="1040" cy="3690" r="18"/><text class="micro" x="1010" y="3660">DFW</text>
+  <circle class="node" cx="1140" cy="3750" r="18"/><text class="micro" x="1110" y="3720">Love</text>
+  <circle class="node" cx="1230" cy="3810" r="18"/><text class="micro" x="1200" y="3850">Dallas</text>
+  <circle class="node" cx="1330" cy="3810" r="18"/><text class="micro" x="1300" y="3850">Arlington</text>
+  <circle class="node" cx="1080" cy="3910" r="18"/><text class="micro" x="1040" y="3950">Fort Worth</text>
+  <circle class="node" cx="1530" cy="3720" r="18"/><text class="micro" x="1490" y="3685">Fan Experience</text>
+  <text class="micro" x="960" y="4025">Boundary: Map visuals support planning orientation. Live routing, live traffic, and dispatch require verified implementation.</text>
+
+  <!-- Badges and Monetization -->
+  <rect class="frame" x="80" y="4150" width="800" height="500"/>
+  <text class="frame-title" x="120" y="4200">12 Status Badge System</text>
+  <rect class="badge-ok" x="120" y="4240" width="160" height="32"/><text class="badge-ok-text" x="140" y="4261">Live Capability</text>
+  <rect class="badge" x="300" y="4240" width="190" height="32"/><text class="badge-text" x="320" y="4261">Operator-Assisted</text>
+  <rect class="badge-warn" x="510" y="4240" width="145" height="32"/><text class="badge-warn-text" x="530" y="4261">Development</text>
+  <rect class="badge-warn" x="675" y="4240" width="130" height="32"/><text class="badge-warn-text" x="695" y="4261">Restricted</text>
+  <rect class="badge" x="120" y="4300" width="200" height="32"/><text class="badge-text" x="140" y="4321">Referral / Third-Party</text>
+  <rect class="badge" x="340" y="4300" width="160" height="32"/><text class="badge-text" x="360" y="4321">Information Only</text>
+  <rect class="badge" x="520" y="4300" width="150" height="32"/><text class="badge-text" x="540" y="4321">Planning Value</text>
+  <rect class="badge-warn" x="120" y="4360" width="220" height="32"/><text class="badge-warn-text" x="140" y="4381">Operator Review Required</text>
+  <rect class="badge-warn" x="360" y="4360" width="145" height="32"/><text class="badge-warn-text" x="380" y="4381">Quote Required</text>
+  <rect class="badge-warn" x="525" y="4360" width="160" height="32"/><text class="badge-warn-text" x="545" y="4381">Payment Pending</text>
+  <rect class="badge-ok" x="120" y="4420" width="120" height="32"/><text class="badge-ok-text" x="140" y="4441">Confirmed</text>
+  <text class="small" x="120" y="4500">Rule: No service, route, hub, payment state, or referral zone appears without a visible or mapped status.</text>
+
+  <rect class="frame" x="920" y="4150" width="800" height="500"/>
+  <text class="frame-title" x="960" y="4200">13 Fan Monetization Zone</text>
+  <rect x="960" y="4240" width="220" height="120" fill="#fff7ed" stroke="#fdba74" rx="18"/><text class="label" x="985" y="4280">Food Referral</text><text class="small" x="985" y="4310">Clearly labeled</text>
+  <rect x="1210" y="4240" width="220" height="120" fill="#fff7ed" stroke="#fdba74" rx="18"/><text class="label" x="1235" y="4280">Attraction Card</text><text class="small" x="1235" y="4310">Information only</text>
+  <rect x="1460" y="4240" width="220" height="120" fill="#fff7ed" stroke="#fdba74" rx="18"/><text class="label" x="1485" y="4280">Sponsored Slot</text><text class="small" x="1485" y="4310">Public fan only</text>
+  <text class="small" x="960" y="4420">Blocked: VIP hub, Team Family hub, private Media / Corporate hub, privacy-sensitive activated hub.</text>
+  <line class="redline" x1="960" y1="4450" x2="1680" y2="4450"/>
+  <text class="small" x="960" y="4495">Disclosure labels: Direct DFW Service | Operator-Assisted | Third-Party Referral | Affiliate / Referral Link | Information Only</text>
+
+  <!-- Mobile Activated Hub -->
+  <rect class="frame" x="80" y="4700" width="1640" height="660"/>
+  <text class="frame-title" x="120" y="4750">14 Mobile Activated Command Hub</text>
+  <rect class="phone" x="140" y="4800" width="300" height="500"/>
+  <rect class="phone-screen" x="160" y="4820" width="260" height="460"/>
+  <text class="label" x="180" y="4865">Personal Command Hub</text>
+  <rect class="badge-warn" x="180" y="4885" width="180" height="28"/><text class="badge-warn-text" x="195" y="4904">Operator Review</text>
+  <rect x="180" y="4935" width="220" height="45" fill="#eff6ff" stroke="#93c5fd" rx="12"/><text class="micro" x="200" y="4963">Status tracker</text>
+  <rect x="180" y="4995" width="220" height="45" fill="#ffffff" stroke="#cbd5e1" rx="12"/><text class="micro" x="200" y="5023">Next Step</text>
+  <rect x="180" y="5055" width="220" height="45" fill="#ffffff" stroke="#cbd5e1" rx="12"/><text class="micro" x="200" y="5083">Itinerary</text>
+  <rect x="180" y="5115" width="220" height="45" fill="#ffffff" stroke="#cbd5e1" rx="12"/><text class="micro" x="200" y="5143">Quote Status</text>
+  <rect x="180" y="5175" width="220" height="45" fill="#ffffff" stroke="#cbd5e1" rx="12"/><text class="micro" x="200" y="5203">Payment / Deposit</text>
+  <rect x="180" y="5235" width="220" height="30" fill="#111827" rx="10"/><text class="micro-light" x="207" y="5255">Ask | Add Detail | View</text>
+  <text class="label" x="510" y="4830">Mobile hub rules</text>
+  <text class="small" x="510" y="4870">1. Status visible before detailed content.</text>
+  <text class="small" x="510" y="4905">2. Payment and confirmation remain separate.</text>
+  <text class="small" x="510" y="4940">3. Operator review language remains visible.</text>
+  <text class="small" x="510" y="4975">4. Requested items never look confirmed.</text>
+  <text class="label" x="510" y="5050">Final acceptance gate</text>
+  <text class="small" x="510" y="5090">Passes only after visual mockup review validates claim control, mobile hierarchy, QR destination, map/source accuracy, asset rules, and monetization zones.</text>
+  <rect class="badge-warn" x="510" y="5140" width="280" height="34"/><text class="badge-warn-text" x="530" y="5163">Frontend implementation remains blocked</text>
+  <rect class="badge-warn" x="820" y="5140" width="285" height="34"/><text class="badge-warn-text" x="840" y="5163">DreamHost deployment remains blocked</text>
+</svg>
