@@ -1,10 +1,10 @@
-# DFW VIP Guest Concierge Governance Layer v1.0.0
+# DFW VIP Guest Concierge Governance Layer v1.0.1
 
 ## 1. Purpose
 
-This file governs the VIP Guest Concierge lane for DFW Matchday Concierge. It defines eligibility, allocation, booking minimums, Tahoe access, primary operator priority, Team Family escalation, Media / Corporate escalation, payment, cancellation, anonymity, and public claim boundaries.
+This file governs the VIP Guest Concierge lane for DFW Matchday Concierge. It defines eligibility, allocation, booking minimums, Black Executive Vehicle Class access, primary operator priority, Team Family escalation, Media / Corporate escalation, payment, cancellation, anonymity, and public claim boundaries.
 
-This layer controls the highest-value and highest-sensitivity service lane before any homepage, mockup, booking widget, or public copy presents VIP service.
+This layer controls the highest-value and highest-sensitivity service lane before any homepage, mockup, booking widget, command hub, profile page, intake page, or public copy presents VIP service.
 
 ## 2. Governing Position
 
@@ -15,7 +15,7 @@ VIP is not a single-trip ride product. VIP is a scheduled, high-touch concierge 
 VIP Guest Concierge must protect scarce resources:
 
 - primary operator time
-- official VIP vehicle access
+- Black Executive Vehicle Class availability
 - private scheduling attention
 - concierge planning bandwidth
 - anonymity and privacy handling
@@ -30,22 +30,23 @@ The active priority order is:
 3. Media / Corporate
 4. Team Fans
 
-VIP remains highest because it receives first access to the primary operator and approved Black 2026 Chevrolet Tahoe allocation.
+VIP remains highest because it receives first review for primary operator availability and Black Executive Vehicle Class allocation.
 
-## 4. Official VIP Vehicle
+## 4. Official VIP Vehicle Standard
 
 The official VIP vehicle standard is:
 
-- 2026 Chevrolet Tahoe
-- black
-- VIP-presented
-- primary operator controlled unless otherwise assigned by approval
+`Black Executive Vehicle Class`
+
+Class definition:
+
+`Black Executive Vehicle Class may include Black Executive SUVs and other eligible executive or presidential-style vehicles, subject to operator review, availability, capacity fit, route requirements, comfort requirements, luggage needs, and quote confirmation.`
 
 Public reference may describe this as:
 
-`Black Chevrolet Tahoe VIP service for approved VIP Guest Concierge bookings.`
+`Black Executive Vehicle Class for approved VIP and executive matchday bookings.`
 
-Do not claim guaranteed Tahoe availability unless a booking is confirmed.
+Do not claim a guaranteed specific make, model, vehicle, driver, or vehicle class before booking confirmation.
 
 ## 5. VIP Service Format
 
@@ -111,7 +112,7 @@ Recommended scoring factors:
 - payment readiness
 - referral quality
 - schedule feasibility
-- Tahoe availability
+- Black Executive Vehicle Class availability
 - operator availability
 
 ### 7.2 Priority Signals
@@ -180,9 +181,9 @@ Allocation order:
 
 The primary operator should not be allocated to ordinary fan shared rides, general pool-driver work, or unqualified single-trip bookings when VIP demand exists.
 
-## 10. Tahoe Allocation Logic
+## 10. Black Executive Vehicle Class Allocation Logic
 
-The Black 2026 Chevrolet Tahoe should be allocated in this order:
+The Black Executive Vehicle Class should be allocated in this order:
 
 1. confirmed VIP Guest Concierge full-stay / weekly client
 2. confirmed VIP Guest Concierge multi-day client
@@ -191,7 +192,7 @@ The Black 2026 Chevrolet Tahoe should be allocated in this order:
 5. approved private day block
 6. approved premium upgrade only when schedule permits
 
-If Tahoe availability is blocked, the inquiry may be:
+If Black Executive Vehicle Class availability is blocked, the inquiry may be:
 
 - quoted with alternate vehicle disclosure
 - waitlisted
@@ -199,7 +200,7 @@ If Tahoe availability is blocked, the inquiry may be:
 - declined
 - referred to trusted driver pool where appropriate
 
-No public page may imply Tahoe availability is guaranteed before confirmation.
+No public page may imply any specific executive vehicle is guaranteed before confirmation.
 
 ## 11. Team Family Escalation Rules
 
@@ -223,7 +224,7 @@ Media / Corporate may escalate into VIP Guest Concierge when:
 - executive or sponsor guest requires private movement
 - credentialed guest requires primary operator discretion
 - booking is high-value or multi-day
-- recurring movement requires Tahoe priority
+- recurring movement requires executive vehicle class priority
 - company-card or invoice value justifies allocation
 - profile or operational sensitivity warrants private treatment
 
@@ -232,7 +233,7 @@ Media / Corporate should remain in its own lane when:
 - group movement can be assigned to partner drivers
 - catering or delivery is primary need
 - crew transport is operational rather than privacy-sensitive
-- multi-vehicle dispatch is more important than Tahoe access
+- multi-vehicle dispatch is more important than one premium vehicle allocation
 
 ## 13. Team Fan Exclusion Rule
 
@@ -253,7 +254,7 @@ Team Fans may escalate only when:
 - high-value private request is approved
 - weekly/full-stay support is requested
 - credential/access relevance exists
-- Tahoe and operator capacity exist
+- Black Executive Vehicle Class and operator capacity exist
 - payment and deposit conditions are satisfied
 
 ## 14. Anonymity and Privacy Protocol
@@ -371,8 +372,8 @@ VIP cancellation and refund handling depends on timing, allocation, expenses, an
 
 Recommended shell:
 
-- Full refund before operator/Tahoe/service window is held.
-- Partial refund after operator/Tahoe/service window is reserved.
+- Full refund before operator, vehicle class, or service window is held.
+- Partial refund after operator, vehicle class, or service window is reserved.
 - Purchased food, supplies, event-day expenses, delivery items, and custom requests are non-refundable once purchased.
 - Late cancellation, no-show, or schedule abandonment may forfeit deposit.
 - Weather, traffic, event security, road closure, official restriction, or flight disruption reviewed case by case.
@@ -388,7 +389,7 @@ When multiple qualified VIP, Team Family, or Media / Corporate requests compete 
 - credential/access relevance
 - referral quality
 - itinerary complexity
-- Tahoe/operator availability
+- executive vehicle class/operator availability
 - strategic future value
 
 Highest-profile or highest-bid clients may receive priority only when service quality and claim boundaries remain controlled.
@@ -399,7 +400,7 @@ Allowed public claims:
 
 - VIP Guest Concierge by request
 - weekly and full-stay VIP concierge inquiries
-- 2026 Black Chevrolet Tahoe for approved VIP service
+- Black Executive Vehicle Class for approved VIP and executive matchday bookings
 - Team Family Support by request
 - private scheduled concierge support
 - operator-confirmed availability
@@ -408,7 +409,7 @@ Allowed public claims:
 Prohibited public claims:
 
 - guaranteed VIP availability
-- guaranteed Tahoe availability before confirmation
+- guaranteed specific vehicle availability before confirmation
 - official FIFA affiliation
 - official credential validation
 - guaranteed event access
@@ -427,12 +428,18 @@ Required hierarchy:
 2. Team Family Support
 3. Media / Corporate
 4. Team Fan Hubs
+5. Drivers
+6. Concierges
+7. Fulfillment
 
 Required visual separation:
 
-- VIP and Team Family: private, selective, privacy-sensitive, Tahoe/primary-operator aware
+- VIP and Team Family: private, selective, privacy-sensitive, executive-vehicle-class aware
 - Media / Corporate: operational, schedulable, company-card, catering/group movement
 - Team Fans: team hub, shared ride, pool-driver eligible, fan experience/tourism layer
+- Drivers: onboarding, readiness, availability, assignment review
+- Concierges: inquiry review, task coordination, fulfillment support
+- Fulfillment: confirmed scope, execution routing, escalation, closeout
 
 VIP must not be presented as a button for ordinary single-trip ride purchase.
 
@@ -445,7 +452,7 @@ The lane is governed by:
 - multi-day / weekly / full-stay preference
 - no single-trip VIP public product
 - no shared VIP rides
-- Black 2026 Chevrolet Tahoe priority
+- Black Executive Vehicle Class priority
 - primary operator priority
 - credential/access-sensitive prioritization
 - anonymity rights
@@ -460,7 +467,7 @@ The lane is governed by:
 - exact daily block pricing if allowed
 - exact deposit percentage or minimum
 - exact cancellation window language
-- exact Tahoe calendar hold procedure
+- exact executive vehicle class calendar hold procedure
 - exact VIP intake form fields for production
 - exact privacy/anonymity public copy
 - exact Team Family escalation copy
