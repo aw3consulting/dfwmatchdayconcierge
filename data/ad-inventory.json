@@ -1,0 +1,186 @@
+{
+  "version": "1.0.0",
+  "governed_action": "dfw_marketing_strategy_and_monetization_blueprint_repo_package",
+  "production_status": "blocked",
+  "default_claim_review_required": true,
+  "inventory_classes": [
+    {
+      "id": "class-a-founding-premium",
+      "name": "Class A Founding Premium Inventory",
+      "priority": 1,
+      "description": "Highest-value sponsorship and takeover inventory for scarce premium public visibility.",
+      "allowed_surfaces": [
+        "homepage_public_sponsor_rail",
+        "public_information_gateway",
+        "partner_advertise_page",
+        "selected_public_guide_headers",
+        "public_media_corporate_information_page"
+      ],
+      "blocked_surfaces": [
+        "paid_vip_hub",
+        "team_family_private_hub",
+        "media_corporate_private_hub",
+        "activated_premium_command_hub",
+        "privacy_sensitive_hub"
+      ],
+      "status_badges": [
+        "Sponsored Placement",
+        "Information Only"
+      ],
+      "claim_review_required": true,
+      "official_affiliation_claim_allowed": false
+    },
+    {
+      "id": "class-b-high-volume-public",
+      "name": "Class B High-Volume Public Inventory",
+      "priority": 2,
+      "description": "Scalable public fan and information placements for team hubs, area guides, route guides, food guides, and attraction guides.",
+      "allowed_surfaces": [
+        "team_fan_hub",
+        "free_fan_information_page",
+        "public_matchday_guide",
+        "route_area_guide",
+        "restaurant_watch_party_guide",
+        "public_fan_command_hub_preview"
+      ],
+      "blocked_surfaces": [
+        "paid_vip_hub",
+        "team_family_private_hub",
+        "media_corporate_private_hub",
+        "activated_premium_command_hub"
+      ],
+      "status_badges": [
+        "Sponsored Placement",
+        "Information Only",
+        "Availability Required"
+      ],
+      "claim_review_required": true,
+      "official_affiliation_claim_allowed": false
+    },
+    {
+      "id": "class-c-affiliate-referral",
+      "name": "Class C Affiliate and Referral Inventory",
+      "priority": 3,
+      "description": "Affiliate and referral routing for non-fulfilled or third-party-controlled visitor needs.",
+      "allowed_surfaces": [
+        "public_information_gateway",
+        "team_fan_hub",
+        "route_area_guide",
+        "restaurant_watch_party_guide",
+        "attraction_guide",
+        "verified_fan_preview"
+      ],
+      "blocked_surfaces": [
+        "private_payment_surface",
+        "private_quote_surface",
+        "privacy_sensitive_hub"
+      ],
+      "status_badges": [
+        "Affiliate / Referral Link",
+        "Third-Party Provider",
+        "Availability Required"
+      ],
+      "claim_review_required": true,
+      "official_affiliation_claim_allowed": false
+    },
+    {
+      "id": "class-d-curated-premium-resource",
+      "name": "Class D Curated Premium Resource Placement",
+      "priority": 4,
+      "description": "Expressly approved high-trust resource placement for premium-adjacent contexts without standard ad treatment.",
+      "allowed_surfaces": [
+        "public_vip_information_page",
+        "public_team_family_information_page",
+        "public_media_corporate_information_page",
+        "operator_reviewed_resource_directory"
+      ],
+      "blocked_surfaces": [
+        "paid_vip_hub_unless_expressly_approved",
+        "team_family_private_hub_unless_expressly_approved",
+        "media_corporate_private_hub_unless_expressly_approved",
+        "privacy_sensitive_hub_unless_expressly_approved"
+      ],
+      "status_badges": [
+        "Operator-Reviewed",
+        "Sponsored Placement",
+        "Availability Required"
+      ],
+      "claim_review_required": true,
+      "official_affiliation_claim_allowed": false
+    }
+  ],
+  "ad_products": [
+    {
+      "id": "founding-presenting-partner",
+      "name": "Founding Presenting Partner",
+      "inventory_class": "class-a-founding-premium",
+      "priority": 1,
+      "pricing_model": "flat_sponsorship",
+      "internal_opening_range": "50000-150000",
+      "claim_review_required": true
+    },
+    {
+      "id": "semifinal-week-premium-takeover",
+      "name": "Semifinal Week Premium Takeover",
+      "inventory_class": "class-a-founding-premium",
+      "priority": 2,
+      "pricing_model": "time_bound_takeover",
+      "internal_opening_range": "25000-75000",
+      "claim_review_required": true
+    },
+    {
+      "id": "category-partner",
+      "name": "Category Partner",
+      "inventory_class": "class-a-founding-premium",
+      "priority": 3,
+      "pricing_model": "category_sponsorship",
+      "internal_opening_range": "15000-50000",
+      "claim_review_required": true
+    },
+    {
+      "id": "team-fan-hub-sponsor",
+      "name": "Team Fan Hub Sponsor",
+      "inventory_class": "class-b-high-volume-public",
+      "priority": 4,
+      "pricing_model": "team_or_match_window_sponsorship",
+      "internal_opening_range": "5000-25000",
+      "claim_review_required": true
+    },
+    {
+      "id": "route-area-guide-sponsor",
+      "name": "Route / Area Guide Sponsor",
+      "inventory_class": "class-b-high-volume-public",
+      "priority": 5,
+      "pricing_model": "guide_sponsorship",
+      "internal_opening_range": "2500-10000",
+      "claim_review_required": true
+    },
+    {
+      "id": "featured-partner-card",
+      "name": "Featured Partner Card",
+      "inventory_class": "class-b-high-volume-public",
+      "priority": 6,
+      "pricing_model": "flat_card_placement",
+      "internal_opening_range": "500-2500",
+      "claim_review_required": true
+    },
+    {
+      "id": "affiliate-referral-routing",
+      "name": "Affiliate / Referral Routing",
+      "inventory_class": "class-c-affiliate-referral",
+      "priority": 7,
+      "pricing_model": "cpa_bounty_revenue_share",
+      "internal_opening_range": "terms_required",
+      "claim_review_required": true
+    },
+    {
+      "id": "group-lead-package",
+      "name": "Group Lead Package",
+      "inventory_class": "class-d-curated-premium-resource",
+      "priority": 8,
+      "pricing_model": "lead_or_planning_package",
+      "internal_opening_range": "1500-10000",
+      "claim_review_required": true
+    }
+  ]
+}
