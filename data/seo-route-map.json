@@ -1,0 +1,62 @@
+{
+  "version": "1.0.0",
+  "purpose": "Define SEO metadata for DFW Matchday Concierge production-candidate routes.",
+  "base_url": "https://dfwmatchdayconcierge.com",
+  "default_og_type": "website",
+  "routes": [
+    {
+      "path": "/",
+      "title": "DFW Matchday Concierge | Dallas Fort Worth Matchday Planning",
+      "description": "Independent Dallas/Fort Worth matchday planning, concierge coordination, airport movement, command hub preview, driver onboarding, concierge onboarding, and fulfillment routing.",
+      "canonical": "https://dfwmatchdayconcierge.com/"
+    },
+    {
+      "path": "/connect/",
+      "title": "Connect | DFW Matchday Concierge",
+      "description": "Start a DFW matchday planning request by call, text, or email for VIP, Team Family, Media / Corporate, Fan Hub, Driver, Concierge, or Fulfillment routing.",
+      "canonical": "https://dfwmatchdayconcierge.com/connect/"
+    },
+    {
+      "path": "/vip/",
+      "title": "VIP Guest Concierge | DFW Matchday Concierge",
+      "description": "Private Dallas/Fort Worth VIP matchday planning with Black Executive Vehicle Class review, airport, hotel, stadium, luggage, comfort, and operator-assisted coordination.",
+      "canonical": "https://dfwmatchdayconcierge.com/vip/"
+    },
+    {
+      "path": "/team-family/",
+      "title": "Team Family Support | DFW Matchday Concierge",
+      "description": "Privacy-sensitive Dallas/Fort Worth matchday planning for team family representatives, family groups, comfort needs, hotels, routes, and operator-reviewed support.",
+      "canonical": "https://dfwmatchdayconcierge.com/team-family/"
+    },
+    {
+      "path": "/media-corporate/",
+      "title": "Media / Corporate Matchday Support | DFW Matchday Concierge",
+      "description": "Coordinator-led Dallas/Fort Worth matchday planning for media crews, corporate groups, executives, equipment, catering, hotels, and recurring schedules.",
+      "canonical": "https://dfwmatchdayconcierge.com/media-corporate/"
+    },
+    {
+      "path": "/fans/",
+      "title": "Team Fan Hubs | DFW Matchday Concierge",
+      "description": "Dallas/Fort Worth fan hub guidance for team routes, language support, shared ride interest, food, attractions, Fan Experience planning, and activated matchday support.",
+      "canonical": "https://dfwmatchdayconcierge.com/fans/"
+    },
+    {
+      "path": "/drivers/",
+      "title": "Driver Onboarding | DFW Matchday Concierge",
+      "description": "Submit driver interest for Dallas/Fort Worth matchday support, vehicle review, availability review, airport familiarity, stadium-area familiarity, and operator review.",
+      "canonical": "https://dfwmatchdayconcierge.com/drivers/"
+    },
+    {
+      "path": "/concierges/",
+      "title": "Concierge Onboarding | DFW Matchday Concierge",
+      "description": "Submit concierge interest for DFW matchday inquiry review, task support, driver coordination, guest communication, fulfillment support, and operator review.",
+      "canonical": "https://dfwmatchdayconcierge.com/concierges/"
+    },
+    {
+      "path": "/fulfillment/",
+      "title": "Fulfillment Layer | DFW Matchday Concierge",
+      "description": "Operator-assisted DFW matchday fulfillment routing for confirmed scope, direct service, driver path, concierge path, referral path, escalation, and closeout.",
+      "canonical": "https://dfwmatchdayconcierge.com/fulfillment/"
+    }
+  ]
+}
