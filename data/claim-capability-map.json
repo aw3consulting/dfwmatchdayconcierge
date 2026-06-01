@@ -1,0 +1,62 @@
+{
+  "version": "1.0.0",
+  "purpose": "Map launch claims to capability status for DFW Matchday Concierge.",
+  "claims": [
+    {
+      "claim": "Call, text, and email contact paths are available.",
+      "status": "live_contact",
+      "allowed_public_use": true
+    },
+    {
+      "claim": "DFW Matchday Concierge provides operator-assisted matchday planning and coordination.",
+      "status": "operator_assisted",
+      "allowed_public_use": true
+    },
+    {
+      "claim": "AI-assisted intake is available as a preview concept.",
+      "status": "ai_preview_only",
+      "allowed_public_use": true,
+      "boundary": "No live AI automation is approved."
+    },
+    {
+      "claim": "Black Executive Vehicle Class may be reviewed for eligible VIP and executive bookings.",
+      "status": "operator_review_required",
+      "allowed_public_use": true,
+      "boundary": "No specific vehicle make or model is guaranteed before confirmation."
+    },
+    {
+      "claim": "Driver onboarding is available as an interest and review lane.",
+      "status": "operator_review_required",
+      "allowed_public_use": true,
+      "boundary": "No automatic approval, assignment, earnings, or event access claim is allowed."
+    },
+    {
+      "claim": "Concierge onboarding is available as an interest and review lane.",
+      "status": "operator_review_required",
+      "allowed_public_use": true,
+      "boundary": "No automatic approval, assignment, authority, or event access claim is allowed."
+    },
+    {
+      "claim": "Fulfillment is available after confirmed scope and operator-approved routing.",
+      "status": "confirmed_scope_required",
+      "allowed_public_use": true,
+      "boundary": "No instant dispatch or guaranteed fulfillment claim is allowed."
+    },
+    {
+      "claim": "Payment or deposit may be required after quote and review.",
+      "status": "payment_pending",
+      "allowed_public_use": true,
+      "boundary": "No live payment collection is approved until separately authorized."
+    },
+    {
+      "claim": "Official tournament, team, venue, federation, sponsor, or credential affiliation exists.",
+      "status": "blocked",
+      "allowed_public_use": false
+    },
+    {
+      "claim": "Live dispatch, live routing, automatic assignment, or guaranteed fulfillment exists.",
+      "status": "blocked",
+      "allowed_public_use": false
+    }
+  ]
+}
