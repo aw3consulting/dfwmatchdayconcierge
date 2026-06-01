@@ -1,4 +1,4 @@
-# DFW Operating System Drift, Gap, and Efficiency Correction v1.0.0
+# DFW Operating System Drift, Gap, and Efficiency Correction v1.0.1
 
 ## 1. Purpose
 
@@ -9,12 +9,13 @@ The issue was not limited to vehicle naming. It exposed a broader governance gap
 1. Drift detection did not automatically trigger when a repeated term became misaligned with the evolved business model.
 2. The correction path required too many manual file-level updates.
 3. Audit and hardening existed, but were not enforcing controlled terminology and business-model propagation efficiently enough.
+4. The next-action command itself was too narrow after the issue was identified as system-wide.
 
 ## 2. Failure Classification
 
 Classification:
 
-`controlled_term_drift_and_propagation_efficiency_failure`
+`system_scope_drift_and_propagation_efficiency_failure`
 
 Severity:
 
@@ -22,7 +23,7 @@ Severity:
 
 Reason:
 
-A repeated operational term was allowed to remain embedded across governance, public copy, data, preview, and mockup context after the business model had expanded beyond that term.
+A repeated operational term was allowed to remain embedded across governance, public copy, data, preview, and mockup context after the business model had expanded beyond that term. The follow-on audit command then retained scope drift by framing the next audit too narrowly around controlled terms and business-model drift rather than the complete operating system.
 
 ## 3. Immediate Corrected Example
 
@@ -63,6 +64,16 @@ Major operating model changes were not automatically converted into:
 
 Manual file-by-file correction increased execution time and risk. Corrections should be registry-led and script-verified.
 
+### 4.5 Narrow Command Naming
+
+The next controlled action was originally named too narrowly after the failure had already been classified as system-wide.
+
+Corrected command:
+
+`dfw_operating_system_full_scope_drift_gap_and_launch_readiness_audit`
+
+This command replaces the narrower prior command and must govern the next audit.
+
 ## 5. Corrective Controls Added
 
 Created:
@@ -71,6 +82,8 @@ Created:
 - `scripts/check-controlled-terms.mjs`
 - `.github/workflows/controlled-term-audit.yml`
 - `docs/dfw-operating-system-drift-gap-and-efficiency-correction-v1.0.0.md`
+- `data/operating-system-scope-manifest.json`
+- `docs/dfw-operating-system-pre-drift-audit-complete-scope-lock-v1.0.0.md`
 
 Related correction records already created:
 
@@ -143,20 +156,23 @@ Corrections must follow this sequence:
 
 Manual page-by-page discovery is not acceptable when a deterministic registry scan can identify the impacted surfaces.
 
-## 12. Immediate Next Audit Need
+## 12. Corrected Next Audit Need
 
-The vehicle-class correction exposed the possibility that other controlled-term drift exists.
+The vehicle-class correction exposed the possibility that other system-wide drift exists across lanes, layers, pages, hubs, mockups, profiles, intake, fulfillment, claims, approval gates, and preview surfaces.
 
 Required next controlled action:
 
-`dfw_operating_system_controlled_term_and_business_model_drift_audit`
+`dfw_operating_system_full_scope_drift_gap_and_launch_readiness_audit`
 
 Purpose:
 
-Scan for all currently known business-model and capability-drift risks, including but not limited to:
+Audit the complete DFW Matchday Concierge operating system for drift, gaps, stale scope, stale pages, stale mockup language, claim risk, readiness risk, and production blockers, including but not limited to:
 
 - four-lane references after seven-lane expansion
 - vehicle-specific references after executive vehicle class correction
+- missing driver layer references
+- missing concierge layer references
+- missing fulfillment layer references
 - production or launch language implying approval
 - AI automation language implying live automation
 - dispatch or routing language implying live capability
@@ -165,6 +181,9 @@ Scan for all currently known business-model and capability-drift risks, includin
 - guaranteed fulfillment language
 - driver or concierge approval/assignment implication
 - outdated mockup-plan references
+- stale preview routes
+- stale profile/intake concepts
+- stale data and governance files
 
 ## 13. Production Standing
 
@@ -184,8 +203,14 @@ This correction does not authorize:
 
 ## 14. Final Determination
 
-The drift, gap, and efficiency failure is confirmed and corrected at the control-layer level.
+The drift, gap, scope, and efficiency failure is confirmed and corrected at the control-layer level.
 
 A deterministic controlled-term audit layer now exists.
 
-Further system-wide drift audit is required before production readiness review.
+A complete operating-system scope manifest now exists.
+
+The next audit command is corrected to:
+
+`dfw_operating_system_full_scope_drift_gap_and_launch_readiness_audit`
+
+This audit is required before production readiness review.
