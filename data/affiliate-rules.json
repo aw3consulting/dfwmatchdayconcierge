@@ -1,0 +1,75 @@
+{
+  "version": "1.0.0",
+  "governed_action": "dfw_marketing_strategy_and_monetization_blueprint_repo_package",
+  "production_status": "blocked",
+  "rules": [
+    {
+      "id": "affiliate-provider-terms-required",
+      "name": "Provider Terms Required",
+      "rule": "No affiliate, referral, or API-integrated provider placement may be published until provider terms, compensation eligibility, geographic availability, and disclosure requirements are reviewed.",
+      "severity": "required"
+    },
+    {
+      "id": "third-party-fulfillment-disclosure",
+      "name": "Third-Party Fulfillment Disclosure",
+      "rule": "Every third-party or affiliate placement must state that provider terms, availability, pricing, and fulfillment are controlled by the provider unless DFW Matchday Concierge separately confirms direct responsibility.",
+      "severity": "required"
+    },
+    {
+      "id": "official-claim-block",
+      "name": "Official Claim Block",
+      "rule": "Affiliate and referral placements must not imply official FIFA, tournament, host city, venue, team, or sponsor relationship unless directly verified and approved.",
+      "severity": "required"
+    },
+    {
+      "id": "privacy-sensitive-placement-block",
+      "name": "Privacy-Sensitive Placement Block",
+      "rule": "Affiliate and referral ads are blocked from paid VIP, Team Family private, Media / Corporate private, activated premium, and privacy-sensitive hubs unless expressly approved as curated premium resources.",
+      "severity": "required"
+    },
+    {
+      "id": "status-badge-required",
+      "name": "Status Badge Required",
+      "rule": "Each affiliate or referral card must include Affiliate / Referral Link, Third-Party Provider, Official Source, Information Only, Availability Required, or Operator-Reviewed status as applicable.",
+      "severity": "required"
+    },
+    {
+      "id": "data-privacy-review-required",
+      "name": "Data Privacy Review Required",
+      "rule": "Any placement that collects or transfers visitor data requires privacy review before publication.",
+      "severity": "required"
+    }
+  ],
+  "allowed_categories": [
+    "hotel_booking",
+    "restaurant_reservation",
+    "food_delivery",
+    "parking",
+    "luggage_storage",
+    "eSIM",
+    "attraction_ticketing",
+    "rideshare_deep_link",
+    "private_transport_referral",
+    "translation_support",
+    "travel_support",
+    "family_activity",
+    "grocery_or_cooler_support"
+  ],
+  "blocked_public_phrases": [
+    "official partner",
+    "official sponsor",
+    "approved by FIFA",
+    "host city partner",
+    "guaranteed ride",
+    "guaranteed driver",
+    "guaranteed security",
+    "guaranteed availability",
+    "official team access",
+    "DFW controlled fulfillment"
+  ],
+  "standard_disclosures": {
+    "affiliate_referral": "Affiliate or referral link. DFW Matchday Concierge may receive compensation if you use this link. Third-party terms, availability, pricing, and fulfillment apply.",
+    "third_party_provider": "Third-party provider. This option is listed for planning convenience. Final service terms, availability, pricing, and fulfillment are controlled by the provider unless DFW Matchday Concierge separately confirms direct service responsibility.",
+    "official_source": "Official source link. Use this source for official event, venue, schedule, or policy information."
+  }
+}
