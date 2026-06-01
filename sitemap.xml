@@ -2,12 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://dfwmatchdayconcierge.com/</loc><priority>1.0</priority></url>
   <url><loc>https://dfwmatchdayconcierge.com/connect/</loc><priority>1.0</priority></url>
-  <url><loc>https://dfwmatchdayconcierge.com/contact/</loc><priority>0.9</priority></url>
-  <url><loc>https://dfwmatchdayconcierge.com/services/</loc><priority>0.9</priority></url>
-  <url><loc>https://dfwmatchdayconcierge.com/private-transportation/</loc><priority>0.8</priority></url>
-  <url><loc>https://dfwmatchdayconcierge.com/airport-transfers/</loc><priority>0.8</priority></url>
-  <url><loc>https://dfwmatchdayconcierge.com/matchday-logistics/</loc><priority>0.8</priority></url>
-  <url><loc>https://dfwmatchdayconcierge.com/concierge-hospitality/</loc><priority>0.8</priority></url>
-  <url><loc>https://dfwmatchdayconcierge.com/group-vip-transportation/</loc><priority>0.8</priority></url>
-  <url><loc>https://dfwmatchdayconcierge.com/luggage-coordination/</loc><priority>0.8</priority></url>
+  <url><loc>https://dfwmatchdayconcierge.com/vip/</loc><priority>0.9</priority></url>
+  <url><loc>https://dfwmatchdayconcierge.com/team-family/</loc><priority>0.9</priority></url>
+  <url><loc>https://dfwmatchdayconcierge.com/media-corporate/</loc><priority>0.9</priority></url>
+  <url><loc>https://dfwmatchdayconcierge.com/fans/</loc><priority>0.8</priority></url>
+  <url><loc>https://dfwmatchdayconcierge.com/drivers/</loc><priority>0.7</priority></url>
+  <url><loc>https://dfwmatchdayconcierge.com/drivers/matchday/</loc><priority>0.6</priority></url>
+  <url><loc>https://dfwmatchdayconcierge.com/drivers/command-hub/</loc><priority>0.6</priority></url>
+  <url><loc>https://dfwmatchdayconcierge.com/concierges/</loc><priority>0.7</priority></url>
+  <url><loc>https://dfwmatchdayconcierge.com/concierges/command-hub/</loc><priority>0.6</priority></url>
+  <url><loc>https://dfwmatchdayconcierge.com/fulfillment/</loc><priority>0.7</priority></url>
+  <url><loc>https://dfwmatchdayconcierge.com/command-hub-preview/</loc><priority>0.6</priority></url>
+  <url><loc>https://dfwmatchdayconcierge.com/command-hub/</loc><priority>0.6</priority></url>
 </urlset>
