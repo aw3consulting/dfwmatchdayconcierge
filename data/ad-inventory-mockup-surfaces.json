@@ -1,0 +1,106 @@
+{
+  "version": "1.0.0",
+  "governed_action": "dfw_full_information_gateway_and_ad_inventory_mockup_revision_package",
+  "production_status": "blocked",
+  "frontend_implementation_authorized": false,
+  "surfaces": [
+    {
+      "id": "homepage-sponsor-rail",
+      "surface": "homepage",
+      "priority": 1,
+      "inventory_class": "class-a-founding-premium",
+      "placement_types": ["presenting_partner", "category_partner", "guide_sponsor"],
+      "required_badges": ["Sponsored Placement", "Information Only"],
+      "disclosure_required": true,
+      "blocked_from": ["private_hubs", "payment_surfaces", "quote_surfaces"],
+      "mockup_frame": "Public Sponsor Rail and Sponsored Disclosure System"
+    },
+    {
+      "id": "public-information-guide-cards",
+      "surface": "public_information_gateway",
+      "priority": 2,
+      "inventory_class": "class-b-high-volume-public",
+      "placement_types": ["sponsored_guide_card", "affiliate_card", "official_source_link"],
+      "required_badges": ["Sponsored Placement", "Affiliate / Referral Link", "Official Source", "Availability Required"],
+      "disclosure_required": true,
+      "blocked_from": ["private_hubs"],
+      "mockup_frame": "Dallas Matchday Information Gateway Modules"
+    },
+    {
+      "id": "team-fan-hub-sponsored-modules",
+      "surface": "team_fan_hub",
+      "priority": 3,
+      "inventory_class": "class-b-high-volume-public",
+      "placement_types": ["team_hub_sponsor_header", "watch_party_card", "restaurant_card", "route_card", "affiliate_card"],
+      "required_badges": ["Sponsored Placement", "Third-Party Provider", "Affiliate / Referral Link", "Availability Required"],
+      "disclosure_required": true,
+      "blocked_claims": ["official team partner", "official supporter group", "guaranteed shared ride"],
+      "mockup_frame": "Team Fan Hub with Sponsored and Affiliate Modules"
+    },
+    {
+      "id": "route-area-guide-sponsored-cards",
+      "surface": "route_area_guide",
+      "priority": 4,
+      "inventory_class": "class-b-high-volume-public",
+      "placement_types": ["route_sponsor_card", "area_sponsor_card", "third_party_provider_card", "official_source_link"],
+      "required_badges": ["Information Only", "Sponsored Placement", "Third-Party Provider", "Official Source"],
+      "disclosure_required": true,
+      "blocked_claims": ["live routing", "guaranteed availability", "direct fulfillment unless confirmed"],
+      "mockup_frame": "Route / Area Guide with Sponsored Cards"
+    },
+    {
+      "id": "restaurant-watch-party-cards",
+      "surface": "restaurant_watch_party_guide",
+      "priority": 5,
+      "inventory_class": "class-b-high-volume-public",
+      "placement_types": ["featured_restaurant_card", "watch_party_listing", "reservation_action", "affiliate_card"],
+      "required_badges": ["Sponsored Placement", "Third-Party Provider", "Availability Required"],
+      "disclosure_required": true,
+      "blocked_claims": ["official watch party unless verified", "guaranteed seating", "guaranteed reservation"],
+      "mockup_frame": "Restaurant and Watch-Party Guide with Availability Status"
+    },
+    {
+      "id": "partner-advertise-page",
+      "surface": "partner_advertise_page",
+      "priority": 6,
+      "inventory_class": "commercial_intake_surface",
+      "placement_types": ["inventory_overview", "rate_card_request", "partner_intake", "claim_boundary_statement"],
+      "required_badges": ["Information Only"],
+      "disclosure_required": false,
+      "claim_review_required": true,
+      "mockup_frame": "Partner / Advertise Page"
+    },
+    {
+      "id": "media-corporate-public-resource",
+      "surface": "public_media_corporate_information_page",
+      "priority": 7,
+      "inventory_class": "class-d-curated-premium-resource",
+      "placement_types": ["coordinator_intake", "public_resource_card", "quote_ready_cta"],
+      "required_badges": ["Operator-Reviewed", "Quote Required", "Availability Required"],
+      "disclosure_required": true,
+      "blocked_from": ["media_corporate_private_hub"],
+      "mockup_frame": "Media / Corporate Public Planning Page"
+    },
+    {
+      "id": "mobile-sponsor-card-stack",
+      "surface": "mobile_public_gateway_and_team_hubs",
+      "priority": 8,
+      "inventory_class": "mobile_public_inventory",
+      "placement_types": ["compact_sponsor_card", "compact_affiliate_card", "guide_shortcut"],
+      "required_badges": ["Sponsored Placement", "Affiliate / Referral Link", "Information Only"],
+      "disclosure_required": true,
+      "blocked_from": ["primary_inquiry_cta_area"],
+      "mockup_frame": "Mobile Gateway and Sponsor Card Stack"
+    },
+    {
+      "id": "internal-ad-inventory-control",
+      "surface": "operator_admin_layer",
+      "priority": 9,
+      "inventory_class": "restricted_internal_control",
+      "placement_types": ["inventory_status", "approval_status", "claim_review_status", "disclosure_status", "blocked_surface_warning"],
+      "required_badges": ["Restricted"],
+      "public_surface_allowed": false,
+      "mockup_frame": "Internal Ad Inventory Control Surface"
+    }
+  ]
+}
