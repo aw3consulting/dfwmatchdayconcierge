@@ -1,4 +1,4 @@
-# DFW Operating System 24-Hour Launch and Driver Onboarding Mission v1.0.0
+# DFW Operating System 24-Hour Launch and Driver Onboarding Mission v1.0.1
 
 ## 1. Mission
 
@@ -151,7 +151,7 @@ No public claim may imply:
 - official team affiliation
 - credential validation
 - guaranteed event access
-- guaranteed Tahoe assignment
+- guaranteed specific vehicle assignment
 - guaranteed driver assignment
 - guaranteed shared ride match
 - live payment processing
