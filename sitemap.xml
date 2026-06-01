@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://dfwmatchdayconcierge.com/</loc><priority>1.0</priority></url>
   <url><loc>https://dfwmatchdayconcierge.com/connect/</loc><priority>1.0</priority></url>
+  <url><loc>https://dfwmatchdayconcierge.com/information-gateway/</loc><priority>1.0</priority></url>
+  <url><loc>https://dfwmatchdayconcierge.com/advertise/</loc><priority>0.9</priority></url>
+  <url><loc>https://dfwmatchdayconcierge.com/inventory-control/</loc><priority>0.5</priority></url>
   <url><loc>https://dfwmatchdayconcierge.com/vip/</loc><priority>0.9</priority></url>
   <url><loc>https://dfwmatchdayconcierge.com/team-family/</loc><priority>0.9</priority></url>
   <url><loc>https://dfwmatchdayconcierge.com/media-corporate/</loc><priority>0.9</priority></url>
