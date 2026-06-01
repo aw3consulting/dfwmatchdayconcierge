@@ -1,0 +1,115 @@
+{
+  "version": "1.0.0",
+  "purpose": "Map locked DFW Matchday Concierge mockup concepts to required final revision before implementation.",
+  "standing": "visual concepts locked, final revised mockup package incomplete until regenerated or annotated against current system authority",
+  "active_authority_files": [
+    "docs/dfw-operating-system-ux-blueprint-v1.0.1.md",
+    "docs/dfw-operating-system-full-scope-blocker-resolution-and-24-hour-launch-plan-v1.0.0.md",
+    "docs/dfw-operating-system-monetization-marketing-and-seo-activation-layer-v1.0.0.md",
+    "docs/dfw-operating-system-dashboard-database-and-infrastructure-layer-v1.0.0.md",
+    "docs/dfw-executive-vehicle-class-standard-v1.0.0.md",
+    "data/claim-capability-map.json",
+    "data/manual-inquiry-tracker-schema.json",
+    "data/seo-route-map.json"
+  ],
+  "global_reconciliation_rules": [
+    "Preserve locked dark navy, black, gold, premium executive visual system.",
+    "Use approved DFW Matchday Concierge logo only.",
+    "Replace all specific Tahoe vehicle language with Black Executive Vehicle Class language.",
+    "Represent executive vehicles as a class, not a guaranteed make or model.",
+    "Show seven lanes: VIP, Team Family, Media / Corporate, Fan Hubs, Drivers, Concierges, Fulfillment.",
+    "Include dashboard, database/manual tracker, monetization, SEO, and launch-readiness cues where relevant.",
+    "Do not show official tournament, team, venue, federation, sponsor, or credential affiliation.",
+    "Do not imply live AI, live payment, live dispatch, live routing, automatic assignment, or guaranteed fulfillment.",
+    "Use operator-assisted, review required, confirmed scope required, and blocked status language where appropriate.",
+    "Premium private hubs remain ad-free unless explicitly approved. Public Fan Hub surfaces may show labeled ad/referral zones."
+  ],
+  "mockups": [
+    {
+      "id": "homepage_command_center",
+      "title": "Homepage / Command Center",
+      "visual_status": "locked_directionally",
+      "revision_status": "requires_final_text_system_reconciliation",
+      "must_add_or_confirm": ["seven-lane selector", "dashboard cues", "monetization boundaries", "SEO-safe positioning", "manual inquiry readiness", "Black Executive Vehicle Class language"]
+    },
+    {
+      "id": "vip_guest_command_hub",
+      "title": "VIP Guest Command Hub",
+      "visual_status": "locked_directionally",
+      "revision_status": "requires_vehicle_and_claim_reconciliation",
+      "must_add_or_confirm": ["Black Executive Vehicle Class", "no guaranteed vehicle make/model", "quote/deposit status", "operator review", "ad-free premium zone"]
+    },
+    {
+      "id": "team_family_command_hub",
+      "title": "Team Family Support Command Hub",
+      "visual_status": "locked_directionally",
+      "revision_status": "requires_privacy_and_authority_reconciliation",
+      "must_add_or_confirm": ["privacy-sensitive status", "representative authority", "no official team/access claim", "VIP escalation review only", "ad-free premium zone"]
+    },
+    {
+      "id": "media_corporate_command_hub",
+      "title": "Media / Corporate Command Hub",
+      "visual_status": "locked_directionally",
+      "revision_status": "requires_commercial_dashboard_reconciliation",
+      "must_add_or_confirm": ["quote queue", "equipment/luggage", "catering request", "invoice/company-card review", "no fleet guarantee"]
+    },
+    {
+      "id": "fan_hub",
+      "title": "Team Fan Hub",
+      "visual_status": "locked_directionally",
+      "revision_status": "requires_monetization_and_ad_zone_reconciliation",
+      "must_add_or_confirm": ["free guidance", "activated planning", "public ad/referral zones", "shared ride interest only", "no VIP vehicle default"]
+    },
+    {
+      "id": "driver_command_hub",
+      "title": "Personal Driver Command Hub",
+      "visual_status": "locked_directionally",
+      "revision_status": "requires_driver_authority_reconciliation",
+      "must_add_or_confirm": ["candidate/reviewed driver states", "availability board", "vehicle review", "assignment offer state", "no guaranteed earnings or assignments"]
+    },
+    {
+      "id": "concierge_command_hub",
+      "title": "Concierge Operations Command Hub",
+      "visual_status": "locked_directionally",
+      "revision_status": "requires_operator_authority_reconciliation",
+      "must_add_or_confirm": ["inquiry review queue", "task queue", "driver coordination", "fulfillment status board", "no independent approval authority"]
+    },
+    {
+      "id": "master_intake",
+      "title": "AI Concierge Discovery + Intake",
+      "visual_status": "locked_directionally",
+      "revision_status": "requires_live_capability_reconciliation",
+      "must_add_or_confirm": ["AI preview only", "operator review", "seven lanes", "manual contact routing", "no live automation claim"]
+    },
+    {
+      "id": "lane_intake_pages",
+      "title": "Lane-Specific Intake Pages",
+      "visual_status": "locked_directionally",
+      "revision_status": "requires_form_boundary_reconciliation",
+      "must_add_or_confirm": ["no sensitive document collection", "operator review", "manual inquiry path", "lane-specific fields", "claim status badges"]
+    },
+    {
+      "id": "profile_pages",
+      "title": "Profile Pages",
+      "visual_status": "locked_directionally",
+      "revision_status": "requires_dashboard_data_reconciliation",
+      "must_add_or_confirm": ["manual tracker compatibility", "status fields", "role authority", "fulfillment path", "privacy and data boundaries"]
+    },
+    {
+      "id": "operator_internal_dashboards",
+      "title": "Operator Internal Dashboards",
+      "visual_status": "missing_from_final_revised_mockup_set",
+      "revision_status": "must_create",
+      "must_add_or_confirm": ["inquiry queue", "quote queue", "manual tracker", "driver readiness", "concierge readiness", "fulfillment queue", "escalation", "closeout", "launch readiness"]
+    },
+    {
+      "id": "marketing_seo_monetization_dashboard",
+      "title": "Marketing / SEO / Monetization Dashboard",
+      "visual_status": "missing_from_final_revised_mockup_set",
+      "revision_status": "must_create",
+      "must_add_or_confirm": ["lead source", "QR traffic", "fan hub monetization", "referral/affiliate/ad status", "SEO tasks", "sponsor/ad placement boundaries"]
+    }
+  ],
+  "final_revised_mockup_package_status": "not_complete",
+  "next_required_action": "generate_or_annotate_final_revised_mockups_against_this_map_before production implementation"
+}
