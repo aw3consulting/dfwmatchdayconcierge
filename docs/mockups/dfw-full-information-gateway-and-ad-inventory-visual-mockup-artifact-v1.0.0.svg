@@ -1,125 +1,74 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="4200" viewBox="0 0 1800 4200" role="img" aria-labelledby="title desc">
-  <title id="title">DFW Full Information Gateway and Ad Inventory Visual Mockup Artifact v1.0.0</title>
-  <desc id="desc">Schematic review board for DFW Matchday Concierge public information gateway, sponsor-safe inventory, team fan hub modules, partner page, media corporate public planning, mobile sponsor stack, and internal ad inventory control. Review only.</desc>
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#07111f"/><stop offset="1" stop-color="#111827"/></linearGradient>
-    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#eef2f7"/></linearGradient>
-    <style>
-      .bg{fill:url(#bg)} .frame{fill:url(#panel);stroke:#cbd5e1;stroke-width:2;rx:22} .dark{fill:#0f172a;stroke:#334155;stroke-width:2;rx:22}
-      .title{font-family:Arial,Helvetica,sans-serif;font-size:48px;font-weight:800;fill:#fff}.sub{font-family:Arial,Helvetica,sans-serif;font-size:22px;fill:#cbd5e1}
-      .h{font-family:Arial,Helvetica,sans-serif;font-size:30px;font-weight:800;fill:#0f172a}.hlight{font-family:Arial,Helvetica,sans-serif;font-size:30px;font-weight:800;fill:#fff}
-      .body{font-family:Arial,Helvetica,sans-serif;font-size:18px;fill:#475569}.bodylight{font-family:Arial,Helvetica,sans-serif;font-size:18px;fill:#cbd5e1}
-      .small{font-family:Arial,Helvetica,sans-serif;font-size:14px;fill:#64748b}.badge{fill:#dbeafe;stroke:#93c5fd;stroke-width:1;rx:14}.badgeText{font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:700;fill:#1d4ed8}
-      .warn{fill:#fff7ed;stroke:#fdba74;stroke-width:1;rx:14}.warnText{font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:700;fill:#9a3412}
-      .ok{fill:#ecfdf5;stroke:#86efac;stroke-width:1;rx:14}.okText{font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:700;fill:#047857}
-      .slot{fill:#f8fafc;stroke:#cbd5e1;stroke-width:2;rx:16}.sponsor{fill:#fef3c7;stroke:#f59e0b;stroke-width:2;rx:16}.cta{fill:#2563eb;rx:16}.ctatext{font-family:Arial,Helvetica,sans-serif;font-size:18px;font-weight:800;fill:#fff}
-      .line{stroke:#cbd5e1;stroke-width:2}.num{font-family:Arial,Helvetica,sans-serif;font-size:18px;font-weight:800;fill:#0f172a}
-    </style>
-  </defs>
-  <rect class="bg" width="1800" height="4200"/>
-  <text x="80" y="90" class="title">DFW Matchday Information + Planning Hub</text>
-  <text x="80" y="130" class="sub">Full information gateway + sponsor-safe ad inventory mockup · Review only · Production blocked</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="2200" viewBox="0 0 1800 2200" role="img" aria-labelledby="title desc">
+  <title id="title">DFW Gateway Mockup Review Board v1.0.0</title>
+  <desc id="desc">Compact schematic review board for the DFW public information gateway, partner surfaces, fan hub modules, and inventory controls.</desc>
+  <rect width="1800" height="2200" fill="#07111f"/>
+  <text x="80" y="90" font-family="Arial" font-size="48" font-weight="800" fill="#ffffff">DFW Matchday Information + Planning Hub</text>
+  <text x="80" y="135" font-family="Arial" font-size="22" fill="#cbd5e1">Compact schematic board · review surface</text>
+  <g font-family="Arial">
+    <rect x="80" y="200" width="500" height="250" rx="22" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="115" y="260" font-size="28" font-weight="800" fill="#0f172a">1. Gateway Homepage</text>
+    <rect x="115" y="305" width="170" height="48" rx="14" fill="#2563eb"/>
+    <text x="142" y="337" font-size="18" font-weight="800" fill="#ffffff">Start Inquiry</text>
+    <rect x="310" y="305" width="210" height="48" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="338" y="337" font-size="18" fill="#475569">Open Guide</text>
 
-  <rect x="70" y="180" width="1660" height="360" class="frame"/>
-  <text x="110" y="235" class="h">1. Full Public Information Gateway Homepage</text>
-  <text x="110" y="275" class="body">Hero positions DFW Matchday Concierge as the premium public planning hub, with inquiry first and public guide access second.</text>
-  <rect x="110" y="315" width="270" height="52" class="cta"/><text x="140" y="349" class="ctatext">Start Inquiry</text>
-  <rect x="400" y="315" width="290" height="52" class="slot"/><text x="430" y="349" class="body">Open Public Guide</text>
-  <rect x="720" y="315" width="250" height="52" class="badge"/><text x="748" y="348" class="badgeText">Information Only</text>
-  <rect x="1000" y="315" width="270" height="52" class="warn"/><text x="1030" y="348" class="warnText">No fulfillment guarantee</text>
-  <rect x="110" y="395" width="300" height="88" class="slot"/><text x="135" y="430" class="body">Airport Guide</text><text x="135" y="458" class="small">DFW + Love Field</text>
-  <rect x="435" y="395" width="300" height="88" class="slot"/><text x="460" y="430" class="body">Stadium Movement</text><text x="460" y="458" class="small">Routes + timing guidance</text>
-  <rect x="760" y="395" width="300" height="88" class="slot"/><text x="785" y="430" class="body">Team Fan Hubs</text><text x="785" y="458" class="small">Guide + upgrade CTA</text>
-  <rect x="1085" y="395" width="300" height="88" class="slot"/><text x="1110" y="430" class="body">Media / Corporate</text><text x="1110" y="458" class="small">Coordinator planning</text>
-  <rect x="1410" y="395" width="250" height="88" class="slot"/><text x="1435" y="430" class="body">VIP Review</text><text x="1435" y="458" class="small">Operator approved</text>
+    <rect x="650" y="200" width="500" height="250" rx="22" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="685" y="260" font-size="28" font-weight="800" fill="#0f172a">2. Sponsor Rail</text>
+    <rect x="685" y="305" width="190" height="70" rx="14" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+    <text x="715" y="348" font-size="18" fill="#475569">Partner Slot</text>
+    <rect x="900" y="305" width="190" height="70" rx="14" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+    <text x="930" y="348" font-size="18" fill="#475569">Guide Slot</text>
 
-  <rect x="70" y="590" width="1660" height="330" class="frame"/>
-  <text x="110" y="645" class="h">2. Public Sponsor Rail + Disclosure</text>
-  <rect x="110" y="690" width="440" height="120" class="sponsor"/><text x="135" y="735" class="body">Founding Presenting Partner</text><text x="135" y="765" class="small">Placeholder · claim review required</text>
-  <rect x="580" y="690" width="300" height="120" class="sponsor"/><text x="605" y="735" class="body">Category Partner</text><text x="605" y="765" class="small">Arrival / hotel / mobility</text>
-  <rect x="910" y="690" width="300" height="120" class="sponsor"/><text x="935" y="735" class="body">Guide Sponsor</text><text x="935" y="765" class="small">Route / restaurant / area</text>
-  <rect x="1240" y="690" width="350" height="120" class="warn"/><text x="1265" y="735" class="warnText">Sponsored Placement</text><text x="1265" y="765" class="small">Disclosure visible on every card</text>
-  <text x="110" y="860" class="body">Sponsor slots remain public-only and cannot imply official relationship unless verified and approved.</text>
+    <rect x="1220" y="200" width="500" height="250" rx="22" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="1255" y="260" font-size="28" font-weight="800" fill="#0f172a">3. Public Guide Grid</text>
+    <rect x="1255" y="305" width="120" height="60" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="1280" y="342" font-size="16" fill="#475569">Airport</text>
+    <rect x="1400" y="305" width="120" height="60" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="1425" y="342" font-size="16" fill="#475569">Stadium</text>
+    <rect x="1545" y="305" width="120" height="60" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="1574" y="342" font-size="16" fill="#475569">Teams</text>
 
-  <rect x="70" y="970" width="800" height="560" class="frame"/>
-  <text x="110" y="1025" class="h">3. Public Guide Module Grid</text>
-  <rect x="110" y="1070" width="220" height="92" class="slot"/><text x="132" y="1110" class="body">Match Schedule</text><text x="132" y="1140" class="small">Information only</text>
-  <rect x="355" y="1070" width="220" height="92" class="slot"/><text x="377" y="1110" class="body">Fan Festival</text><text x="377" y="1140" class="small">Official-source links</text>
-  <rect x="600" y="1070" width="220" height="92" class="slot"/><text x="622" y="1110" class="body">Hotel Areas</text><text x="622" y="1140" class="small">Guide + referral</text>
-  <rect x="110" y="1190" width="220" height="92" class="slot"/><text x="132" y="1230" class="body">Arlington</text><text x="132" y="1260" class="small">Stadium district</text>
-  <rect x="355" y="1190" width="220" height="92" class="slot"/><text x="377" y="1230" class="body">Dallas</text><text x="377" y="1260" class="small">Food + nightlife</text>
-  <rect x="600" y="1190" width="220" height="92" class="slot"/><text x="622" y="1230" class="body">Fort Worth</text><text x="622" y="1260" class="small">Day-trip guide</text>
-  <rect x="110" y="1310" width="710" height="120" class="sponsor"/><text x="135" y="1355" class="body">Sponsored Guide Card Slot</text><text x="135" y="1385" class="small">Status badge + disclosure required · no guaranteed fulfillment</text>
+    <rect x="80" y="520" width="500" height="250" rx="22" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="115" y="580" font-size="28" font-weight="800" fill="#0f172a">4. Fan Hub Module</text>
+    <rect x="115" y="625" width="400" height="70" rx="14" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+    <text x="145" y="668" font-size="18" fill="#475569">Hub Sponsor Area</text>
 
-  <rect x="930" y="970" width="800" height="560" class="frame"/>
-  <text x="970" y="1025" class="h">4. Team Fan Hub Monetization</text>
-  <rect x="970" y="1070" width="700" height="80" class="sponsor"/><text x="995" y="1118" class="body">Team Fan Hub Sponsor Header</text>
-  <rect x="970" y="1180" width="210" height="100" class="slot"/><text x="995" y="1222" class="body">Route Card</text><text x="995" y="1250" class="small">Info only</text>
-  <rect x="1210" y="1180" width="210" height="100" class="slot"/><text x="1235" y="1222" class="body">Watch Party</text><text x="1235" y="1250" class="small">Availability required</text>
-  <rect x="1450" y="1180" width="220" height="100" class="slot"/><text x="1475" y="1222" class="body">Affiliate Card</text><text x="1475" y="1250" class="small">Third-party</text>
-  <rect x="970" y="1310" width="250" height="48" class="cta"/><text x="1000" y="1341" class="ctatext">Activate Planning</text>
-  <rect x="1245" y="1310" width="220" height="48" class="badge"/><text x="1270" y="1340" class="badgeText">Planning Value</text>
-  <rect x="1490" y="1310" width="180" height="48" class="warn"/><text x="1510" y="1340" class="warnText">No team claim</text>
+    <rect x="650" y="520" width="500" height="250" rx="22" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="685" y="580" font-size="28" font-weight="800" fill="#0f172a">5. Route + Area Guide</text>
+    <rect x="685" y="625" width="190" height="70" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="723" y="668" font-size="18" fill="#475569">Route Info</text>
+    <rect x="900" y="625" width="190" height="70" rx="14" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+    <text x="930" y="668" font-size="18" fill="#475569">Area Slot</text>
 
-  <rect x="70" y="1580" width="800" height="520" class="frame"/>
-  <text x="110" y="1635" class="h">5. Route / Area Guide</text>
-  <rect x="110" y="1680" width="300" height="130" class="slot"/><text x="135" y="1725" class="body">Route Overview</text><text x="135" y="1755" class="small">Information-only guidance</text>
-  <rect x="440" y="1680" width="330" height="130" class="sponsor"/><text x="465" y="1725" class="body">Sponsored Area Card</text><text x="465" y="1755" class="small">Sponsored Placement badge</text>
-  <rect x="110" y="1840" width="300" height="130" class="slot"/><text x="135" y="1885" class="body">Official Source Link</text><text x="135" y="1915" class="small">Policies + event info</text>
-  <rect x="440" y="1840" width="330" height="130" class="slot"/><text x="465" y="1885" class="body">Third-Party Provider</text><text x="465" y="1915" class="small">Provider controls terms</text>
-  <rect x="110" y="2000" width="270" height="46" class="warn"/><text x="135" y="2030" class="warnText">Live routing blocked</text>
+    <rect x="1220" y="520" width="500" height="250" rx="22" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="1255" y="580" font-size="28" font-weight="800" fill="#0f172a">6. Food + Watch Guide</text>
+    <rect x="1255" y="625" width="190" height="70" rx="14" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+    <text x="1285" y="668" font-size="18" fill="#475569">Food Card</text>
+    <rect x="1470" y="625" width="190" height="70" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="1498" y="668" font-size="18" fill="#475569">Watch Card</text>
 
-  <rect x="930" y="1580" width="800" height="520" class="frame"/>
-  <text x="970" y="1635" class="h">6. Restaurant + Watch-Party Guide</text>
-  <rect x="970" y="1680" width="330" height="130" class="sponsor"/><text x="995" y="1725" class="body">Featured Restaurant Card</text><text x="995" y="1755" class="small">Sponsored + disclosed</text>
-  <rect x="1330" y="1680" width="330" height="130" class="slot"/><text x="1355" y="1725" class="body">Watch-Party Listing</text><text x="1355" y="1755" class="small">No official claim unless verified</text>
-  <rect x="970" y="1840" width="330" height="130" class="slot"/><text x="995" y="1885" class="body">Reservation Action</text><text x="995" y="1915" class="small">Third-party terms</text>
-  <rect x="1330" y="1840" width="330" height="130" class="warn"/><text x="1355" y="1885" class="warnText">Availability Required</text><text x="1355" y="1915" class="small">No guaranteed seating</text>
+    <rect x="80" y="840" width="500" height="250" rx="22" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="115" y="900" font-size="28" font-weight="800" fill="#0f172a">7. Partner Page</text>
+    <text x="115" y="955" font-size="18" fill="#475569">Inventory, audiences, inquiry fields</text>
 
-  <rect x="70" y="2150" width="800" height="520" class="frame"/>
-  <text x="110" y="2205" class="h">7. Partner / Advertise Page</text>
-  <rect x="110" y="2250" width="300" height="90" class="slot"/><text x="135" y="2290" class="body">Inventory Classes</text><text x="135" y="2320" class="small">A / B / C / D</text>
-  <rect x="440" y="2250" width="300" height="90" class="slot"/><text x="465" y="2290" class="body">Target Audiences</text><text x="465" y="2320" class="small">Sponsors + partners</text>
-  <rect x="110" y="2370" width="630" height="90" class="slot"/><text x="135" y="2410" class="body">Inquiry Form Fields</text><text x="135" y="2440" class="small">Category, budget, dates, proof, URL, disclosure</text>
-  <rect x="110" y="2490" width="280" height="50" class="cta"/><text x="140" y="2522" class="ctatext">Request Rate Card</text>
-  <rect x="420" y="2490" width="320" height="50" class="warn"/><text x="445" y="2522" class="warnText">Claim review required</text>
+    <rect x="650" y="840" width="500" height="250" rx="22" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="685" y="900" font-size="28" font-weight="800" fill="#0f172a">8. Coordinator Page</text>
+    <text x="685" y="955" font-size="18" fill="#475569">Group planning and quote-ready intake</text>
 
-  <rect x="930" y="2150" width="800" height="520" class="frame"/>
-  <text x="970" y="2205" class="h">8. Media / Corporate Public Planning</text>
-  <rect x="970" y="2250" width="330" height="95" class="slot"/><text x="995" y="2290" class="body">Coordinator Intake</text><text x="995" y="2320" class="small">Group + schedule</text>
-  <rect x="1330" y="2250" width="330" height="95" class="slot"/><text x="1355" y="2290" class="body">Vehicle Count</text><text x="1355" y="2320" class="small">Quote required</text>
-  <rect x="970" y="2370" width="330" height="95" class="slot"/><text x="995" y="2410" class="body">Equipment / Luggage</text><text x="995" y="2440" class="small">Operator reviewed</text>
-  <rect x="1330" y="2370" width="330" height="95" class="sponsor"/><text x="1355" y="2410" class="body">Public Resource Card</text><text x="1355" y="2440" class="small">Private hub stays ad-free</text>
-  <rect x="970" y="2490" width="250" height="46" class="badge"/><text x="995" y="2520" class="badgeText">Quote Required</text>
-  <rect x="1245" y="2490" width="250" height="46" class="ok"/><text x="1270" y="2520" class="okText">Operator-Reviewed</text>
+    <rect x="1220" y="840" width="500" height="250" rx="22" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="1255" y="900" font-size="28" font-weight="800" fill="#0f172a">9. Mobile Stack</text>
+    <rect x="1410" y="930" width="150" height="90" rx="16" fill="#0f172a" stroke="#334155" stroke-width="2"/>
+    <text x="1430" y="982" font-size="18" fill="#cbd5e1">Mobile</text>
 
-  <rect x="70" y="2720" width="800" height="900" class="frame"/>
-  <text x="110" y="2775" class="h">9. Mobile Gateway Sponsor Stack</text>
-  <rect x="270" y="2820" width="350" height="720" class="dark"/>
-  <text x="300" y="2875" class="hlight">DFW Matchday Hub</text>
-  <text x="300" y="2910" class="bodylight">Information + Planning</text>
-  <rect x="300" y="2950" width="280" height="48" class="cta"/><text x="328" y="2982" class="ctatext">Start Inquiry</text>
-  <rect x="300" y="3020" width="280" height="70" class="sponsor"/><text x="320" y="3055" class="body">Sponsor Card</text><text x="320" y="3080" class="small">Disclosed</text>
-  <rect x="300" y="3110" width="280" height="70" class="slot"/><text x="320" y="3145" class="body">Airport Guide</text></rect>
-  <rect x="300" y="3200" width="280" height="70" class="slot"/><text x="320" y="3235" class="body">Team Hubs</text></rect>
-  <rect x="300" y="3290" width="280" height="70" class="slot"/><text x="320" y="3325" class="body">Food + Watch</text></rect>
-  <rect x="300" y="3380" width="280" height="45" class="warn"/><text x="322" y="3410" class="warnText">Disclosure visible</text>
+    <rect x="80" y="1160" width="1640" height="280" rx="22" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="115" y="1220" font-size="28" font-weight="800" fill="#0f172a">10. Internal Inventory Control</text>
+    <text x="115" y="1275" font-size="18" fill="#475569">Placement status · date range · disclosure status · review status · location controls</text>
+    <rect x="115" y="1320" width="310" height="54" rx="14" fill="#ecfdf5" stroke="#86efac" stroke-width="2"/>
+    <text x="145" y="1354" font-size="18" fill="#047857">Ready for review</text>
 
-  <rect x="930" y="2720" width="800" height="900" class="frame"/>
-  <text x="970" y="2775" class="h">10. Internal Ad Inventory Control</text>
-  <rect x="970" y="2820" width="700" height="70" class="slot"/><text x="995" y="2862" class="body">Placement: Homepage Sponsor Rail · Status: Pending Review</text>
-  <rect x="970" y="2910" width="700" height="70" class="slot"/><text x="995" y="2952" class="body">Dates: Start / End · Disclosure: Required · Claim Review: Required</text>
-  <rect x="970" y="3000" width="700" height="70" class="warn"/><text x="995" y="3042" class="warnText">Blocked Surfaces: VIP private, Team Family private, Corporate private, activated premium</text>
-  <rect x="970" y="3090" width="700" height="70" class="slot"/><text x="995" y="3132" class="body">Approval: Not Sold · Logo: Not Approved · Payment: Not Received</text>
-  <rect x="970" y="3180" width="700" height="70" class="ok"/><text x="995" y="3222" class="okText">Ready for mockup review, not ready for production</text>
-  <rect x="970" y="3290" width="210" height="60" class="badge"/><text x="995" y="3328" class="badgeText">Restricted</text>
-  <rect x="1205" y="3290" width="210" height="60" class="badge"/><text x="1230" y="3328" class="badgeText">Review Only</text>
-  <rect x="1440" y="3290" width="230" height="60" class="warn"/><text x="1465" y="3328" class="warnText">Production Blocked</text>
-
-  <rect x="70" y="3680" width="1660" height="340" class="dark"/>
-  <text x="110" y="3740" class="hlight">Review Determination Needed</text>
-  <text x="110" y="3785" class="bodylight">Next controlled action: dfw_full_information_gateway_and_ad_inventory_mockup_review_and_frontend_opening_determination</text>
-  <text x="110" y="3830" class="bodylight">Frontend implementation remains blocked until the schematic mockup package is reviewed and accepted.</text>
-  <text x="110" y="3875" class="bodylight">DreamHost deployment, final QR activation, live automation, unsupported official relationship claims, and fulfillment guarantees remain blocked.</text>
-  <rect x="110" y="3930" width="260" height="52" class="warn"/><text x="135" y="3964" class="warnText">Review Surface Only</text>
+    <rect x="80" y="1510" width="1640" height="260" rx="22" fill="#0f172a" stroke="#334155" stroke-width="2"/>
+    <text x="115" y="1570" font-size="28" font-weight="800" fill="#ffffff">Next Determination</text>
+    <text x="115" y="1625" font-size="18" fill="#cbd5e1">Review the mockup package before opening any frontend implementation lane.</text>
+    <text x="115" y="1670" font-size="18" fill="#cbd5e1">Production deployment and final QR activation require separate approval.</text>
+  </g>
 </svg>
