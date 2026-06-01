@@ -1,12 +1,20 @@
-# DFW Operating System Pre-Drift Audit Complete Scope Lock v1.0.0
+# DFW Operating System Pre-Audit Complete Scope Lock v1.0.1
 
 ## 1. Purpose
 
 This file locks the required scope before running:
 
+`dfw_operating_system_full_scope_drift_gap_and_launch_readiness_audit`
+
+The audit must not run as a narrow terminology scan or business-model-only review. It must include the complete DFW Matchday Concierge operating system.
+
+Superseded command:
+
 `dfw_operating_system_controlled_term_and_business_model_drift_audit`
 
-The audit must not run as a narrow terminology scan. It must include the complete DFW Matchday Concierge operating system.
+Reason for supersession:
+
+The prior command retained scope drift because the issue had already been identified as system-wide. The corrected command must cover terminology, business model, operating model, layers, lanes, pages, hubs, profiles, intake, fulfillment, preview routes, mockups, production gates, and approval blockers.
 
 ## 2. Scope Requirement
 
@@ -252,9 +260,9 @@ The audit must check every claim against these gates:
 - Development
 - Blocked
 
-## 14. Required Drift Audit Categories
+## 14. Required Full-Scope Audit Categories
 
-The drift audit must check for:
+The full-scope audit must check for:
 
 - prior four-lane references after seven-lane expansion
 - vehicle-specific references after Black Executive Vehicle Class correction
@@ -274,6 +282,10 @@ The drift audit must check for:
 - stale data files
 - stale governance files
 - stale profile or intake concepts
+- stale command hub concepts
+- stale capability gates
+- stale approval blockers
+- stale production-readiness assumptions
 
 ## 15. Required Files Created Before Audit
 
@@ -304,6 +316,12 @@ This scope lock does not authorize:
 
 ## 17. Final Determination
 
-The controlled-term and business-model drift audit may only proceed after accepting this complete scope.
+The corrected audit may only proceed under this command:
 
-The audit must treat the DFW Matchday Concierge system as a complete operating system, not a homepage, shell, or isolated terminology update.
+`dfw_operating_system_full_scope_drift_gap_and_launch_readiness_audit`
+
+The superseded command must not govern future execution:
+
+`dfw_operating_system_controlled_term_and_business_model_drift_audit`
+
+The audit must treat the DFW Matchday Concierge system as a complete operating system, not a homepage, shell, terminology update, or business-model-only review.
