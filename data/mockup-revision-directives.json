@@ -1,0 +1,91 @@
+{
+  "version": "1.0.0",
+  "governed_action": "dfw_marketing_strategy_and_monetization_blueprint_repo_package",
+  "production_status": "blocked",
+  "mockup_revision_directives": [
+    {
+      "id": "homepage-sponsor-rail",
+      "priority": 1,
+      "surface": "homepage",
+      "directive": "Add a premium sponsor rail below the hero area for Founding Presenting Partner and category sponsor visibility.",
+      "required_status_badges": ["Sponsored Placement", "Information Only"],
+      "claim_review_required": true
+    },
+    {
+      "id": "information-planning-hub-positioning",
+      "priority": 2,
+      "surface": "homepage_and_public_gateway",
+      "directive": "Reposition the public site as DFW Matchday Information + Planning Hub while preserving DFW Matchday Concierge brand authority.",
+      "required_status_badges": ["Information Only", "Planning Value"],
+      "claim_review_required": true
+    },
+    {
+      "id": "full-information-gateway-layout",
+      "priority": 3,
+      "surface": "public_information_gateway",
+      "directive": "Create a full gateway layout with schedule, airport, stadium, Fan Festival, hotel-area, restaurant, watch-party, attraction, media/corporate, and team fan hub modules.",
+      "required_status_badges": ["Information Only", "Sponsored Placement", "Affiliate / Referral Link"],
+      "claim_review_required": true
+    },
+    {
+      "id": "team-fan-hub-sponsorship-zones",
+      "priority": 4,
+      "surface": "team_fan_hub",
+      "directive": "Add team-specific sponsor header, route guide card, watch-party card, restaurant card, affiliate card, and activated planning CTA.",
+      "required_status_badges": ["Sponsored Placement", "Third-Party Provider", "Availability Required"],
+      "claim_review_required": true
+    },
+    {
+      "id": "ad-disclosure-component",
+      "priority": 5,
+      "surface": "all_public_monetized_surfaces",
+      "directive": "Add compact disclosure treatment for sponsored placement, affiliate/referral link, third-party provider, and official source cards.",
+      "required_status_badges": ["Sponsored Placement", "Affiliate / Referral Link", "Third-Party Provider", "Official Source"],
+      "claim_review_required": true
+    },
+    {
+      "id": "partner-advertise-page",
+      "priority": 6,
+      "surface": "partner_advertise_page",
+      "directive": "Add a public-facing partner and advertise page with inventory classes, target audiences, inquiry CTA, and claim-safe sponsor language.",
+      "required_status_badges": ["Information Only"],
+      "claim_review_required": true
+    },
+    {
+      "id": "media-corporate-public-partner-module",
+      "priority": 7,
+      "surface": "public_media_corporate_information_page",
+      "directive": "Add coordinator-first public module for group planning, sponsor-safe resource placement, and quote-ready inquiry while keeping private corporate hub ad-free.",
+      "required_status_badges": ["Operator-Reviewed", "Quote Required", "Availability Required"],
+      "claim_review_required": true
+    },
+    {
+      "id": "mobile-sponsor-card-stack",
+      "priority": 8,
+      "surface": "mobile_public_gateway_and_team_hubs",
+      "directive": "Create a mobile-first sponsor card stack that remains compact, disclosed, and separate from primary inquiry CTAs.",
+      "required_status_badges": ["Sponsored Placement", "Information Only"],
+      "claim_review_required": true
+    },
+    {
+      "id": "internal-ad-inventory-admin-surface",
+      "priority": 9,
+      "surface": "operator_admin_layer",
+      "directive": "Represent inventory status, sponsor status, start and end date, approval status, disclosure status, claim review, and placement location for internal control.",
+      "required_status_badges": ["Restricted"],
+      "claim_review_required": true
+    }
+  ],
+  "blocked_mockup_treatments": [
+    "official FIFA partner language without verification",
+    "official host city partner language without verification",
+    "team logo or tournament mark use without approval",
+    "ads inside paid VIP hub",
+    "ads inside Team Family private hub",
+    "ads inside Media / Corporate private hub",
+    "ads inside activated premium command hub",
+    "fulfillment guarantee language",
+    "live payment automation claim",
+    "live dispatch automation claim"
+  ]
+}
