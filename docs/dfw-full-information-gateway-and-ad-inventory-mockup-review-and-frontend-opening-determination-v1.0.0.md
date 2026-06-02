@@ -1,165 +1,71 @@
-# DFW Full Information Gateway and Ad Inventory Mockup Review and Frontend Opening Determination v1.0.0
+# DFW Full Information Gateway and Ad Inventory Mockup Review and Frontend Opening Determination v1.0.1
 
-## 1. Purpose
+## 1. Supersession Status
 
-This file executes:
+Status:
 
-`dfw_full_information_gateway_and_ad_inventory_mockup_review_and_frontend_opening_determination`
+`HARD-SUPERSEDED / HISTORICAL FRONTEND-SHELL OPENING RECORD ONLY / NOT LOCKED MOCKUP AUTHORITY`
 
-The purpose is to determine whether the schematic full information gateway and ad inventory mockup package is sufficient to open a bounded frontend shell implementation lane.
+This file hard-supersedes v1.0.0.
 
-## 2. Determination
+The prior determination converted a schematic mockup package into bounded frontend shell opening authority. That standing is now restricted to historical traceability only.
 
-Determination:
+## 2. Correct Governing Authority
+
+The governing authority for locked concept mockups is:
+
+1. `docs/dfw-locked-concept-mockups-proof-retention-record-v1.0.0.md`
+2. `data/mockup-proof-retention-register.json`
+
+The governing locked set is:
+
+`22 locked concept mockups`
+
+## 3. Superseded Determination
+
+The prior v1.0.0 determination:
 
 `PASS WITH BOUNDED FRONTEND SHELL OPENING`
 
-The reviewed mockup package is sufficient to open a bounded frontend shell implementation lane for review-surface work only.
+is superseded as a mockup-authority basis.
 
-This determination does not authorize production launch.
+It may not be used to claim that schematic artifacts are:
 
-## 3. Reviewed Inputs
+- locked concept mockups
+- user-review mockup outputs
+- visual acceptance artifacts
+- frontend-derived visual evidence
+- production-readiness evidence
+- authority to generate replacement mockups
 
-Reviewed files:
+## 4. Historical Scope Only
 
-1. `docs/dfw-full-information-gateway-and-ad-inventory-mockup-revision-package-v1.0.0.md`
-2. `docs/mockups/dfw-full-information-gateway-and-ad-inventory-visual-mockup-artifact-v1.0.0.md`
-3. `docs/mockups/dfw-full-information-gateway-and-ad-inventory-visual-mockup-artifact-v1.0.0.svg`
-4. `data/full-information-gateway-modules.json`
-5. `data/ad-inventory-mockup-surfaces.json`
-6. `docs/dfw-marketing-strategy-and-monetization-blueprint-v1.0.0.md`
-7. `docs/dfw-ad-inventory-and-sponsored-placement-governance-v1.0.0.md`
+This file may remain only as a historical record that a schematic package once supported review-surface shell work.
 
-## 4. Review Findings
+It may not reopen or support:
 
-### 4.1 Information-First Positioning
+- new mockup generation
+- visual substitution
+- locked concept replacement
+- schematic-board review acceptance
+- production readiness
+- DreamHost readiness
+- QR activation readiness
+- sponsor claim readiness
+- public claim readiness
 
-Finding:
+## 5. Future Frontend Handling
 
-`PASS`
+Frontend implementation and refinement may proceed only when governed by current frontend files and current user-approved direction.
 
-The package positions the public surface as the DFW Matchday Information + Planning Hub while preserving DFW Matchday Concierge brand authority.
+Mockup proof and locked visual direction must remain governed by the 22 locked concept mockup proof and retention stack.
 
-### 4.2 Frame Coverage
+Any future visual mockup work requires explicit user authorization and must use the locked concept mockups as the authority reference.
 
-Finding:
+## 6. Final Determination
 
-`PASS FOR FRONTEND SHELL`
+The v1.0.0 mockup review and frontend opening determination is hard-superseded as mockup authority.
 
-The package covers the required review frames:
+It is retained only as historical frontend-shell traceability.
 
-- gateway homepage
-- sponsor rail
-- public guide grid
-- fan hub module
-- route and area guide module
-- food and watch guide module
-- partner page
-- coordinator page
-- mobile stack
-- internal inventory control
-
-### 4.3 Data Readiness
-
-Finding:
-
-`PASS`
-
-The module data and ad surface data provide enough structure for a static review-surface implementation.
-
-### 4.4 Premium Surface Controls
-
-Finding:
-
-`PASS`
-
-The package preserves premium surface separation and keeps public sponsored modules separate from private premium areas.
-
-### 4.5 Production Readiness
-
-Finding:
-
-`NOT READY FOR PRODUCTION`
-
-The package still requires final copy review, mobile review, visual QA, claim review, disclosure review, accessibility review, performance review, DreamHost readiness review, QR review, and final user approval before production movement.
-
-## 5. Authorized Frontend Shell Scope
-
-This determination opens only a bounded frontend shell implementation lane for review.
-
-Allowed scope:
-
-1. full information gateway page shell
-2. homepage information-first hero shell
-3. public sponsor rail placeholder component
-4. sponsor-safe card component
-5. disclosure label component
-6. status badge component
-7. public guide module grid
-8. team fan hub public module shell
-9. route and area guide card shell
-10. restaurant and watch guide shell
-11. partner page shell
-12. coordinator page shell
-13. mobile sponsor stack shell
-14. internal inventory control display shell
-15. static data wiring from approved JSON files
-
-## 6. Scope Not Opened
-
-The following remain outside this determination:
-
-- DreamHost production deployment
-- DNS movement
-- final QR production activation
-- public production launch
-- live AI features
-- live payment features
-- live dispatch features
-- live routing features
-- live ad network integration
-- live affiliate API integration
-- live third-party provider API integration
-- final public claim approval
-- final sponsor claim approval
-- final fulfillment claim approval
-
-## 7. Required Data Sources
-
-The frontend shell may read from:
-
-- `data/full-information-gateway-modules.json`
-- `data/ad-inventory-mockup-surfaces.json`
-- `data/ad-inventory.json`
-- `data/sponsored-placements.json`
-- `data/affiliate-rules.json`
-- `data/mockup-revision-directives.json`
-
-## 8. Required Post-Implementation Gates
-
-Before any production move, the frontend shell must pass:
-
-1. desktop visual review
-2. mobile visual review
-3. claim review
-4. disclosure review
-5. accessibility review
-6. performance review
-7. data fallback review
-8. QR destination review
-9. DreamHost readiness review
-10. final user approval
-
-## 9. Next Controlled Action
-
-Next controlled action:
-
-`dfw_full_information_gateway_and_ad_inventory_frontend_shell_implementation_package`
-
-## 10. Final Determination
-
-The mockup package passes for bounded frontend shell implementation.
-
-The implementation lane is open for review-surface frontend work only.
-
-Production launch, final QR activation, live automation, unsupported public claims, and final fulfillment claims remain unopened.
+Production launch, DreamHost deployment, final QR activation, live automation, public claims, sponsor claims, affiliate claims, and fulfillment claims remain blocked until governed approval gates pass.
