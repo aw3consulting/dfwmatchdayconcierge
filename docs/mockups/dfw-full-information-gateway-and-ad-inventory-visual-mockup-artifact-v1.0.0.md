@@ -1,100 +1,84 @@
-# DFW Full Information Gateway and Ad Inventory Visual Mockup Artifact v1.0.0
+# DFW Full Information Gateway and Ad Inventory Visual Mockup Artifact v1.0.1
 
-## 1. Purpose
-
-This file records the governed standing of the schematic visual mockup artifact for the DFW Matchday Information + Planning Hub and ad inventory revision package.
-
-## 2. Artifact File
-
-Visual artifact path:
-
-`docs/mockups/dfw-full-information-gateway-and-ad-inventory-visual-mockup-artifact-v1.0.0.svg`
-
-## 3. Governing Source Files
-
-This artifact is governed by:
-
-1. `docs/dfw-full-information-gateway-and-ad-inventory-mockup-revision-package-v1.0.0.md`
-2. `docs/dfw-marketing-strategy-and-monetization-blueprint-v1.0.0.md`
-3. `docs/dfw-ad-inventory-and-sponsored-placement-governance-v1.0.0.md`
-4. `data/ad-inventory.json`
-5. `data/sponsored-placements.json`
-6. `data/mockup-revision-directives.json`
-
-## 4. Artifact Standing
-
-Standing:
-
-`Full Information Gateway and Ad Inventory Schematic Visual Mockup Artifact`
+## 1. Supersession Status
 
 Status:
 
-`Created for governed review`
+`HARD-SUPERSEDED / HISTORICAL SCHEMATIC RECORD ONLY / NOT VALID MOCKUP PROOF / NOT USER-REVIEW MOCKUP OUTPUT`
 
-Frontend implementation authorization:
+This file hard-supersedes the prior v1.0.0 schematic visual mockup artifact record.
 
-`Not authorized`
+The prior schematic artifact may not be used as:
 
-Production deployment:
+- locked concept mockup proof
+- user-review mockup output
+- visual acceptance evidence
+- frontend-derived mockup evidence
+- production-readiness evidence
+- authority to generate new mockups
+- authority to substitute schematic boards for locked concept mockups
 
-`Blocked`
+## 2. Correct Governing Authority
 
-Final QR production activation:
+The governing authority for locked concept mockups is:
 
-`Blocked`
+1. `docs/dfw-locked-concept-mockups-proof-retention-record-v1.0.0.md`
+2. `data/mockup-proof-retention-register.json`
 
-Live automation:
+The user-declared locked concept set is:
 
-`Blocked`
+`22 locked concept mockups`
 
-## 5. Included Frames
+## 3. Historical Artifact Path
 
-The visual artifact includes:
+Historical schematic artifact path:
 
-1. Full Public Information Gateway Homepage
-2. Public Sponsor Rail and Disclosure System
-3. Public Guide Module Grid
-4. Team Fan Hub Monetization Module
-5. Route / Area Guide Sponsored Card Module
-6. Restaurant and Watch-Party Guide Module
-7. Partner / Advertise Page
-8. Media / Corporate Public Planning Page
-9. Mobile Gateway Sponsor Card Stack
-10. Internal Ad Inventory Control Surface
+`docs/mockups/dfw-full-information-gateway-and-ad-inventory-visual-mockup-artifact-v1.0.0.svg`
 
-## 6. Governance Preserved
+This artifact is historical only.
 
-The artifact preserves:
+It does not count toward any locked mockup set.
 
-- information-first public positioning
-- sponsor-safe public placement handling
-- required status badge handling
-- required disclosure handling
-- premium private hub ad restrictions
-- operator-confirmed fulfillment boundary
-- third-party provider boundary
-- unsupported official relationship claim block
-- live payment, dispatch, and routing automation block
+It does not satisfy any user-review mockup requirement.
 
-## 7. Review Checklist
+## 4. Superseded Standing
 
-Before frontend implementation, the mockup must pass review for:
+Prior standing:
 
-- information-first positioning
-- sponsor rail hierarchy
-- public guide clarity
-- disclosure readability
-- status badge readability
-- team fan hub monetization clarity
-- mobile inquiry priority
-- premium hub ad restriction clarity
-- Media / Corporate public/private boundary
-- internal inventory control completeness
+`Full Information Gateway and Ad Inventory Schematic Visual Mockup Artifact`
 
-## 8. Next Controlled Action
+Corrected standing:
 
-`dfw_full_information_gateway_and_ad_inventory_mockup_review_and_frontend_opening_determination`
+`Historical schematic planning artifact only`
 
-## 9. Final Determination
+## 5. Use Restrictions
 
-The schematic visual artifact is created for review only. Frontend implementation, production deployment, final QR activation, live automation, unsupported official relationship claims, and fulfillment guarantees remain blocked.
+This file and the historical schematic artifact may be used only for:
+
+- historical traceability
+- drift analysis
+- documenting why schematic artifacts are insufficient
+- confirming production gates stayed blocked
+
+This file and the historical schematic artifact may not be used for:
+
+- locked concept mockup proof
+- user-review mockup upload
+- visual design acceptance
+- frontend-derived visual evidence
+- public launch readiness
+- DreamHost deployment readiness
+- QR activation readiness
+- claim approval
+- sponsor approval
+- replacement mockup generation
+
+## 6. Final Determination
+
+The prior schematic visual mockup artifact record is hard-superseded.
+
+The artifact is historical only.
+
+The only valid locked mockup authority remains the 22 locked concept mockup proof and retention stack.
+
+Production, DreamHost, QR activation, live automation, public claims, sponsor claims, affiliate claims, and fulfillment claims remain blocked until governed approval gates pass.
