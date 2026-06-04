@@ -1,0 +1,17 @@
+@media print {
+  .site-header {
+    position: static;
+  }
+
+  body {
+    background: #06101a;
+  }
+
+  .btn,
+  .card,
+  .path-card,
+  .hero-panel,
+  .sponsor-band {
+    break-inside: avoid;
+  }
+}
