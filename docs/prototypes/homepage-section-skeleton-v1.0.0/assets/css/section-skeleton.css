@@ -61,11 +61,16 @@ body {
   min-height: clamp(16rem, 31vw, 28rem);
 }
 
-.dfw-section--title-sponsor {
+.dfw-section--title-sponsor,
+.dfw-section--sponsor-rail {
   background:
     linear-gradient(180deg, rgba(201, 168, 93, 0.18), rgba(255, 255, 255, 0.03)),
     var(--dfw-color-surface);
   border: var(--dfw-sponsor-border);
+}
+
+.dfw-section--sponsor-rail .dfw-section__inner {
+  min-height: clamp(7rem, 10vw, 10rem);
 }
 
 .dfw-section--three {
@@ -122,7 +127,8 @@ body {
 .dfw-visual--cards,
 .dfw-visual--sponsor,
 .dfw-visual--trust,
-.dfw-visual--nav-panel {
+.dfw-visual--nav-panel,
+.dfw-visual--rail {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
@@ -169,7 +175,8 @@ body {
   .dfw-visual--cards,
   .dfw-visual--sponsor,
   .dfw-visual--trust,
-  .dfw-visual--nav-panel {
+  .dfw-visual--nav-panel,
+  .dfw-visual--rail {
     grid-template-columns: 1fr;
   }
 }
