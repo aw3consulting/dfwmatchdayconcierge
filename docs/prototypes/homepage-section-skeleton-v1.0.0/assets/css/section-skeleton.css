@@ -61,14 +61,14 @@ body {
   min-height: clamp(16rem, 31vw, 28rem);
 }
 
-.dfw-section--two {
+.dfw-section--title-sponsor {
   background:
-    linear-gradient(180deg, rgba(201, 168, 93, 0.16), rgba(255, 255, 255, 0.03)),
+    linear-gradient(180deg, rgba(201, 168, 93, 0.18), rgba(255, 255, 255, 0.03)),
     var(--dfw-color-surface);
   border: var(--dfw-sponsor-border);
 }
 
-.dfw-section--four {
+.dfw-section--three {
   background:
     linear-gradient(180deg, var(--dfw-trust-bg), rgba(255, 255, 255, 0.025)),
     var(--dfw-color-surface);
@@ -180,6 +180,6 @@ body {
   }
 
   .dfw-section__inner {
-    gap: var(--dfw-space-4);
+    gap: var(--dfw-space-4;
   }
 }
