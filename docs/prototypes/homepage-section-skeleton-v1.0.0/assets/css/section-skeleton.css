@@ -53,7 +53,6 @@ body {
 }
 
 .dfw-section--header .dfw-section__inner,
-.dfw-section--navigation .dfw-section__inner,
 .dfw-section--footer .dfw-section__inner {
   min-height: clamp(6.5rem, 10vw, 9rem);
 }
@@ -62,9 +61,9 @@ body {
   min-height: clamp(16rem, 31vw, 28rem);
 }
 
-.dfw-section--three {
+.dfw-section--two {
   background:
-    linear-gradient(180deg, rgba(201, 168, 93, 0.11), rgba(255, 255, 255, 0.03)),
+    linear-gradient(180deg, rgba(201, 168, 93, 0.16), rgba(255, 255, 255, 0.03)),
     var(--dfw-color-surface);
   border: var(--dfw-sponsor-border);
 }
@@ -86,7 +85,6 @@ body {
 }
 
 .dfw-section--header .dfw-section__name,
-.dfw-section--navigation .dfw-section__name,
 .dfw-section--footer .dfw-section__name {
   font-size: var(--dfw-type-lg);
 }
@@ -123,7 +121,8 @@ body {
 
 .dfw-visual--cards,
 .dfw-visual--sponsor,
-.dfw-visual--trust {
+.dfw-visual--trust,
+.dfw-visual--nav-panel {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
@@ -169,7 +168,8 @@ body {
 
   .dfw-visual--cards,
   .dfw-visual--sponsor,
-  .dfw-visual--trust {
+  .dfw-visual--trust,
+  .dfw-visual--nav-panel {
     grid-template-columns: 1fr;
   }
 }
