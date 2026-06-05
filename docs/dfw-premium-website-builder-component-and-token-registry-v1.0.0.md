@@ -4,17 +4,29 @@
 
 This file defines the reusable component and token registry for the DFW AI-Governed Premium Website Builder Module.
 
-The registry governs skeleton and later section production by requiring purpose-based CSS tokens, reusable section wrappers, responsive behavior controls, accessibility controls, sponsor-surface controls, and trust-surface controls.
+This zero-drift correction clarifies that the registry is not execution authority for the next action. It supports future skeleton rendering only after explicit user option selection is recorded.
 
-This file does not authorize homepage generation, final homepage content, production deployment, QR activation, PDF capture, or image generation.
+This file does not authorize option selection, skeleton rendering, skeleton file creation, homepage generation, final homepage content, production deployment, QR activation, PDF capture, or image generation.
 
 ## 2. Status
 
-Status: CREATED FOR MAIN BRANCH GOVERNED MODULE BUILD
+Status: ACTIVE COMPONENT AND TOKEN REGISTRY / NOT EXECUTION AUTHORITY
 
-The registry is active for the next allowed skeleton path:
+Activation standing:
 
-`docs/prototypes/homepage-section-skeleton-v1.0.0/`
+`NEXT ACTION MAY ONLY BE OPTION-SELECTION REVIEW AFTER USER AUTHORIZATION / SKELETON RENDERING BLOCKED UNTIL USER OPTION SELECTION IS RECORDED`
+
+Active source of truth:
+
+`docs/dfw-current-execution-source-of-truth-index-v1.0.0.md`
+
+Active option-selection handoff:
+
+`docs/dfw-premium-website-builder-execution-handoff-prompt-v1.0.1.md`
+
+Active skeleton rendering playbook:
+
+`docs/dfw-premium-website-builder-skeleton-rendering-playbook-v1.0.1.md`
 
 ## 3. Registry Purpose
 
@@ -22,8 +34,8 @@ The registry prevents visual drift by forcing design decisions into named tokens
 
 The registry supports:
 
-1. Section-first execution.
-2. Browser-rendered CSS review.
+1. Section-first governance.
+2. Future browser-rendered CSS review after user option selection.
 3. Desktop and mobile review.
 4. Accessibility review.
 5. Sponsor surface review.
@@ -54,7 +66,7 @@ Required token family:
 Rules:
 
 1. Color tokens must be purpose-based.
-2. Skeleton review must use dark premium contrast.
+2. Future skeleton review must use dark premium contrast.
 3. Sponsor color treatment must remain restrained.
 4. Trust surfaces must read clearly without becoming legal-document blocks.
 5. No color may be used as the only source of meaning.
@@ -81,11 +93,11 @@ Required token family:
 
 Rules:
 
-1. Skeleton text must be legible on desktop and mobile.
+1. Text must be legible on desktop and mobile.
 2. Display typography may express premium tone.
 3. Body typography must prioritize clarity.
 4. Letter spacing must be controlled and never applied to long text.
-5. External font loading is blocked in the skeleton stage unless separately approved.
+5. External font loading remains blocked in future skeleton stage unless separately approved.
 
 ## 6. Spacing Tokens
 
@@ -148,7 +160,7 @@ Required token family:
 Rules:
 
 1. Containers must prevent edge crowding.
-2. Wide containers may be used for hero and sponsor surfaces.
+2. Wide containers may be used for hero and sponsor surfaces after authorization.
 3. Narrow containers may be used for trust clarity.
 4. Container behavior must pass mobile review.
 
@@ -168,10 +180,10 @@ Required token family:
 
 Rules:
 
-1. Skeleton buttons may appear only as nonfunctional placeholders when needed for layout review.
+1. Placeholder buttons may appear only when authorized for future layout review.
 2. Placeholder buttons may not contain final CTA copy.
 3. Touch target minimum height must be preserved.
-4. Active form or booking behavior is blocked in skeleton stage.
+4. Active form or booking behavior is blocked in future skeleton stage.
 
 ## 10. Card Tokens
 
@@ -191,8 +203,8 @@ Rules:
 
 1. Cards must not become dense directories.
 2. Cards must preserve premium spacing.
-3. Card count must match selected section option.
-4. Card text in skeleton stage is limited to section name/tagline or nonpublic source comments.
+3. Card count must match selected section option after user selection.
+4. Card text in future skeleton stage is limited to section name, tagline, or nonpublic source comments.
 
 ## 11. Sponsor Surface Tokens
 
@@ -210,7 +222,7 @@ Required token family:
 Rules:
 
 1. Sponsor surfaces must not imply confirmed sponsors.
-2. Sponsor surfaces must not include logos in skeleton stage.
+2. Sponsor surfaces must not include logos in future skeleton stage.
 3. Sponsor surfaces must not include ad metrics without validation.
 4. Sponsor surfaces must remain premium and secondary.
 
@@ -230,7 +242,7 @@ Required token family:
 Rules:
 
 1. Trust surfaces must support clarity and independent platform language after content authorization.
-2. Skeleton trust surfaces may show only section name and tagline.
+2. Future skeleton trust surfaces may show only section name and tagline.
 3. Trust surfaces must avoid over-legal density.
 4. Trust surfaces must pass readability and contrast review.
 
@@ -240,17 +252,17 @@ Required components:
 
 | Component | Purpose | Required class pattern | Use rule |
 |---|---|---|---|
-| Page shell | Overall preview canvas | `.dfw-page-shell` | One per skeleton preview. |
-| Section wrapper | Individual section boundary | `.dfw-section` | One per required section. |
-| Section inner | Controlled section content width | `.dfw-section__inner` | Required inside section wrapper. |
-| Section name | Skeleton section label | `.dfw-section__name` | Must render authorized section name only. |
-| Section tagline | Skeleton tagline | `.dfw-section__tagline` | Must render authorized tagline only. |
-| Header shell | Header structure | `.dfw-header` | Header section only. |
-| Navigation shell | Navigation structure | `.dfw-nav` | Navigation section only. |
-| Hero shell | Hero section emphasis | `.dfw-hero` | Hero section only. |
-| Sponsor shell | Sponsor surface review | `.dfw-sponsor-surface` | Section 3 or approved sponsor surface only. |
-| Trust shell | Trust surface review | `.dfw-trust-surface` | Section 4 or approved trust surface only. |
-| Footer shell | Footer closure | `.dfw-footer` | Footer section only. |
+| Page shell | Overall review canvas | `.dfw-page-shell` | Future use only after user option selection. |
+| Section wrapper | Individual section boundary | `.dfw-section` | Future use only after user option selection. |
+| Section inner | Controlled section content width | `.dfw-section__inner` | Future use only after user option selection. |
+| Section name | Skeleton section label | `.dfw-section__name` | Must render authorized section name only after skeleton authorization. |
+| Section tagline | Skeleton tagline | `.dfw-section__tagline` | Must render authorized tagline only after skeleton authorization. |
+| Header shell | Header structure | `.dfw-header` | Header section only after authorization. |
+| Navigation shell | Navigation structure | `.dfw-nav` | Navigation section only after authorization. |
+| Hero shell | Hero section emphasis | `.dfw-hero` | Hero section only after authorization. |
+| Sponsor shell | Sponsor surface review | `.dfw-sponsor-surface` | Section 3 or approved sponsor surface only after authorization. |
+| Trust shell | Trust surface review | `.dfw-trust-surface` | Section 4 or approved trust surface only after authorization. |
+| Footer shell | Footer closure | `.dfw-footer` | Footer section only after authorization. |
 
 ## 14. Responsive Behavior Tokens
 
@@ -267,10 +279,10 @@ Required token family:
 
 Rules:
 
-1. Use CSS media queries tied to these breakpoints.
+1. Use CSS media queries tied to these breakpoints after skeleton authorization.
 2. Mobile review must include stack, spacing, type, and overflow checks.
 3. Desktop review must include hierarchy, section flow, and premium spacing checks.
-4. Section skeleton must work without JavaScript.
+4. Future section skeleton must work without JavaScript.
 
 ## 15. Accessibility Tokens
 
@@ -286,7 +298,7 @@ Required token family:
 
 Rules:
 
-1. Interactive placeholders must preserve focus visibility.
+1. Interactive placeholders must preserve focus visibility where present.
 2. Touch target minimums must be maintained.
 3. Long-form future content must use readable measure.
 4. Contrast must remain readable on dark surfaces.
@@ -295,8 +307,8 @@ Rules:
 ## 16. Component Governance Rules
 
 1. Components must map to a section option or registry entry.
-2. Components must render in browser through HTML/CSS.
-3. Components must not introduce final content in skeleton stage.
+2. Components must render in browser through HTML/CSS only after skeleton authorization.
+3. Components must not introduce final content in future skeleton stage.
 4. Components must not load unapproved external scripts.
 5. Components must not load unapproved external fonts.
 6. Components must not create production routes.
@@ -304,11 +316,13 @@ Rules:
 8. Components must not include sponsor logos, partner names, pricing, forms, or final CTAs.
 9. Components must preserve mobile behavior.
 10. Components must support accessibility review.
+11. Component registry language may not be treated as user option selection.
+12. Component registry language may not authorize skeleton rendering.
 
 ## 17. Final Determination
 
-The component and token registry is ready for governed skeleton execution.
+The component and token registry is ready as a governed reference for future use after user option selection.
 
 Final standing for this file:
 
-`COMPONENT AND TOKEN REGISTRY CREATED / CSS TOKEN MODEL LOCKED / REUSABLE SECTION COMPONENT MODEL LOCKED / NEXT EXECUTION MAY ONLY USE REGISTRY-CONTROLLED TOKENS AND COMPONENTS FOR THE CSS-RENDERED SECTION SKELETON`.
+`COMPONENT AND TOKEN REGISTRY CORRECTED / NOT EXECUTION AUTHORITY / NEXT ACTION MAY ONLY BE OPTION-SELECTION REVIEW AFTER USER AUTHORIZATION / SKELETON RENDERING BLOCKED UNTIL USER OPTION SELECTION IS RECORDED`.
