@@ -1,3 +1,30 @@
+# SUPERSEDED — DO NOT USE FOR NEXT EXECUTION
+Status: SUPERSEDED / HISTORICAL AUDIT TRACE ONLY / NOT ACTIVE EXECUTION AUTHORITY
+This file is retained only for historical traceability. It is not the active authority for the next DFW Matchday Concierge website builder action.
+This file may not be used to authorize, infer, or execute:
+1. option selection,
+2. skeleton rendering,
+3. skeleton file creation,
+4. homepage generation,
+5. final homepage content insertion,
+6. PDF capture,
+7. DreamHost deployment,
+8. QR activation,
+9. production approval,
+10. Batch 1 progression.
+Active source of truth:
+`docs/dfw-current-execution-source-of-truth-index-v1.0.0.md`
+Active option-selection handoff:
+`docs/dfw-premium-website-builder-execution-handoff-prompt-v1.0.1.md`
+Active skeleton rendering playbook:
+`docs/dfw-premium-website-builder-skeleton-rendering-playbook-v1.0.1.md`
+Next permitted action:
+`dfw_homepage_section_option_selection_review_v1_0_0`
+The next permitted action may only present options and recommendations, then stop for user selection.
+Skeleton rendering remains blocked until the user explicitly selects one option for each section or explicitly approves the recommended option set as the selected execution basis.
+No inferred approval, implied approval, recommendation, prior preference, superseded file language, or historical file language may be treated as user selection.
+---
+
 # DFW Homepage v1.0.4 Minimal Premium Gateway Wireframe and Build Brief v1.0.0
 
 ## Controlled Action
@@ -218,81 +245,3 @@ Approved route targets:
 3. Advertise With Us: `advertise/index.html`
 4. Fan paths: `fans/index.html`
 5. Group planning: `matchday-plan/index.html`
-6. Visitor guidance: `guides/index.html`
-7. Reviewed support: `vip-media-coordinator-support/index.html`
-8. Sponsor opportunities: `advertise/index.html`
-9. Partner recognition: `sponsors/index.html`
-10. Trust details: `about/index.html`
-
-If a linked page does not exist yet, the link may be staged, but the homepage must still route to the intended page path.
-
-## File Edit Authority
-
-The next v1.0.4 prototype mission may create or edit only the v1.0.4 prototype directory and its local assets:
-
-1. `docs/prototypes/homepage-v1.0.4/review.html`
-2. `docs/prototypes/homepage-v1.0.4/assets/css/tokens.css`
-3. `docs/prototypes/homepage-v1.0.4/assets/css/prototype.css`
-4. `docs/prototypes/homepage-v1.0.4/assets/css/preview-fixes.css` if needed
-5. local README or review note for the v1.0.4 prototype if needed
-
-Blocked during v1.0.4 prototype execution:
-
-1. editing production homepage files
-2. editing linked pages
-3. creating Batch 1 mockups
-4. generating PDFs
-5. generating images
-6. deploying to DreamHost
-7. changing QR destination
-8. adding fake partners
-9. creating unsupported fulfillment flows
-
-## Pre-Code Gate
-
-Before editing any v1.0.4 prototype file, the acting session must produce the required pre-code section acceptance table from:
-
-`docs/dfw-homepage-v1.0.4-pre-code-section-acceptance-table-v1.0.0.md`
-
-Every row must pass before code begins.
-
-## Build Acceptance Tests
-
-The v1.0.4 browser prototype passes only if:
-
-1. it feels like a minimal luxury event gateway
-2. it uses the locked section order
-3. it uses the locked copy model
-4. it includes no more than six primary sections before footer
-5. it repeats no concept more than twice unless required by navigation, accessibility, footer, or disclaimer
-6. it routes detailed information to linked pages
-7. it avoids directory, dashboard, document, catalog, and spreadsheet behavior
-8. it presents sponsor opportunity as premium and concise
-9. it uses no fake partner logos or unapproved sold treatment
-10. it preserves independent platform and sponsor disclosure language
-11. it works at 1440 CSS px desktop width
-12. it works at 390 CSS px mobile width
-13. it reflows to 320 CSS px
-14. it has no microtext, clipped text, overlap, or horizontal mobile scroll
-15. it preserves semantic order from header to disclaimer
-
-## Automatic Failure Triggers
-
-The prototype fails if it includes:
-
-1. planning form as the main homepage structure
-2. popular-needs grid that repeats guide categories already shown elsewhere
-3. guide gateway that duplicates service summary cards
-4. full sponsor inventory detail
-5. full official-source section
-6. full provider handoff section
-7. long trust or legal explanations beyond the locked copy
-8. dashboard-style action panel
-9. document-like content stacking
-10. generic landing page language unrelated to DFW Matchday Concierge
-11. any official affiliation implication
-12. any live booking, dispatch, payment, AI fulfillment, or general visitor Command Hub claim without approval
-
-## Final Determination
-
-`V1.0.4 WIREFRAME AND BUILD BRIEF LOCKED / GOVERNANCE NOW BRIDGED TO CODE / NEXT PROTOTYPE MAY BEGIN ONLY AFTER USER AUTHORIZATION AND PRE-CODE TABLE PASS`
