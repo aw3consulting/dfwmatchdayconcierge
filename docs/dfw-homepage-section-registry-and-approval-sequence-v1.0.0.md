@@ -1,3 +1,30 @@
+# SUPERSEDED — DO NOT USE FOR NEXT EXECUTION
+Status: SUPERSEDED / HISTORICAL AUDIT TRACE ONLY / NOT ACTIVE EXECUTION AUTHORITY
+This file is retained only for historical traceability. It is not the active authority for the next DFW Matchday Concierge website builder action.
+This file may not be used to authorize, infer, or execute:
+1. option selection,
+2. skeleton rendering,
+3. skeleton file creation,
+4. homepage generation,
+5. final homepage content insertion,
+6. PDF capture,
+7. DreamHost deployment,
+8. QR activation,
+9. production approval,
+10. Batch 1 progression.
+Active source of truth:
+`docs/dfw-current-execution-source-of-truth-index-v1.0.0.md`
+Active option-selection handoff:
+`docs/dfw-premium-website-builder-execution-handoff-prompt-v1.0.1.md`
+Active skeleton rendering playbook:
+`docs/dfw-premium-website-builder-skeleton-rendering-playbook-v1.0.1.md`
+Next permitted action:
+`dfw_homepage_section_option_selection_review_v1_0_0`
+The next permitted action may only present options and recommendations, then stop for user selection.
+Skeleton rendering remains blocked until the user explicitly selects one option for each section or explicitly approves the recommended option set as the selected execution basis.
+No inferred approval, implied approval, recommendation, prior preference, superseded file language, or historical file language may be treated as user selection.
+---
+
 # DFW Homepage Section Registry and Approval Sequence v1.0.0
 
 ## Controlled Action
