@@ -1,24 +1,24 @@
-# DFW Homepage Section Skeleton v1.0.1 Revision
+# DFW Homepage Section Skeleton v1.0.2 Revision
 
 ## Status
 
-CSS-rendered section skeleton review surface revised after user section review.
+CSS-rendered section skeleton review surface revised after renewed user section review.
 
 ## User Revision Direction
 
 The user directed:
 
-1. Navigation will be included in Section 1.
-2. Section 2 will be Title Sponsor.
+1. Title Sponsor should appear under Header.
+2. Section 2 should be Audience Pathway Cards.
 
 ## Revised Skeleton Structure
 
 1. Header — Executive Lockup Bar
-2. Hero — Minimal Premium Gateway
-3. Section 1 — Navigation and service orientation
-4. Title Sponsor — Primary sponsor surface without sponsor claim
-5. Section 3 — Audience Pathway Cards
-6. Section 4 — Trust Clarity Band
+2. Title Sponsor — Primary sponsor surface without sponsor claim
+3. Hero — Minimal Premium Gateway
+4. Section 1 — Navigation and service orientation
+5. Section 2 — Audience Pathway Cards
+6. Section 3 — Trust Clarity Band
 7. Footer — Compact Executive Footer
 
 ## Approved Files Revised
