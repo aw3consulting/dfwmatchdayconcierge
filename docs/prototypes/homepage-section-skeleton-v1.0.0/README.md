@@ -1,19 +1,20 @@
-# DFW Homepage Section Skeleton v1.0.3 Revision
+# DFW Homepage Prototype Content Review v1.0.0
 
 ## Status
 
-CSS-rendered section skeleton review surface approved for structure and locked for the next governed step.
+Approved copy inserted into the locked 8-section prototype path for browser review.
 
-## User Revision Direction
+## User Approval Evidence
 
-The user directed:
+The user approved:
 
-1. Sponsor Rail should be added under Section 2.
-2. The revised skeleton should total 8 sections.
+`I approve the final copy authorization package for bounded prototype content insertion.`
 
-## User Structure Approval
+Approved package:
 
-The user approved this revised structure:
+`docs/dfw-homepage-locked-structure-final-copy-authorization-package-v1.0.0.md`
+
+## Locked Structure
 
 1. Header
 2. Title Sponsor
@@ -24,53 +25,34 @@ The user approved this revised structure:
 7. Section 3
 8. Footer
 
-## Revised Skeleton Structure
+## Files Revised for Bounded Prototype Content Insertion
 
-1. Header — Executive Lockup Bar
-2. Title Sponsor — Primary sponsor surface without sponsor claim
-3. Hero — Minimal Premium Gateway
-4. Section 1 — Navigation and service orientation
-5. Section 2 — Audience Pathway Cards
-6. Sponsor Rail — Secondary sponsor surface without sponsor claim
-7. Section 3 — Trust Clarity Band
-8. Footer — Compact Executive Footer
+This action edited only:
 
-## Approved Files Revised
+1. `docs/prototypes/homepage-section-skeleton-v1.0.0/review.html`
+2. `docs/prototypes/homepage-section-skeleton-v1.0.0/assets/css/section-skeleton.css`
+3. `docs/prototypes/homepage-section-skeleton-v1.0.0/README.md`
 
-This structure-lock update edited only:
+The CSS token and preview-fix files remain in the approved prototype path.
 
-1. `docs/prototypes/homepage-section-skeleton-v1.0.0/README.md`
+## Content Insertion Scope
 
-The existing review, CSS token, section skeleton, and preview-fix files remain in the approved skeleton path.
+Only the approved copy from the final copy authorization package was inserted.
 
-## Public-Facing Skeleton Text Rule
+No contact links, QR links, forms, booking actions, active route links, sponsor names, sponsor logos, confirmed sponsor claims, performance claims, official affiliation claims, production approval claims, or deployment claims were inserted.
 
-The rendered skeleton continues to use only section names and authorized skeleton taglines. No final homepage content is inserted.
+## Review Standing
 
-## Content Authorization Gate
+Ready for browser review.
 
-Structure approval does not authorize final content insertion.
-
-Before any final content insertion, a separate content authorization planning action must define:
-
-1. allowed content per section,
-2. claim-safety mapping,
-3. sponsor-safety limits,
-4. independent-platform clarity,
-5. blocked QR, booking, route, deployment, and production language.
+User approval is required before any final section approval, PDF capture, production deployment, QR activation, production approval, or Batch 1 progression.
 
 ## Blocked Actions
 
 The following remain blocked:
 
-1. Final homepage content insertion.
-2. Homepage generation beyond skeleton review.
-3. PDF capture.
-4. DreamHost deployment.
-5. QR activation.
-6. Production approval.
-7. Batch 1 progression.
-
-## Review Standing
-
-Structure locked. User approval is still required before content authorization, final content insertion, page composition, PDF capture, production deployment, or QR activation.
+1. PDF capture.
+2. DreamHost deployment.
+3. QR activation.
+4. Production approval.
+5. Batch 1 progression.
