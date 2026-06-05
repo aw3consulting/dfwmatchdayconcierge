@@ -74,8 +74,14 @@ They may not be used as skeleton content sources and may not bypass the section 
 | `docs/dfw-homepage-v1.0.4-governance-to-execution-handoff-and-output-contract-v1.0.0.md` | Older v1.0.4 execution handoff. | Superseded / historical audit trace only. | Historical audit trace only. Not executable. Not current authority. May not authorize skeleton rendering. | `docs/dfw-premium-website-builder-execution-handoff-prompt-v1.0.1.md` |
 | `docs/dfw-homepage-v1.0.4-minimal-premium-gateway-wireframe-and-build-brief-v1.0.0.md` | Older v1.0.4 build brief. | Superseded / historical audit trace only. | Historical audit trace only. Not executable. Not current authority. May not authorize skeleton rendering. | `docs/dfw-premium-website-builder-execution-handoff-prompt-v1.0.1.md` |
 | `docs/dfw-homepage-section-by-section-premium-website-builder-governance-standard-v1.0.0.md` | Older section skeleton governance standard. | Superseded / historical audit trace only. | Historical audit trace only. Not executable. Not current authority. May not authorize skeleton rendering. | `docs/dfw-premium-website-builder-skeleton-rendering-playbook-v1.0.1.md` |
+| `docs/dfw-homepage-section-registry-and-approval-sequence-v1.0.0.md` | Older section registry allowed skeleton rendering sequence without corrected hard stop. | Superseded / historical audit trace only. | Historical audit trace only. Not executable. Not current authority. May not authorize skeleton rendering. | `docs/dfw-premium-website-builder-execution-handoff-prompt-v1.0.1.md` |
+| `docs/dfw-homepage-hard-recovery-path-final-solution-determination-v1.0.0.md` | Older next prototype mission and pre-build execution authority. | Superseded / historical audit trace only. | Historical audit trace only. Not executable. Not current authority. May not authorize skeleton rendering. | `docs/dfw-premium-website-builder-execution-handoff-prompt-v1.0.1.md` |
 
-## 9. Next Authorized Action
+## 9. Known Unresolved Superseded Surface
+
+`docs/dfw-ai-governed-premium-website-builder-market-research-and-standards-map-v1.0.0.md` remains superseded by v1.0.1, but direct file-surface deactivation attempts were blocked by the connector. It must not be treated as active authority because v1.0.1 is the active research map, but perfect correction satisfaction requires file-surface deactivation before zero unsafe drift can be claimed.
+
+## 10. Next Authorized Action
 
 The next action is not skeleton rendering.
 
@@ -85,7 +91,7 @@ The next authorized action, after user authorization, is:
 
 That action may only present options and recommendations, then stop for user selection.
 
-## 10. Blocked Actions
+## 11. Blocked Actions
 
 Blocked until further user authorization and required gates:
 
@@ -98,8 +104,8 @@ Blocked until further user authorization and required gates:
 7. Production approval.
 8. Batch 1 progression.
 
-## 11. Final Determination
+## 12. Final Determination
 
 Final standing:
 
-`SOURCE-OF-TRUTH INDEX UPDATED / SUPERSEDED EXECUTION SURFACES LISTED / NEXT ACTION LIMITED TO OPTION-SELECTION REVIEW AFTER USER AUTHORIZATION / SKELETON RENDERING REMAINS BLOCKED UNTIL USER OPTION SELECTION IS RECORDED`.
+`SOURCE-OF-TRUTH INDEX UPDATED / SUPERSEDED EXECUTION SURFACES LISTED / ONE SUPERSEDED RESEARCH MAP FILE-SURFACE DEACTIVATION REMAINS UNRESOLVED / NEXT ACTION LIMITED TO OPTION-SELECTION REVIEW AFTER USER AUTHORIZATION / SKELETON RENDERING REMAINS BLOCKED UNTIL USER OPTION SELECTION IS RECORDED`.
