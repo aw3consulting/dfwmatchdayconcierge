@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DFW Header Navigation PDF Match Preview</title>
+  <style>
+    :root {
+      --pdf-header-0: #000712;
+      --pdf-header-1: #03101e;
+      --pdf-header-2: #1c2c3e;
+      --pdf-gold: #8e744c;
+      --pdf-gold-light: #c6a771;
+      --pdf-text: #f5f2ec;
+      --pdf-muted: #d7d5d0;
+    }
+
+    * { box-sizing: border-box; }
+
+    html,
+    body {
+      margin: 0;
+      min-width: 320px;
+      background: var(--pdf-header-0);
+      color: var(--pdf-text);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .pdf-header-preview {
+      width: 100%;
+      min-height: 72px;
+      background:
+        linear-gradient(90deg, rgba(0, 7, 18, 0.98) 0%, rgba(3, 16, 30, 0.97) 45%, rgba(28, 44, 62, 0.72) 100%),
+        var(--pdf-header-1);
+      border-bottom: 1px solid rgba(142, 116, 76, 0.34);
+    }
+
+    .pdf-header-inner {
+      display: grid;
+      grid-template-columns: auto auto minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 20px;
+      width: min(100%, 1120px);
+      margin: 0 auto;
+      min-height: 72px;
+      padding: 8px 34px;
+    }
+
+    .dfw-mark {
+      display: block;
+      width: 62px;
+      height: auto;
+    }
+
+    .brand-lockup {
+      color: var(--pdf-text);
+      font-size: 13px;
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: 0.075em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .nav-labels {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(10px, 1.18vw, 18px);
+      min-width: 0;
+    }
+
+    .nav-labels span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 32px;
+      color: var(--pdf-muted);
+      font-size: clamp(8px, 0.72vw, 10px);
+      font-weight: 800;
+      letter-spacing: 0.11em;
+      line-height: 1;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .header-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 34px;
+      padding: 0 18px;
+      border: 1px solid var(--pdf-gold-light);
+      border-radius: 4px;
+      color: var(--pdf-gold-light);
+      background: rgba(0, 7, 18, 0.68);
+      font-size: 9px;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      line-height: 1;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 980px) {
+      .pdf-header-inner {
+        grid-template-columns: auto auto auto;
+      }
+
+      .nav-labels {
+        grid-column: 1 / -1;
+        justify-content: flex-start;
+        overflow: hidden;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .pdf-header-inner {
+        grid-template-columns: auto 1fr;
+        gap: 10px 14px;
+        padding: 10px 14px;
+      }
+
+      .dfw-mark { width: 52px; }
+
+      .brand-lockup { font-size: 12px; }
+
+      .nav-labels,
+      .header-button {
+        grid-column: 1 / -1;
+      }
+
+      .nav-labels {
+        justify-content: flex-start;
+        gap: 12px;
+        overflow-x: auto;
+        scrollbar-width: none;
+      }
+
+      .nav-labels::-webkit-scrollbar { display: none; }
+
+      .header-button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header class="pdf-header-preview" aria-label="DFW Matchday Concierge header navigation visual preview">
+    <div class="pdf-header-inner">
+      <img class="dfw-mark" alt="DFW" src="data:image/png;base64,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" />
+      <div class="brand-lockup">DFW MATCHDAY<br>CONCIERGE</div>
+      <nav class="nav-labels" aria-label="Non-active PDF-inspired navigation labels">
+        <span>VIP</span>
+        <span>TEAM FAMILY</span>
+        <span>MEDIA / CORPORATE</span>
+        <span>FAN HUBS</span>
+        <span>DRIVERS</span>
+        <span>CONCIERGES</span>
+        <span>FULFILLMENT</span>
+        <span>ABOUT</span>
+      </nav>
+      <span class="header-button" aria-label="Non-active advertising button">ADVERTISE WITH US →</span>
+    </div>
+  </header>
+</body>
+</html>
