@@ -1,39 +1,39 @@
-# DFW Homepage Section Skeleton v1.0.0
+# DFW Homepage Section Skeleton v1.0.1 Revision
 
 ## Status
 
-CSS-rendered section skeleton review surface.
+CSS-rendered section skeleton review surface revised after user section review.
 
-## User Option Selection Evidence
+## User Revision Direction
 
-The user selected:
+The user directed:
 
-`Option 1 — Recommended Governed Set`
+1. Navigation will be included in Section 1.
+2. Section 2 will be Title Sponsor.
 
-Selected options:
+## Revised Skeleton Structure
 
 1. Header — Executive Lockup Bar
-2. Navigation — Three-Path Concierge Nav
-3. Hero — Minimal Premium Gateway
-4. Section 1 — Service Orientation Panel
-5. Section 2 — Audience Pathway Cards
-6. Section 3 — Sponsor Surface Showcase
-7. Section 4 — Trust Clarity Band
-8. Footer — Compact Executive Footer
+2. Hero — Minimal Premium Gateway
+3. Section 1 — Navigation and service orientation
+4. Title Sponsor — Primary sponsor surface without sponsor claim
+5. Section 3 — Audience Pathway Cards
+6. Section 4 — Trust Clarity Band
+7. Footer — Compact Executive Footer
 
-## Approved Files
+## Approved Files Revised
 
-This skeleton stage created only:
+This revision edited only:
 
 1. `docs/prototypes/homepage-section-skeleton-v1.0.0/review.html`
-2. `docs/prototypes/homepage-section-skeleton-v1.0.0/assets/css/tokens.css`
-3. `docs/prototypes/homepage-section-skeleton-v1.0.0/assets/css/section-skeleton.css`
-4. `docs/prototypes/homepage-section-skeleton-v1.0.0/assets/css/preview-fixes.css`
-5. `docs/prototypes/homepage-section-skeleton-v1.0.0/README.md`
+2. `docs/prototypes/homepage-section-skeleton-v1.0.0/assets/css/section-skeleton.css`
+3. `docs/prototypes/homepage-section-skeleton-v1.0.0/README.md`
+
+The existing token and preview-fix files remain in the approved skeleton path.
 
 ## Public-Facing Skeleton Text Rule
 
-The rendered skeleton uses only section names and authorized taglines.
+The rendered skeleton continues to use only section names and authorized skeleton taglines. No final homepage content is inserted.
 
 ## Blocked Actions
 
@@ -49,4 +49,4 @@ The following remain blocked:
 
 ## Review Standing
 
-Ready for browser review. User approval is required before any section lock, content authorization, final content insertion, page composition, PDF capture, production deployment, or QR activation.
+Ready for renewed browser review. User approval is required before any section lock, content authorization, final content insertion, page composition, PDF capture, production deployment, or QR activation.
