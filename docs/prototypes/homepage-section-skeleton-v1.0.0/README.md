@@ -2,7 +2,7 @@
 
 ## Status
 
-CSS-rendered section skeleton review surface revised after renewed user section review.
+CSS-rendered section skeleton review surface approved for structure and locked for the next governed step.
 
 ## User Revision Direction
 
@@ -10,6 +10,19 @@ The user directed:
 
 1. Sponsor Rail should be added under Section 2.
 2. The revised skeleton should total 8 sections.
+
+## User Structure Approval
+
+The user approved this revised structure:
+
+1. Header
+2. Title Sponsor
+3. Hero
+4. Section 1
+5. Section 2
+6. Sponsor Rail
+7. Section 3
+8. Footer
 
 ## Revised Skeleton Structure
 
@@ -24,17 +37,27 @@ The user directed:
 
 ## Approved Files Revised
 
-This revision edited only:
+This structure-lock update edited only:
 
-1. `docs/prototypes/homepage-section-skeleton-v1.0.0/review.html`
-2. `docs/prototypes/homepage-section-skeleton-v1.0.0/assets/css/section-skeleton.css`
-3. `docs/prototypes/homepage-section-skeleton-v1.0.0/README.md`
+1. `docs/prototypes/homepage-section-skeleton-v1.0.0/README.md`
 
-The existing token and preview-fix files remain in the approved skeleton path.
+The existing review, CSS token, section skeleton, and preview-fix files remain in the approved skeleton path.
 
 ## Public-Facing Skeleton Text Rule
 
 The rendered skeleton continues to use only section names and authorized skeleton taglines. No final homepage content is inserted.
+
+## Content Authorization Gate
+
+Structure approval does not authorize final content insertion.
+
+Before any final content insertion, a separate content authorization planning action must define:
+
+1. allowed content per section,
+2. claim-safety mapping,
+3. sponsor-safety limits,
+4. independent-platform clarity,
+5. blocked QR, booking, route, deployment, and production language.
 
 ## Blocked Actions
 
@@ -50,4 +73,4 @@ The following remain blocked:
 
 ## Review Standing
 
-Ready for renewed browser review. User approval is required before any section lock, content authorization, final content insertion, page composition, PDF capture, production deployment, or QR activation.
+Structure locked. User approval is still required before content authorization, final content insertion, page composition, PDF capture, production deployment, or QR activation.
