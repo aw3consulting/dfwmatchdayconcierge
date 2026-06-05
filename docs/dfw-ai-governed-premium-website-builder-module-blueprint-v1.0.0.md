@@ -4,23 +4,33 @@
 
 This file defines the DFW AI-Governed Premium Website Builder Module for section-first website production under the DFW Matchday Concierge governed workspace.
 
-The module converts governance into execution behavior by controlling how sections are defined, selected, rendered, reviewed, revised, approved, locked, and later composed.
-
-This file does not authorize homepage generation, final homepage content, PDF capture, DreamHost deployment, QR activation, or production approval.
+This correction removes residual active-sounding skeleton execution drift. This file is active only as module governance. It does not authorize skeleton rendering as the next action.
 
 ## 2. Status
 
-Status: CREATED FOR MAIN BRANCH GOVERNED MODULE BUILD
+Status: ACTIVE MODULE BLUEPRINT / ZERO-DRIFT CORRECTED
 
 Mission name: `dfw_ai_governed_premium_website_builder_module_research_architecture_and_execution_handoff_package`
 
 Current standing enforced by this file:
 
-`V1.0.4 HARD FAIL LOCKED / FULL HOMEPAGE ONE-PASS EXECUTION BLOCKED / SECTION-BY-SECTION PREMIUM WEBSITE BUILDER GOVERNANCE LOCKED / NEXT EXECUTION MUST BUILD ONLY A CSS-RENDERED SECTION SKELETON WITH SECTION NAME + TAGLINE / FINAL CONTENT INSERTION BLOCKED UNTIL SECTION APPROVAL`
+`V1.0.4 HARD FAIL LOCKED / FULL HOMEPAGE ONE-PASS EXECUTION BLOCKED / SECTION-BY-SECTION PREMIUM WEBSITE BUILDER GOVERNANCE LOCKED / NEXT ACTION MAY ONLY BE OPTION-SELECTION REVIEW AFTER USER AUTHORIZATION / SKELETON RENDERING BLOCKED UNTIL USER OPTION SELECTION IS RECORDED / FINAL CONTENT INSERTION BLOCKED`
+
+Active source of truth:
+
+`docs/dfw-current-execution-source-of-truth-index-v1.0.0.md`
+
+Active option-selection handoff:
+
+`docs/dfw-premium-website-builder-execution-handoff-prompt-v1.0.1.md`
+
+Active skeleton rendering playbook:
+
+`docs/dfw-premium-website-builder-skeleton-rendering-playbook-v1.0.1.md`
 
 ## 3. Module Purpose
 
-The module exists to prevent another full-page homepage failure by forcing section identity, option selection, browser-rendered skeleton review, responsive review, accessibility review, claim review, sponsor review, and user approval before any section lock or page composition.
+The module prevents full-page homepage failure by forcing section identity, option presentation, user option selection, browser-rendered skeleton review after selection, responsive review, accessibility review, claim review, sponsor review, and user approval before section lock or page composition.
 
 ## 4. Module Role
 
@@ -31,15 +41,15 @@ It performs these roles:
 1. Defines required homepage sections.
 2. Presents premium layout options per section.
 3. Requires one recommended option per section.
-4. Blocks final content before skeleton approval.
-5. Creates only browser-rendered CSS skeletons during the skeleton stage.
+4. Requires user option selection before skeleton rendering.
+5. Blocks final content before skeleton approval.
 6. Requires user approval before section lock.
 7. Blocks whole-page homepage generation until all sections are locked.
 8. Blocks production actions until validation and user approval pass.
 
 ## 5. Section-First Execution Model
 
-The module enforces exactly these homepage section identities for the next skeleton execution:
+The module enforces exactly these homepage section identities for future skeleton rendering after user option selection is recorded:
 
 | Section | Authorized skeleton tagline |
 |---|---|
@@ -55,34 +65,20 @@ The module enforces exactly these homepage section identities for the next skele
 Required sequence:
 
 1. Section identity before section content.
-2. Section option selection before section skeleton.
-3. CSS rendering before content insertion.
-4. Desktop review before mobile approval.
-5. Mobile review before section lock.
-6. Section lock before page composition.
-7. Page composition before final content insertion.
-8. User approval before every lock.
-9. No self-approval.
-10. No whole-page build until all sections are locked.
+2. Section option presentation before user option selection.
+3. User option selection before skeleton rendering.
+4. CSS rendering before content insertion.
+5. Desktop review before mobile approval.
+6. Mobile review before section lock.
+7. Section lock before page composition.
+8. Page composition before final content insertion.
+9. User approval before every lock.
+10. No self-approval.
+11. No whole-page build until all sections are locked.
 
 ## 6. Component Registry Model
 
 Every section must use governed components from the component and token registry.
-
-Component classes:
-
-1. Section wrapper.
-2. Section inner container.
-3. Section name label.
-4. Section tagline line.
-5. Navigation shell.
-6. Header identity shell.
-7. Hero containment shell.
-8. Card frame.
-9. Sponsor surface frame.
-10. Trust surface frame.
-11. Footer shell.
-12. Internal review marker.
 
 Component rules:
 
@@ -109,11 +105,11 @@ Each option must define:
 8. Failure triggers.
 9. DFW suitability score.
 
-The acting session must recommend one option per section before rendering the skeleton. User approval is required before an option becomes the selected execution basis.
+The acting session may recommend one option per section during option-selection review. Recommendation is not selection. The acting session must stop after presenting options and recommendations. User selection is required before any skeleton file may be created.
 
 ## 8. Theme Token Model
 
-All skeleton rendering must use governed CSS tokens.
+All future skeleton rendering after user selection must use governed CSS tokens.
 
 Token classes:
 
@@ -132,11 +128,10 @@ Token classes:
 
 Token rules:
 
-1. Tokens must live in `assets/css/tokens.css` for the next skeleton prototype.
-2. Section CSS must consume tokens instead of untracked visual decisions.
-3. Token names must remain purpose-based.
-4. Tokens must support premium dark contrast, legibility, spaciousness, and mobile clarity.
-5. Token changes must be reviewed as CSS behavior.
+1. Token names must remain purpose-based.
+2. Tokens must support premium dark contrast, legibility, spaciousness, and mobile clarity.
+3. Token changes must be reviewed as CSS behavior.
+4. Token use does not authorize skeleton rendering without user option selection.
 
 ## 9. Content Insertion Gate
 
@@ -156,7 +151,7 @@ Final content insertion is blocked until all of these conditions pass:
 12. Section locked.
 13. Content authorized by the user.
 
-Allowed skeleton content:
+Allowed skeleton content after user option selection:
 
 1. Section name.
 2. Authorized tagline for that section.
@@ -177,6 +172,8 @@ Blocked skeleton content:
 
 ## 10. Responsive Gate
 
+Desktop and mobile review must occur after skeleton rendering and before section lock.
+
 Desktop gate checks:
 
 1. Section hierarchy reads clearly at full desktop width.
@@ -190,10 +187,9 @@ Mobile gate checks:
 1. Section stacks cleanly.
 2. Header and navigation remain compact.
 3. No horizontal overflow.
-4. Touch targets are adequate where interactive placeholders exist.
-5. Text remains legible.
-6. Section distinction remains clear.
-7. Sponsor and trust surfaces remain secondary and clean.
+4. Text remains legible.
+5. Section distinction remains clear.
+6. Sponsor and trust surfaces remain secondary and clean.
 
 ## 11. Accessibility Gate
 
@@ -212,21 +208,6 @@ Checks:
 ## 12. Claim-Safety Gate
 
 No public claim may appear unless mapped to live, operator-assisted, development, or restricted capability.
-
-Claim categories requiring review:
-
-1. Transportation fulfillment.
-2. Airport transfer capability.
-3. Matchday logistics.
-4. Concierge hospitality.
-5. VIP support.
-6. Media or corporate coordination.
-7. Sponsor or partner opportunity.
-8. Availability.
-9. Pricing.
-10. QR or contact pathways.
-11. Production readiness.
-12. Compliance language.
 
 Skeleton stage claim rule:
 
@@ -265,9 +246,7 @@ Every section must move through these states in order:
 15. Final Section Approved.
 16. Page Composition Authorized.
 
-No section may skip states. If a revision is required, the section returns to the earliest affected state and moves forward again.
-
-User approval is required for `Approved`, `Locked`, `Content Authorized`, `Final Section Approved`, and `Page Composition Authorized`.
+No section may skip states. User approval is required for `Option Selected`, `Approved`, `Locked`, `Content Authorized`, `Final Section Approved`, and `Page Composition Authorized`.
 
 ## 15. GitHub Execution Model
 
@@ -275,7 +254,7 @@ Governing repository: `aw3consulting/dfwmatchdayconcierge`
 
 Governing branch: `main`
 
-The next skeleton execution may create or edit only:
+Future skeleton rendering after recorded user option selection may create or edit only:
 
 1. `docs/prototypes/homepage-section-skeleton-v1.0.0/review.html`
 2. `docs/prototypes/homepage-section-skeleton-v1.0.0/assets/css/tokens.css`
@@ -283,52 +262,34 @@ The next skeleton execution may create or edit only:
 4. `docs/prototypes/homepage-section-skeleton-v1.0.0/assets/css/preview-fixes.css`
 5. `docs/prototypes/homepage-section-skeleton-v1.0.0/README.md`
 
-The next skeleton execution must not edit:
-
-1. `docs/prototypes/homepage-v1.0.4/`
-2. Production files.
-3. Linked pages.
-4. PDF files.
-5. Image files.
-6. DreamHost deployment files.
-7. QR files.
-
-Commit rules:
-
-1. Commit each governed file or bounded file group to `main`.
-2. Fetch from `main` after commit.
-3. Verify exact path.
-4. Return commit SHA.
-5. Return final standing.
+The next action may not edit those files. The next action may only present options and recommendations, then stop for user selection.
 
 ## 16. Failure Triggers
 
 The module fails if it allows:
 
 1. Full homepage generation in one pass.
-2. Final content before skeleton approval.
-3. Visual mockup instead of browser-rendered CSS.
-4. Unresearched tool assumptions.
-5. Unsupported standards claims.
-6. Section option analysis skipped.
-7. Section approval skipped.
-8. Mobile review skipped.
-9. Accessibility review skipped.
-10. Sponsor surface review skipped.
-11. Final content insertion before user approval.
-12. PDF capture before browser review approval.
-13. DreamHost deployment before validation and user approval.
-14. QR activation before production approval.
-15. Acting-session self-approval of a section lock.
-16. Homepage content migrating into linked-page content or vice versa.
+2. Skeleton rendering before user option selection.
+3. Final content before skeleton approval.
+4. Visual mockup instead of browser-rendered CSS after skeleton authorization.
+5. Unresearched tool assumptions.
+6. Unsupported standards claims.
+7. Section option analysis skipped.
+8. Section approval skipped.
+9. Mobile review skipped.
+10. Accessibility review skipped.
+11. Sponsor surface review skipped.
+12. Final content insertion before user approval.
+13. PDF capture before browser review approval.
+14. DreamHost deployment before validation and user approval.
+15. QR activation before production approval.
+16. Acting-session self-approval of a section lock.
 17. Skeleton output using production claims, pricing, logos, partner names, service details, or final copy.
 
 ## 17. Final Determination
 
-The DFW AI-Governed Premium Website Builder Module is defined as a repo-first, section-first, CSS-rendered, approval-gated production system.
-
-The module converts premium website builder market logic into a controlled internal workflow without adopting market-tool lock-in or AI full-site generation risk.
+The DFW AI-Governed Premium Website Builder Module is defined as a repo-first, section-first, option-selection-gated, CSS-rendered, approval-gated production system.
 
 Final standing for this file:
 
-`AI-GOVERNED PREMIUM WEBSITE BUILDER MODULE BLUEPRINT CREATED / SECTION-FIRST EXECUTION MODEL LOCKED / FULL HOMEPAGE GENERATION, FINAL CONTENT INSERTION, PDF CAPTURE, DREAMHOST DEPLOYMENT, AND QR ACTIVATION REMAIN BLOCKED`.
+`AI-GOVERNED PREMIUM WEBSITE BUILDER MODULE BLUEPRINT CORRECTED / NEXT ACTION MAY ONLY BE OPTION-SELECTION REVIEW AFTER USER AUTHORIZATION / SKELETON RENDERING BLOCKED UNTIL USER OPTION SELECTION IS RECORDED / FULL HOMEPAGE GENERATION, FINAL CONTENT INSERTION, PDF CAPTURE, DREAMHOST DEPLOYMENT, AND QR ACTIVATION REMAIN BLOCKED`.
