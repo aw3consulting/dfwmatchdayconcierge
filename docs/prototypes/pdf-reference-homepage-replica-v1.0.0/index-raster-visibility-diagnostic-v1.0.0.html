@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DFW Raster Visibility Diagnostic v1.0.0</title>
+<style>
+:root{--bg:#020b13;--panel:#071d30;--gold:#d8a64b;--gold2:#f0c86b;--text:#f4f7f2;--muted:#b6c4ca;--ok:#7ee787;--bad:#f28b82}*{box-sizing:border-box}body{margin:0;background:#000;color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.35}main{max-width:1100px;margin:0 auto;padding:24px;background:linear-gradient(#031827,#020b13);min-height:100vh}h1{margin:0 0 8px;color:var(--gold2);text-transform:uppercase;letter-spacing:.04em;font-size:24px}p{color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:18px}.card{border:1px solid rgba(216,166,75,.55);background:#061b2d;border-radius:8px;padding:14px}.stage{min-height:190px;display:grid;place-items:center;margin:10px 0;padding:16px;border:1px dashed rgba(240,200,107,.75);background:linear-gradient(135deg,#000 0 48%,#f7f7f7 48% 52%,#09243a 52%)}.stage.dark{background:#020b13}.stage.light{background:#f5f5f2}img{display:block;max-width:100%;height:auto;object-fit:contain;opacity:1;visibility:visible}.logo-54{width:54px;height:54px}.logo-120{width:120px;height:120px}.logo-wide{width:220px;max-height:150px}.meta{font-size:12px;color:#d7e4e8;white-space:pre-wrap;word-break:break-word;background:rgba(0,0,0,.25);padding:8px;border-radius:5px}.status{font-weight:800;text-transform:uppercase;color:var(--gold2)}.pass{color:var(--ok)}.fail{color:var(--bad)}table{width:100%;border-collapse:collapse;margin-top:18px;font-size:13px}th,td{border:1px solid rgba(216,166,75,.35);padding:8px;text-align:left;vertical-align:top}th{color:var(--gold2);background:#041522}
+</style>
+</head>
+<body>
+<main>
+<h1>Raster Image Visibility Diagnostic v1.0.0</h1>
+<p>This page isolates raster rendering with direct HTML <code>&lt;img&gt;</code> elements. No SVG is used on this diagnostic page.</p>
+<section class="grid" aria-label="Raster image tests">
+<article class="card"><h2>Approved header PNG / 54px header condition</h2><div class="stage dark"><img class="logo-54" src="assets/images/logos/dfw-logo-header-raster-v1.0.2.png" alt="DFW Matchday Concierge approved header PNG at 54 pixels"></div><div class="meta" data-report-for="0">pending browser report</div></article>
+<article class="card"><h2>Approved header PNG / 120px contrast check</h2><div class="stage dark"><img class="logo-120" src="assets/images/logos/dfw-logo-header-raster-v1.0.2.png" alt="DFW Matchday Concierge approved header PNG at 120 pixels"></div><div class="meta" data-report-for="1">pending browser report</div></article>
+<article class="card"><h2>Approved header PNG / light contrast check</h2><div class="stage light"><img class="logo-wide" src="assets/images/logos/dfw-logo-header-raster-v1.0.2.png" alt="DFW Matchday Concierge approved header PNG on light background"></div><div class="meta" data-report-for="2">pending browser report</div></article>
+<article class="card"><h2>Generated PNG swatch / browser control</h2><div class="stage dark"><img class="logo-120" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAATklEQVR4nGNkE1X6f2miJgOxgOnSRE0GvfzrxGtgYGBgIEUTE4xBrCYmZA4xmpjQBQhpwtBASBNWDfg04dSASxNeDdg0EdSArokoDciaAEaCI+DUn2QaAAAAAElFTkSuQmCC" alt="Generated PNG browser control swatch"></div><div class="meta" data-report-for="3">pending browser report</div></article>
+</section>
+<table><thead><tr><th>Required diagnostic item</th><th>Status in repository diagnostic</th></tr></thead><tbody>
+<tr><td>Approved header PNG logo</td><td>Displayed from <code>assets/images/logos/dfw-logo-header-raster-v1.0.2.png</code>.</td></tr>
+<tr><td>Approved transparent logo PNG</td><td>Workspace source exists outside this repository path. Repository-valid diagnostic uses the approved header PNG already present in the accepted prototype path.</td></tr>
+<tr><td>JPEG test image</td><td>No active JPEG homepage asset found in the accepted draft.</td></tr>
+<tr><td>WebP test image</td><td>No active WebP homepage asset found in the accepted draft.</td></tr>
+<tr><td>Generated PNG test swatch</td><td>Displayed as a PNG browser-control swatch.</td></tr>
+</tbody></table>
+</main>
+<script>
+const imgs=Array.from(document.images);function report(img,i){const box=img.getBoundingClientRect();const cs=getComputedStyle(img);const ok=img.complete&&img.naturalWidth>0&&box.width>0&&box.height>0&&cs.display!=='none'&&cs.visibility!=='hidden'&&Number(cs.opacity)>0;const target=document.querySelector(`[data-report-for="${i}"]`);target.innerHTML=`<span class="status ${ok?'pass':'fail'}">${ok?'PASS':'FAIL'}</span>\nsource: ${img.getAttribute('src').slice(0,140)}\ncomplete: ${img.complete}\nnatural: ${img.naturalWidth} × ${img.naturalHeight}\nrendered: ${Math.round(box.width)} × ${Math.round(box.height)}\ndisplay: ${cs.display}\nvisibility: ${cs.visibility}\nopacity: ${cs.opacity}\nobject-fit: ${cs.objectFit}`;}imgs.forEach((img,i)=>{img.addEventListener('load',()=>report(img,i));img.addEventListener('error',()=>report(img,i));report(img,i);});
+</script>
+</body>
+</html>
