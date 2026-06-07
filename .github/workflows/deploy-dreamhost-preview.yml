@@ -1,0 +1,48 @@
+name: Deploy DreamHost Preview
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deploy-preview:
+    name: Deploy preview.dfwmatchdayconcierge.com
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Build preview package
+        shell: bash
+        run: |
+          set -euo pipefail
+          SRC="docs/prototypes/pdf-reference-homepage-replica-v1.0.0"
+          OUT="dist-dreamhost-preview"
+          rm -rf "$OUT"
+          mkdir -p "$OUT"
+          cp "$SRC/index-v1.0.18-raster-image-visibility-corrected.html" "$OUT/index.html"
+          cp -R "$SRC/assets" "$OUT/assets"
+          test -f "$OUT/index.html"
+          test -f "$OUT/assets/images/logos/dfw-logo-header-raster-v1.0.3.png"
+
+      - name: Configure SSH key
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+          printf '%s\n' "${{ secrets.DREAMHOST_SSH_KEY }}" > ~/.ssh/dreamhost_preview_key
+          chmod 600 ~/.ssh/dreamhost_preview_key
+          ssh-keyscan -p "${{ secrets.DREAMHOST_PORT }}" "${{ secrets.DREAMHOST_HOST }}" >> ~/.ssh/known_hosts
+
+      - name: Deploy to DreamHost preview
+        shell: bash
+        run: |
+          set -euo pipefail
+          rsync -az --delete \
+            -e "ssh -i ~/.ssh/dreamhost_preview_key -p ${{ secrets.DREAMHOST_PORT }}" \
+            dist-dreamhost-preview/ \
+            "${{ secrets.DREAMHOST_USER }}@${{ secrets.DREAMHOST_HOST }}:${{ secrets.DREAMHOST_TARGET_DIR }}"
