@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 284 224" role="img" aria-label="AI-assisted command chip visual">
+<defs><linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#061b2d"/><stop offset="1" stop-color="#0d3a5c"/></linearGradient><linearGradient id="g" x1="0" x2="1"><stop stop-color="#d8a64b"/><stop offset="1" stop-color="#f0c86b"/></linearGradient></defs>
+<rect width="284" height="224" rx="18" fill="url(#bg)"/><rect x="16" y="16" width="252" height="192" rx="14" fill="none" stroke="#d8a64b" stroke-width="2" opacity=".55"/>
+<path d="M42 156 H88 L108 132 H142 L163 92 H212" fill="none" stroke="#f0c86b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity=".8"/>
+<circle cx="42" cy="156" r="7" fill="#d8a64b"/><circle cx="108" cy="132" r="7" fill="#d8a64b"/><circle cx="163" cy="92" r="7" fill="#d8a64b"/><circle cx="212" cy="92" r="7" fill="#d8a64b"/>
+<rect x="80" y="54" width="124" height="94" rx="18" fill="#020b13" stroke="url(#g)" stroke-width="3"/><text x="142" y="115" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="50" fill="#f0c86b">AI</text>
+<path d="M80 80 H54 M80 112 H48 M80 138 H58 M204 80 H232 M204 112 H242 M204 138 H226" stroke="#7ab1cd" stroke-width="3" stroke-linecap="round" opacity=".72"/>
+</svg>
