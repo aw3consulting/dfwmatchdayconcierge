@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DFW Matchday Concierge - S03 Top-Line Fix v1.0.11</title>
+  <style>body{margin:0;background:#020b13;color:#f4f7f2;font-family:Arial,sans-serif}.loader{min-height:100vh;display:grid;place-items:center;text-align:center}</style>
+</head>
+<body>
+  <div class="loader">Loading DFW Matchday Concierge preview...</div>
+  <script>
+    fetch('index-v1.0.10.html').then(function(response){return response.text();}).then(function(html){
+      html = html.replace('assets/css/replica-v1.0.10.css">','assets/css/replica-v1.0.10.css"><link rel="stylesheet" href="assets/css/replica-v1.0.11.css">');
+      html = html.replace('Preview Fixed Prototype v1.0.10','S03 Top-Line Fix v1.0.11');
+      document.open();
+      document.write(html);
+      document.close();
+    }).catch(function(){
+      document.body.innerHTML = '<main style="padding:24px;color:#f4f7f2;background:#020b13;font-family:Arial,sans-serif"><h1>Preview loader failed</h1><p>Open index-v1.0.10.html and verify the S03 top-line correction stylesheet is available at assets/css/replica-v1.0.11.css.</p></main>';
+    });
+  </script>
+</body>
+</html>
