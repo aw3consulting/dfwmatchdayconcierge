@@ -1,0 +1,169 @@
+name: DreamHost Preview Deploy
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirm_preview_deploy:
+        description: "Type DEPLOY_PREVIEW to copy DreamHost staging files into the protected live preview path"
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+env:
+  LIVE_ROOT: /home/dfw_webadmin/preview.dfwmatchdayconcierge.com
+  STAGING_ROOT: /home/dfw_webadmin/staging.dfwmatchdayconcierge.com
+  PREVIEW_PATH: preview
+
+jobs:
+  deploy-preview:
+    name: Deploy protected preview path on DreamHost
+    runs-on: ubuntu-latest
+    environment: dreamhost-preview
+    timeout-minutes: 10
+
+    steps:
+      - name: Require explicit preview confirmation
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ "${{ github.event.inputs.confirm_preview_deploy }}" != "DEPLOY_PREVIEW" ]; then
+            echo "Refusing to run. confirm_preview_deploy must equal DEPLOY_PREVIEW."
+            exit 1
+          fi
+
+      - name: Validate required secrets
+        shell: bash
+        env:
+          DREAMHOST_SSH_HOST: ${{ secrets.DREAMHOST_SSH_HOST }}
+          DREAMHOST_SSH_PORT: ${{ secrets.DREAMHOST_SSH_PORT }}
+          DREAMHOST_SSH_USER: ${{ secrets.DREAMHOST_SSH_USER }}
+          DREAMHOST_SSH_PRIVATE_KEY: ${{ secrets.DREAMHOST_SSH_PRIVATE_KEY }}
+          DREAMHOST_KNOWN_HOSTS: ${{ secrets.DREAMHOST_KNOWN_HOSTS }}
+          DFW_PREVIEW_BASIC_AUTH_USER: ${{ secrets.DFW_PREVIEW_BASIC_AUTH_USER }}
+          DFW_PREVIEW_BASIC_AUTH_PASS: ${{ secrets.DFW_PREVIEW_BASIC_AUTH_PASS }}
+        run: |
+          set -euo pipefail
+          required=(
+            DREAMHOST_SSH_HOST
+            DREAMHOST_SSH_PORT
+            DREAMHOST_SSH_USER
+            DREAMHOST_SSH_PRIVATE_KEY
+            DREAMHOST_KNOWN_HOSTS
+            DFW_PREVIEW_BASIC_AUTH_USER
+            DFW_PREVIEW_BASIC_AUTH_PASS
+          )
+          for key in "${required[@]}"; do
+            if [ -z "${!key:-}" ]; then
+              echo "Missing required secret: $key"
+              exit 1
+            fi
+          done
+
+      - name: Configure SSH
+        shell: bash
+        env:
+          DREAMHOST_SSH_PRIVATE_KEY: ${{ secrets.DREAMHOST_SSH_PRIVATE_KEY }}
+          DREAMHOST_KNOWN_HOSTS: ${{ secrets.DREAMHOST_KNOWN_HOSTS }}
+        run: |
+          set -euo pipefail
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$DREAMHOST_SSH_PRIVATE_KEY" > ~/.ssh/dreamhost_preview_key
+          chmod 600 ~/.ssh/dreamhost_preview_key
+          printf '%s\n' "$DREAMHOST_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          chmod 644 ~/.ssh/known_hosts
+
+      - name: Deploy DreamHost staging files to protected preview path
+        shell: bash
+        env:
+          DREAMHOST_SSH_HOST: ${{ secrets.DREAMHOST_SSH_HOST }}
+          DREAMHOST_SSH_PORT: ${{ secrets.DREAMHOST_SSH_PORT }}
+          DREAMHOST_SSH_USER: ${{ secrets.DREAMHOST_SSH_USER }}
+          DFW_PREVIEW_BASIC_AUTH_USER: ${{ secrets.DFW_PREVIEW_BASIC_AUTH_USER }}
+          DFW_PREVIEW_BASIC_AUTH_PASS: ${{ secrets.DFW_PREVIEW_BASIC_AUTH_PASS }}
+        run: |
+          set -euo pipefail
+
+          ssh -i ~/.ssh/dreamhost_preview_key \
+            -p "$DREAMHOST_SSH_PORT" \
+            -o BatchMode=yes \
+            -o StrictHostKeyChecking=yes \
+            "$DREAMHOST_SSH_USER@$DREAMHOST_SSH_HOST" \
+            "DFW_PREVIEW_BASIC_AUTH_USER='$DFW_PREVIEW_BASIC_AUTH_USER' DFW_PREVIEW_BASIC_AUTH_PASS='$DFW_PREVIEW_BASIC_AUTH_PASS' LIVE_ROOT='$LIVE_ROOT' STAGING_ROOT='$STAGING_ROOT' PREVIEW_PATH='$PREVIEW_PATH' bash -se" <<'REMOTE_SCRIPT'
+          set -euo pipefail
+
+          PREVIEW_ROOT="$LIVE_ROOT/$PREVIEW_PATH"
+          STAMP="$(date +%Y%m%d-%H%M%S)"
+          HTPASSWD_FILE="$HOME/.htpasswd_dfw_preview"
+
+          echo "DFW DreamHost protected preview deployment :: $STAMP"
+
+          test -d "$LIVE_ROOT" || { echo "FAIL: LIVE_ROOT missing: $LIVE_ROOT"; exit 1; }
+          test -d "$STAGING_ROOT" || { echo "FAIL: STAGING_ROOT missing: $STAGING_ROOT"; exit 1; }
+          test -f "$STAGING_ROOT/index.html" || { echo "FAIL: staging index.html missing"; exit 1; }
+          test -d "$STAGING_ROOT/assets" || { echo "FAIL: staging assets/ missing"; exit 1; }
+          test -f "$STAGING_ROOT/connect/index.html" || { echo "FAIL: staging connect/index.html missing"; exit 1; }
+
+          if [ -d "$PREVIEW_ROOT" ]; then
+            mv "$PREVIEW_ROOT" "$LIVE_ROOT/preview.backup.$STAMP"
+          fi
+
+          mkdir -p "$PREVIEW_ROOT"
+          rsync -a --delete --exclude ".git" "$STAGING_ROOT"/ "$PREVIEW_ROOT"/
+
+          printf "%s:%s\n" \
+            "$DFW_PREVIEW_BASIC_AUTH_USER" \
+            "$(openssl passwd -apr1 "$DFW_PREVIEW_BASIC_AUTH_PASS")" \
+            > "$HTPASSWD_FILE"
+          chmod 600 "$HTPASSWD_FILE"
+
+          cat > "$PREVIEW_ROOT/.htaccess" <<EOF
+          AuthType Basic
+          AuthName "DFW Matchday Preview"
+          AuthUserFile $HTPASSWD_FILE
+          Require valid-user
+          Options -Indexes
+
+          <IfModule mod_headers.c>
+          Header set X-Robots-Tag "noindex, nofollow, noarchive"
+          </IfModule>
+          EOF
+
+          find "$PREVIEW_ROOT" -type f -name "*.html" -exec perl -0pi -e 's#</head>#<meta name="robots" content="noindex,nofollow,noarchive"></head>#i unless /name=["'"'"'']robots["'"'"'']/i' {} \;
+
+          find "$PREVIEW_ROOT" -type f \( -name "*.html" -o -name "*.css" -o -name "*.js" \) -exec perl -0pi -e '
+            s#(src|href)=["'"'"'']/(assets/)#$1="/preview/$2#g;
+            s#(src|href)=["'"'"'']/(connect/)#$1="/preview/$2#g;
+            s#url\((["'"'"'']?)/(assets/)#url($1/preview/$2#g;
+          ' {} +
+
+          echo "PREVIEW_DEPLOYED=https://dfwmatchdayconcierge.com/preview/"
+          echo "LIVE_ROOT_PRESERVED=$LIVE_ROOT"
+          echo "PREVIEW_ROOT=$PREVIEW_ROOT"
+          REMOTE_SCRIPT
+
+      - name: Validate protected preview HTTP responses
+        shell: bash
+        env:
+          DFW_PREVIEW_BASIC_AUTH_USER: ${{ secrets.DFW_PREVIEW_BASIC_AUTH_USER }}
+          DFW_PREVIEW_BASIC_AUTH_PASS: ${{ secrets.DFW_PREVIEW_BASIC_AUTH_PASS }}
+        run: |
+          set -euo pipefail
+
+          root_status="$(curl -s -o /dev/null -w '%{http_code}' https://dfwmatchdayconcierge.com/)"
+          preview_public_status="$(curl -s -o /dev/null -w '%{http_code}' https://dfwmatchdayconcierge.com/preview/)"
+          preview_auth_status="$(curl -s -o /dev/null -w '%{http_code}' -u "$DFW_PREVIEW_BASIC_AUTH_USER:$DFW_PREVIEW_BASIC_AUTH_PASS" https://dfwmatchdayconcierge.com/preview/)"
+          connect_auth_status="$(curl -s -o /dev/null -w '%{http_code}' -u "$DFW_PREVIEW_BASIC_AUTH_USER:$DFW_PREVIEW_BASIC_AUTH_PASS" https://dfwmatchdayconcierge.com/preview/connect/)"
+
+          echo "root_status=$root_status"
+          echo "preview_public_status=$preview_public_status"
+          echo "preview_auth_status=$preview_auth_status"
+          echo "connect_auth_status=$connect_auth_status"
+
+          test "$root_status" = "200"
+          test "$preview_public_status" = "401"
+          test "$preview_auth_status" = "200"
+          test "$connect_auth_status" = "200"
+
+          echo "DreamHost protected preview validation passed."
