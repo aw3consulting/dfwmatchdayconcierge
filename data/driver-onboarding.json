@@ -1,0 +1,39 @@
+{
+  "version": "1.0.0",
+  "governance": "DFW 24-hour launch driver onboarding lane",
+  "standing": "Operator-reviewed driver candidate intake",
+  "status_badges": [
+    "Driver Interest",
+    "Operator Review Required",
+    "Document Review Required",
+    "Vehicle Review Required",
+    "Availability Review Required",
+    "Approved Later State",
+    "Not Automatically Assigned"
+  ],
+  "required_candidate_details": [
+    "Name",
+    "Phone",
+    "Email",
+    "City or base area",
+    "Vehicle year, make, model, and color",
+    "Seating capacity",
+    "Luggage capacity",
+    "Insurance readiness",
+    "License readiness",
+    "Availability windows",
+    "Airport familiarity",
+    "Arlington/stadium familiarity",
+    "Dallas/Fort Worth familiarity",
+    "Language capability",
+    "Professional driving or hospitality experience",
+    "Interest category",
+    "Document review readiness"
+  ],
+  "sensitive_data_warning": "Do not send SSN, bank account details, full ID images, or sensitive personal documents through public email unless explicitly requested through a secure review step.",
+  "contact": {
+    "phone": "214-892-6827",
+    "email": "concierge@dfwmatchdayconcierge.com",
+    "driver_email_subject": "DFW Matchday Concierge Driver Interest"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "site_name": "DFW Matchday Concierge",
+  "positioning": "Private Matchday Movement. Trip-Value Protection. Dallas World Cup Concierge.",
+  "domain": "https://dfwmatchdayconcierge.com",
+  "final_qr_destination": "https://dfwmatchdayconcierge.com/connect",
+  "contact": {
+    "phone_display": "214-892-6827",
+    "phone_e164": "+12148926827",
+    "email": "concierge@dfwmatchdayconcierge.com"
+  },
+  "production_host": "DreamHost",
+  "preview_host_rule": "GitHub Pages temporary review surface only",
+  "production_gate": {
+    "dreamhost_deployment_authorized": false,
+    "requires_user_approval": true
+  },
+  "source_seed_standing": {
+    "package_name": "dfw-governed-workspace-source-seed-v1.0.0",
+    "standing": "approved visual and brand-continuity reference only",
+    "locked_reference_files": [
+      "dfw-matchday-concierge-business-card-print-package-v1.0.18.zip",
+      "dfw-matchday-concierge-final-front-reference-v1.0.18.png",
+      "dfw-matchday-concierge-final-back-reference-v1.0.18.png",
+      "approved-logo-transparent-reference-v1.0.15.png",
+      "approved-logo-crop-reference-v1.0.14.png"
+    ]
+  },
+  "required_routes": ["/", "/connect/", "/book/", "/contact/", "/dallas-matchday-hub/", "/services/", "/private-transportation/", "/airport-transfers/", "/matchday-logistics/", "/trip-value-concierge/", "/luggage-coordination/", "/tickets/", "/scores/", "/groups/", "/languages/", "/matches/", "/teams/", "/es/", "/ja/", "/nl/", "/de/", "/sv/", "/hr/", "/ar/"]
+}

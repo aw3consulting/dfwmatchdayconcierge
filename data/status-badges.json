@@ -1,0 +1,50 @@
+{
+  "version": "1.0.0",
+  "governance": "DFW bounded frontend shell implementation",
+  "badges": [
+    {
+      "label": "Live Capability",
+      "description": "Currently available contact, planning, or information capability."
+    },
+    {
+      "label": "Operator-Assisted",
+      "description": "Requires direct operator handling before acceptance or confirmation."
+    },
+    {
+      "label": "Development",
+      "description": "Planned or shell-only capability that is not live."
+    },
+    {
+      "label": "Restricted",
+      "description": "Unavailable or restricted unless later approved."
+    },
+    {
+      "label": "Referral / Third-Party",
+      "description": "May route to a provider, affiliate, API, or external referral path after review."
+    },
+    {
+      "label": "Information Only",
+      "description": "Planning guidance only."
+    },
+    {
+      "label": "Planning Value",
+      "description": "Value is planning, itinerary control, review, or command hub organization."
+    },
+    {
+      "label": "Operator Review Required",
+      "description": "Final availability, pricing, vehicle assignment, provider routing, and service confirmation require operator review."
+    },
+    {
+      "label": "Quote Required",
+      "description": "Pricing is prepared only after review of timing, route, guest count, scope, and capacity."
+    },
+    {
+      "label": "Payment Pending",
+      "description": "Payment or deposit state is not complete."
+    },
+    {
+      "label": "Confirmed",
+      "description": "Used only after operator approval, accepted quote, payment/deposit approval, and availability confirmation."
+    }
+  ]
+}

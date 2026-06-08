@@ -1,0 +1,50 @@
+{
+  "media_corporate_hub": {
+    "hub_label": "Media / Corporate Matchday Command Hub",
+    "priority": "highest_monetization",
+    "booking_widget_position": "above_information_layer",
+    "primary_actions": [
+      "airport-transfer",
+      "hotel-stadium-airport",
+      "matchday-route",
+      "round-trip",
+      "multi-vehicle",
+      "executive-suv",
+      "shared-media-ride",
+      "credential-timing",
+      "catering",
+      "large-group",
+      "equipment-luggage",
+      "recurring-schedule",
+      "dedicated-driver",
+      "dispatch-request"
+    ],
+    "required_fields": [
+      "organization",
+      "contact-name",
+      "phone",
+      "email",
+      "role-type",
+      "service-needed",
+      "date",
+      "pickup-location",
+      "dropoff-location",
+      "passenger-count",
+      "equipment-count",
+      "vehicle-count",
+      "credential-timing",
+      "catering-request",
+      "payment-method",
+      "notes"
+    ],
+    "information_layer": [
+      "airport timing",
+      "stadium routes",
+      "credential timing",
+      "hotel routing",
+      "catering support",
+      "assignment status",
+      "dispatch notes"
+    ]
+  }
+}

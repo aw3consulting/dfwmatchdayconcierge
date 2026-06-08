@@ -1,0 +1,145 @@
+{
+  "version": "1.0.0",
+  "governed_action": "dfw_marketing_strategy_and_monetization_blueprint_repo_package",
+  "production_status": "blocked",
+  "claim_control": {
+    "official_affiliation_claims_blocked_until_verified": true,
+    "host_city_partner_claims_blocked_until_verified": true,
+    "sponsor_status_must_be_verified_before_public_use": true
+  },
+  "target_groups": [
+    {
+      "id": "host-visitor-economy",
+      "priority": 1,
+      "name": "Host and Visitor Economy Targets",
+      "target_profile": [
+        "host city ecosystem",
+        "tourism organizations",
+        "visitor bureaus",
+        "Fan Festival adjacent organizations",
+        "venue-area stakeholders",
+        "hospitality districts",
+        "transportation and parking stakeholders"
+      ],
+      "best_offer": [
+        "Founding Presenting Partner",
+        "Category Partner",
+        "Route / Area Guide Sponsor",
+        "Public information gateway support"
+      ],
+      "claim_boundary": "No host city partner or official support claim unless verified by direct agreement."
+    },
+    {
+      "id": "official-sponsor-large-brand-ecosystem",
+      "priority": 2,
+      "name": "Official Sponsor and Large Brand Ecosystem",
+      "target_profile": [
+        "tournament sponsors",
+        "regional supporters",
+        "airlines",
+        "banks",
+        "telecoms",
+        "hotel groups",
+        "payment brands",
+        "delivery and food brands",
+        "mobility and logistics brands"
+      ],
+      "best_offer": [
+        "Founding Presenting Partner",
+        "Semifinal Week Premium Takeover",
+        "Category Partner",
+        "Team Fan Hub Sponsor"
+      ],
+      "claim_boundary": "Their tournament status may not be used as a DFW Matchday Concierge partner claim unless a direct agreement is verified."
+    },
+    {
+      "id": "local-hospitality-experience",
+      "priority": 3,
+      "name": "Local Hospitality and Experience Targets",
+      "target_profile": [
+        "hotels",
+        "restaurants",
+        "bars",
+        "watch-party venues",
+        "attractions",
+        "entertainment districts",
+        "cultural organizations",
+        "family activity providers",
+        "nightlife operators"
+      ],
+      "best_offer": [
+        "Featured Partner Card",
+        "Team Fan Hub Sponsor",
+        "Route / Area Guide Sponsor",
+        "Affiliate / Referral Routing"
+      ],
+      "claim_boundary": "Public listings require sponsored, referral, third-party, or information-only status badges."
+    },
+    {
+      "id": "mobility-utility-support",
+      "priority": 4,
+      "name": "Mobility, Utility, and Support Targets",
+      "target_profile": [
+        "parking providers",
+        "shuttle providers",
+        "private transport providers",
+        "luggage storage",
+        "eSIM providers",
+        "translation providers",
+        "urgent care",
+        "grocery and cooler support",
+        "food delivery",
+        "travel support"
+      ],
+      "best_offer": [
+        "Route / Area Guide Sponsor",
+        "Featured Partner Card",
+        "Affiliate / Referral Routing",
+        "Utility Card"
+      ],
+      "claim_boundary": "Third-party terms, pricing, availability, and fulfillment must be disclosed."
+    },
+    {
+      "id": "groups-coordinators",
+      "priority": 5,
+      "name": "Groups and Coordinator Targets",
+      "target_profile": [
+        "media coordinators",
+        "production coordinators",
+        "corporate travel managers",
+        "sponsor activation teams",
+        "hospitality agencies",
+        "executive assistants",
+        "supporter group leaders",
+        "cultural associations",
+        "team-family representatives where privacy-safe"
+      ],
+      "best_offer": [
+        "Group Lead Package",
+        "Media / Corporate Command Hub",
+        "Coordinator-led planning",
+        "Quote-ready group movement planning"
+      ],
+      "claim_boundary": "Planning and quote preparation do not guarantee fulfillment before operator confirmation and payment terms."
+    }
+  ],
+  "required_qualification_fields": [
+    "company_name",
+    "contact_name",
+    "contact_role",
+    "category",
+    "target_audience",
+    "desired_dates",
+    "desired_placement_type",
+    "budget_range",
+    "official_status_claimed",
+    "official_status_proof",
+    "target_url",
+    "offer_details",
+    "fulfillment_responsibility",
+    "disclosure_requirements",
+    "logo_approval_status",
+    "claim_review_status",
+    "payment_status"
+  ]
+}

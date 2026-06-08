@@ -1,0 +1,26 @@
+{
+  "audiences": [
+    {
+      "id": "media-corporate",
+      "label": "Media / Corporate",
+      "priority": 1,
+      "monetization_weight": "highest",
+      "hub_route": "/media-corporate/",
+      "primary_intent": "scheduled movement, group support, catering, recurring routes, company-card booking, and operations coordination",
+      "booking_widget_position": "above_information_layer",
+      "primary_products": ["airport-transfer", "hotel-stadium-airport", "round-trip", "multi-vehicle", "executive-suv", "catering", "large-group", "equipment-luggage", "dedicated-driver", "dispatch-request"],
+      "information_layer": ["airport timing", "stadium arrival", "credential timing", "hotel routes", "catering options", "group movement", "assignment status"]
+    },
+    {
+      "id": "local-international-fans",
+      "label": "Local / International Fans",
+      "priority": 2,
+      "monetization_weight": "high",
+      "hub_route": "/teams/",
+      "primary_intent": "team-based matchday planning, language support, rides, fan experience, food, sightseeing, shared rides, and matchday packages",
+      "booking_widget_position": "above_information_layer",
+      "primary_products": ["team-hub", "ride-route", "shared-ride", "round-trip", "fan-experience-route", "food-snack-drink", "cooler-setup", "essentials-otc", "luggage", "matchday-package", "stockyards-add-on"],
+      "information_layer": ["team schedule", "language", "food recommendations", "group standings", "advancement watch", "DFW attractions", "stadium routes", "Fan Experience"]
+    }
+  ]
+}

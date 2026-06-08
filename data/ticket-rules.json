@@ -1,0 +1,20 @@
+{
+  "required_public_disclaimer": "DFW Matchday Concierge is not an official ticketing partner, ticket broker, resale marketplace, escrow provider, or authentication authority.",
+  "allowed_language": [
+    "fan post intake",
+    "need-a-ticket inquiry",
+    "may-have-extra-ticket inquiry",
+    "safe handoff coordination inquiry",
+    "official-ticket-channel guidance",
+    "operator-assisted delivery coordination inquiry"
+  ],
+  "restricted_language": [
+    "ticket brokerage claim",
+    "resale marketplace claim",
+    "ticket authentication guarantee",
+    "escrow claim",
+    "guarantee of ticket validity",
+    "claim of official tournament affiliation",
+    "handling funds without defined payment and liability framework"
+  ]
+}

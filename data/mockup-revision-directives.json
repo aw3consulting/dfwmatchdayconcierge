@@ -1,0 +1,109 @@
+{
+  "version": "1.0.1",
+  "status": "hard_superseded_as_mockup_generation_authority",
+  "purpose": "Preserve commercial revision concepts only as bounded implementation guidance under the 22 locked concept mockup authority.",
+  "governed_action_superseded": "dfw_marketing_strategy_and_monetization_blueprint_repo_package",
+  "production_status": "blocked",
+  "correct_authority_files": [
+    "docs/dfw-locked-concept-mockups-proof-retention-record-v1.0.0.md",
+    "data/mockup-proof-retention-register.json"
+  ],
+  "locked_concept_count": 22,
+  "rules": [
+    "This file does not authorize mockup generation.",
+    "This file does not authorize replacement visual creation.",
+    "This file does not authorize schematic mockup output.",
+    "This file does not authorize file-count-based mockup production.",
+    "This file may be used only as commercial and information-gateway implementation guidance against the locked 22 concept mockups.",
+    "Any future visual mockup work requires explicit user authorization and must be based on the locked concept mockup proof and retention stack."
+  ],
+  "bounded_revision_concepts_for_reference_only": [
+    {
+      "id": "homepage-sponsor-rail",
+      "priority": 1,
+      "surface": "homepage",
+      "directive": "Add a premium sponsor rail below the hero area for Founding Presenting Partner and category sponsor visibility.",
+      "required_status_badges": ["Sponsored Placement", "Information Only"],
+      "claim_review_required": true
+    },
+    {
+      "id": "information-planning-hub-positioning",
+      "priority": 2,
+      "surface": "homepage_and_public_gateway",
+      "directive": "Reposition the public site as DFW Matchday Information + Planning Hub while preserving DFW Matchday Concierge brand authority.",
+      "required_status_badges": ["Information Only", "Planning Value"],
+      "claim_review_required": true
+    },
+    {
+      "id": "full-information-gateway-layout",
+      "priority": 3,
+      "surface": "public_information_gateway",
+      "directive": "Use schedule, airport, stadium, Fan Festival, hotel-area, restaurant, watch-party, attraction, media/corporate, and team fan hub modules only as bounded implementation guidance.",
+      "required_status_badges": ["Information Only", "Sponsored Placement", "Affiliate / Referral Link"],
+      "claim_review_required": true
+    },
+    {
+      "id": "team-fan-hub-sponsorship-zones",
+      "priority": 4,
+      "surface": "team_fan_hub",
+      "directive": "Use public fan hub sponsor, route, restaurant, watch-party, affiliate, and activated-planning concepts only where consistent with locked concept direction and public monetization boundaries.",
+      "required_status_badges": ["Sponsored Placement", "Third-Party Provider", "Availability Required"],
+      "claim_review_required": true
+    },
+    {
+      "id": "ad-disclosure-component",
+      "priority": 5,
+      "surface": "all_public_monetized_surfaces",
+      "directive": "Use compact disclosure treatment for sponsored placement, affiliate/referral link, third-party provider, and official source cards.",
+      "required_status_badges": ["Sponsored Placement", "Affiliate / Referral Link", "Third-Party Provider", "Official Source"],
+      "claim_review_required": true
+    },
+    {
+      "id": "partner-advertise-page",
+      "priority": 6,
+      "surface": "partner_advertise_page",
+      "directive": "Use partner and advertise content only as claim-safe commercial implementation guidance, not mockup generation authority.",
+      "required_status_badges": ["Information Only"],
+      "claim_review_required": true
+    },
+    {
+      "id": "media-corporate-public-partner-module",
+      "priority": 7,
+      "surface": "public_media_corporate_information_page",
+      "directive": "Use coordinator-first public module concepts while keeping private corporate hubs ad-free.",
+      "required_status_badges": ["Operator-Reviewed", "Quote Required", "Availability Required"],
+      "claim_review_required": true
+    },
+    {
+      "id": "mobile-sponsor-card-stack",
+      "priority": 8,
+      "surface": "mobile_public_gateway_and_team_hubs",
+      "directive": "Use mobile sponsor card stack concepts only as implementation guidance; mockup generation remains blocked without explicit user authorization.",
+      "required_status_badges": ["Sponsored Placement", "Information Only"],
+      "claim_review_required": true
+    },
+    {
+      "id": "internal-ad-inventory-admin-surface",
+      "priority": 9,
+      "surface": "operator_admin_layer",
+      "directive": "Represent inventory status, sponsor status, dates, approvals, disclosures, claim review, and placement location only as internal-control implementation guidance.",
+      "required_status_badges": ["Restricted"],
+      "claim_review_required": true
+    }
+  ],
+  "blocked_mockup_treatments": [
+    "official FIFA partner language without verification",
+    "official host city partner language without verification",
+    "team logo or tournament mark use without approval",
+    "ads inside paid VIP hub",
+    "ads inside Team Family private hub",
+    "ads inside Media / Corporate private hub",
+    "ads inside activated premium command hub",
+    "fulfillment guarantee language",
+    "live payment automation claim",
+    "live dispatch automation claim",
+    "schematic boards treated as locked concept mockups",
+    "generated placeholders treated as user-review mockups"
+  ],
+  "final_status": "commercial_guidance_retained_generation_authority_removed"
+}

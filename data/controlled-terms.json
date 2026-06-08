@@ -1,0 +1,88 @@
+{
+  "version": "1.0.0",
+  "purpose": "Govern controlled public terminology, drift triggers, and replacement rules for DFW Matchday Concierge.",
+  "standing": "active",
+  "controlled_term_sets": [
+    {
+      "id": "vehicle_class_standard",
+      "status": "active",
+      "canonical_term": "Black Executive Vehicle Class",
+      "canonical_supporting_language": "Black Executive Vehicle Class may include Black Executive SUVs and other eligible executive-class vehicles, subject to operator review, availability, passenger fit, luggage fit, route needs, comfort requirements, and quote confirmation.",
+      "required_public_boundary": "Vehicle class and operator assignment are confirmed only after operator review, quote, payment/deposit approval, and availability confirmation.",
+      "forbidden_terms": [
+        "Black 2026 Chevrolet Tahoe",
+        "2026 Chevrolet Tahoe",
+        "Black Chevrolet Tahoe",
+        "Chevrolet Tahoe",
+        "Tahoe eligibility",
+        "Tahoe allocation",
+        "Tahoe standard",
+        "guaranteed Tahoe",
+        "official VIP vehicle"
+      ],
+      "allowed_reference_files": [
+        "docs/dfw-executive-vehicle-class-standard-v1.0.0.md",
+        "docs/dfw-executive-vehicle-class-system-wide-correction-record-v1.0.0.md"
+      ],
+      "required_term_files": [
+        "index.html",
+        "vip/index.html",
+        "data/lane-cards.json",
+        "docs/dfw-vip-driver-and-vehicle-profile-layer-v1.0.0.md",
+        "docs/dfw-vip-guest-concierge-governance-layer-v1.0.0.md",
+        "docs/dfw-executive-vehicle-class-standard-v1.0.0.md"
+      ]
+    },
+    {
+      "id": "production_gate_standard",
+      "status": "active",
+      "canonical_term": "DreamHost production deployment remains blocked until validation, mobile review, QR review, claim review, and explicit user approval pass.",
+      "forbidden_terms": [
+        "DreamHost deployment approved",
+        "production launch approved",
+        "final QR activated",
+        "public launch approved"
+      ],
+      "allowed_reference_files": []
+    },
+    {
+      "id": "automation_gate_standard",
+      "status": "active",
+      "canonical_term": "Live AI, payment, dispatch, routing, driver assignment, concierge assignment, and fulfillment automation remain blocked unless separately approved.",
+      "forbidden_terms": [
+        "live dispatch automation approved",
+        "automatic driver assignment approved",
+        "automatic concierge assignment approved",
+        "live payment automation approved",
+        "guaranteed fulfillment",
+        "instant dispatch"
+      ],
+      "allowed_reference_files": []
+    }
+  ],
+  "audit_policy": {
+    "scan_paths": [
+      "."
+    ],
+    "text_extensions": [
+      ".html",
+      ".md",
+      ".json",
+      ".js",
+      ".mjs",
+      ".css",
+      ".svg",
+      ".yml",
+      ".yaml"
+    ],
+    "ignored_directories": [
+      ".git",
+      "node_modules",
+      "dist",
+      "build",
+      ".next",
+      ".cache"
+    ],
+    "failure_policy": "Any forbidden controlled term outside its allowed reference files fails the audit. Any required canonical term missing from a required file fails the audit."
+  }
+}

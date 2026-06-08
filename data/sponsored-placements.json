@@ -1,0 +1,96 @@
+{
+  "version": "1.0.0",
+  "governed_action": "dfw_marketing_strategy_and_monetization_blueprint_repo_package",
+  "production_status": "blocked",
+  "default_approval_status": "not_sold",
+  "placements": [
+    {
+      "id": "homepage-sponsor-rail",
+      "name": "Homepage Sponsor Rail",
+      "inventory_class": "class-a-founding-premium",
+      "surface": "homepage",
+      "placement_type": "sponsor_rail",
+      "allowed_status_badges": ["Sponsored Placement", "Information Only"],
+      "blocked_claims": ["official tournament partner", "host city partner", "approved by FIFA"],
+      "disclosure_required": true,
+      "claim_review_required": true
+    },
+    {
+      "id": "public-information-gateway-presenting-partner",
+      "name": "Public Information Gateway Presenting Partner",
+      "inventory_class": "class-a-founding-premium",
+      "surface": "public_information_gateway",
+      "placement_type": "presenting_partner",
+      "allowed_status_badges": ["Sponsored Placement", "Information Only"],
+      "blocked_claims": ["official tournament partner", "host city partner", "guaranteed fulfillment"],
+      "disclosure_required": true,
+      "claim_review_required": true
+    },
+    {
+      "id": "semifinal-week-takeover",
+      "name": "Semifinal Week Premium Takeover",
+      "inventory_class": "class-a-founding-premium",
+      "surface": "semifinal_public_guides",
+      "placement_type": "time_bound_takeover",
+      "allowed_status_badges": ["Sponsored Placement", "Information Only", "Availability Required"],
+      "blocked_claims": ["official semifinal sponsor", "official tournament partner", "guaranteed service"],
+      "disclosure_required": true,
+      "claim_review_required": true
+    },
+    {
+      "id": "team-fan-hub-header",
+      "name": "Team Fan Hub Header Sponsor",
+      "inventory_class": "class-b-high-volume-public",
+      "surface": "team_fan_hub",
+      "placement_type": "sponsor_header",
+      "allowed_status_badges": ["Sponsored Placement", "Information Only"],
+      "blocked_claims": ["official team partner", "official supporter group", "guaranteed shared ride"],
+      "disclosure_required": true,
+      "claim_review_required": true
+    },
+    {
+      "id": "route-area-guide-card",
+      "name": "Route / Area Guide Sponsored Card",
+      "inventory_class": "class-b-high-volume-public",
+      "surface": "route_area_guides",
+      "placement_type": "featured_card",
+      "allowed_status_badges": ["Sponsored Placement", "Third-Party Provider", "Availability Required"],
+      "blocked_claims": ["guaranteed availability", "direct DFW fulfillment unless confirmed"],
+      "disclosure_required": true,
+      "claim_review_required": true
+    },
+    {
+      "id": "restaurant-watch-party-card",
+      "name": "Restaurant / Watch-Party Featured Card",
+      "inventory_class": "class-b-high-volume-public",
+      "surface": "restaurant_watch_party_guides",
+      "placement_type": "featured_card",
+      "allowed_status_badges": ["Sponsored Placement", "Third-Party Provider", "Availability Required"],
+      "blocked_claims": ["official watch party unless verified", "guaranteed seating", "guaranteed reservation"],
+      "disclosure_required": true,
+      "claim_review_required": true
+    },
+    {
+      "id": "affiliate-utility-card",
+      "name": "Affiliate Utility Card",
+      "inventory_class": "class-c-affiliate-referral",
+      "surface": "public_guides_and_fan_hubs",
+      "placement_type": "affiliate_card",
+      "allowed_status_badges": ["Affiliate / Referral Link", "Third-Party Provider", "Availability Required"],
+      "blocked_claims": ["DFW controlled fulfillment", "guaranteed provider acceptance"],
+      "disclosure_required": true,
+      "claim_review_required": true
+    },
+    {
+      "id": "media-corporate-public-resource",
+      "name": "Media / Corporate Public Resource Placement",
+      "inventory_class": "class-d-curated-premium-resource",
+      "surface": "public_media_corporate_information_page",
+      "placement_type": "curated_resource",
+      "allowed_status_badges": ["Operator-Reviewed", "Sponsored Placement", "Availability Required"],
+      "blocked_claims": ["private hub sponsor", "guaranteed fleet", "guaranteed invoice approval"],
+      "disclosure_required": true,
+      "claim_review_required": true
+    }
+  ]
+}

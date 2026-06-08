@@ -1,0 +1,34 @@
+{
+  "version": "1.0.1",
+  "status": "hard_superseded_as_generation_authority",
+  "purpose": "Bound the prior mockup reconciliation map under the 22 locked concept mockup proof and retention authority.",
+  "standing": "historical_reconciliation_reference_only",
+  "correct_authority_files": [
+    "docs/dfw-locked-concept-mockups-proof-retention-record-v1.0.0.md",
+    "data/mockup-proof-retention-register.json"
+  ],
+  "locked_concept_count": 22,
+  "superseded_language": [
+    "must_create",
+    "generate_or_annotate_final_revised_mockups_against_this_map_before production implementation",
+    "final revised mockup package incomplete until regenerated"
+  ],
+  "supersession_rules": [
+    "This file does not authorize new mockup generation.",
+    "This file does not authorize replacement of the 22 locked concept mockups.",
+    "This file does not authorize schematic boards, wireframes, or placeholder artifacts as user-review mockups.",
+    "This file may be used only for historical drift analysis and implementation guidance against the locked concept proof stack.",
+    "Any future mockup work requires explicit user authorization and must reference the 22 locked concept mockup proof and retention stack."
+  ],
+  "global_reconciliation_rules_retained_for_reference_only": [
+    "Preserve locked dark navy, black, gold, premium executive visual system.",
+    "Use approved DFW Matchday Concierge logo only.",
+    "Represent executive vehicles as a class, not a guaranteed make or model.",
+    "Show seven lanes: VIP, Team Family, Media / Corporate, Fan Hubs, Drivers, Concierges, Fulfillment.",
+    "Do not show official tournament, team, venue, federation, sponsor, or credential affiliation.",
+    "Do not imply live AI, live payment, live dispatch, live routing, automatic assignment, or guaranteed fulfillment.",
+    "Use operator-assisted, review required, confirmed scope required, and blocked status language where appropriate.",
+    "Premium private hubs remain ad-free unless explicitly approved. Public Fan Hub surfaces may show labeled ad/referral zones."
+  ],
+  "final_status": "hard_superseded_for_generation_use_keep_only_as_historical_reference"
+}

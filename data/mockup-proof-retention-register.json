@@ -1,0 +1,62 @@
+{
+  "version": "1.0.0",
+  "created_utc": "2026-06-01T14:00:00Z",
+  "purpose": "Immediate proof and retention register for DFW Matchday Concierge locked concept mockups uploaded/provided by the user for governed review.",
+  "standing": "proof_and_retention_recorded",
+  "generation_authorization": "blocked_until_explicit_user_directive",
+  "locked_slot_count_declared_by_user": 22,
+  "verification_basis": [
+    "visible uploaded mockup batches in active conversation",
+    "runtime-local mockup image artifacts present in /mnt/data",
+    "SHA-256 proof hashes computed for retained runtime files",
+    "governed reconciliation package already created at docs/dfw-operating-system-final-revised-mockup-reconciliation-package-v1.0.0.md"
+  ],
+  "retention_basis": [
+    "conversation upload surface",
+    "active runtime retention package created outside repo",
+    "repo text proof register",
+    "repo markdown proof record"
+  ],
+  "locked_concept_slots": [
+    {"slot": 1, "title": "Homepage / Command Center", "status": "verified_visible_reference"},
+    {"slot": 2, "title": "VIP Guest Command Hub", "status": "verified_visible_reference"},
+    {"slot": 3, "title": "Team Family Support Command Hub", "status": "verified_visible_reference"},
+    {"slot": 4, "title": "Media / Corporate Command Hub", "status": "verified_visible_reference"},
+    {"slot": 5, "title": "Team Fan Hub", "status": "verified_visible_reference"},
+    {"slot": 6, "title": "Personal Driver Command Hub", "status": "verified_visible_reference"},
+    {"slot": 7, "title": "Concierge Operations Command Hub", "status": "verified_visible_reference"},
+    {"slot": 8, "title": "AI Concierge Discovery + Intake", "status": "verified_visible_reference"},
+    {"slot": 9, "title": "VIP Guest Intake", "status": "verified_visible_reference"},
+    {"slot": 10, "title": "Team Family Support Intake", "status": "verified_visible_reference"},
+    {"slot": 11, "title": "Media / Corporate Intake", "status": "verified_runtime_reference"},
+    {"slot": 12, "title": "Team Fan Hub Activation", "status": "verified_runtime_reference"},
+    {"slot": 13, "title": "Driver Onboarding", "status": "verified_runtime_reference"},
+    {"slot": 14, "title": "Concierge Onboarding", "status": "verified_runtime_reference"},
+    {"slot": 15, "title": "Fulfillment Routing Intake", "status": "verified_runtime_reference"},
+    {"slot": 16, "title": "VIP Guest Profile", "status": "verified_runtime_reference"},
+    {"slot": 17, "title": "Team Family Support Profile", "status": "verified_runtime_reference"},
+    {"slot": 18, "title": "Media / Corporate Profile", "status": "verified_runtime_reference"},
+    {"slot": 19, "title": "Team Fan Hub Profile", "status": "verified_runtime_reference"},
+    {"slot": 20, "title": "Driver Profile", "status": "verified_runtime_reference"},
+    {"slot": 21, "title": "Concierge Profile", "status": "verified_visible_reference", "local_runtime_file": "01DAC7B3-CC35-4E29-9A82-9BFFB8A9E03C.jpeg", "file_id": "file_000000007970722fa929c32c885630e5"},
+    {"slot": 22, "title": "Fulfillment Request Profile", "status": "verified_visible_reference", "local_runtime_file": "C74C4E44-975A-421A-BC60-4B5D54B7356C.jpeg", "file_id": "file_000000002dbc71f5aa159fd5ca8dbb15"}
+  ],
+  "retained_runtime_counts": {
+    "mockup_reference_pngs": 25,
+    "user_upload_jpeg_captures": 13,
+    "archival_zip_created": true
+  },
+  "retention_package": {
+    "local_archive": "/mnt/data/dfw-locked-concept-mockups-proof-retention-package-v1.0.0.zip",
+    "local_manifest": "/mnt/data/dfw-locked-concept-mockups-proof-retention-manifest-v1.0.0.json",
+    "local_record": "/mnt/data/dfw-locked-concept-mockups-proof-retention-record-v1.0.0.md"
+  },
+  "proof_policy": "The proof register preserves slot inventory, runtime retention package reference, and generated SHA-256 manifest outside repo. Binary repository retention or release-asset upload requires separate explicit archival direction.",
+  "restrictions": [
+    "No additional mockup generation is authorized.",
+    "No visual redesign is authorized.",
+    "No production deployment is authorized.",
+    "No final QR activation is authorized."
+  ],
+  "next_allowed_use": "Governance reconciliation, drift annotation, and implementation guidance only."
+}

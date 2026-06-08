@@ -1,0 +1,10 @@
+{
+  "services": [
+    {"id":"private-transportation","slug":"private-transportation","title":"Private Matchday Transportation","capability_status":"Live Capability","claim_ids":["private-transportation"],"public_positioning":"Private airport, hotel, stadium, stop, and return movement through direct coordination."},
+    {"id":"airport-transfers","slug":"airport-transfers","title":"Airport Arrival and Departure Transfers","capability_status":"Live Capability","claim_ids":["airport-transfers"],"public_positioning":"Prepared DFW Airport and Love Field movement with luggage and hotel timing."},
+    {"id":"matchday-logistics","slug":"matchday-logistics","title":"Matchday Logistics","capability_status":"Operator-Assisted Capability","claim_ids":["matchday-logistics"],"public_positioning":"Operator-assisted arrival, post-match pickup, return, and multi-stop timing."},
+    {"id":"trip-value-concierge","slug":"trip-value-concierge","title":"Trip-Value Concierge","capability_status":"Operator-Assisted Capability","claim_ids":["trip-value-protection","food-snacks-water-coffee-cooler"],"public_positioning":"Food pickup, snacks, water, coffee, cooler setup, ice, cups, lawful drink coordination, and comfort requests when directly planned."},
+    {"id":"luggage-coordination","slug":"luggage-coordination","title":"Luggage Coordination","capability_status":"Operator-Assisted Capability","claim_ids":["luggage-coordination"],"public_positioning":"Luggage count, loading, hotel timing, and fit planning."},
+    {"id":"tickets","slug":"tickets","title":"Ticket Coordination Boundary","capability_status":"Restricted Capability","claim_ids":["ticket-coordination-boundary"],"public_positioning":"Controlled intake for ticket needs, extra ticket posts, official-channel guidance, and safe handoff inquiries without brokerage, resale, escrow, authentication, or validity guarantees."}
+  ]
+}

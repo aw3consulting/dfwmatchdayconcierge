@@ -1,0 +1,48 @@
+{
+  "payment_methods": [
+    {
+      "id": "zelle",
+      "label": "Zelle",
+      "status": "operator-confirmed",
+      "supported_for": ["deposit", "balance", "group booking"]
+    },
+    {
+      "id": "cash-app",
+      "label": "Cash App",
+      "status": "operator-confirmed",
+      "supported_for": ["deposit", "balance"]
+    },
+    {
+      "id": "venmo",
+      "label": "Venmo",
+      "status": "operator-confirmed",
+      "supported_for": ["deposit", "balance"]
+    },
+    {
+      "id": "square-link",
+      "label": "Square Payment Link",
+      "status": "operator-confirmed",
+      "supported_for": ["card-payment", "invoice", "corporate"]
+    },
+    {
+      "id": "revolut-request",
+      "label": "Revolut Payment Request",
+      "status": "development",
+      "supported_for": ["international-payment-request"],
+      "public_note": "International payment options may be available by request."
+    },
+    {
+      "id": "cash-approved",
+      "label": "Approved Cash Payment",
+      "status": "restricted",
+      "supported_for": ["approved-cases-only"]
+    }
+  ],
+  "deposit_logic": {
+    "standard_ride": "deposit_required",
+    "matchday_package": "larger_deposit_required",
+    "food_drink_cooler": "prepaid_or_reimbursement_required",
+    "large_group": "quote_and_deposit_required",
+    "recurring_schedule": "quote_and_deposit_required"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "languages": [
+    {"code":"en","name":"English","route":"/"},
+    {"code":"es","name":"Spanish","route":"/es/"},
+    {"code":"ja","name":"Japanese","route":"/ja/"},
+    {"code":"nl","name":"Dutch","route":"/nl/"},
+    {"code":"de","name":"German","route":"/de/"},
+    {"code":"sv","name":"Swedish","route":"/sv/"},
+    {"code":"hr","name":"Croatian","route":"/hr/"},
+    {"code":"ar","name":"Arabic","route":"/ar/"}
+  ],
+  "capability_status": "Development Capability",
+  "review_rule": "Language starter routes may publish. Full multilingual support requires human review."
+}

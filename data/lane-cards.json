@@ -1,0 +1,38 @@
+{
+  "version": "1.0.1",
+  "governance": "DFW bounded frontend shell implementation with executive vehicle class correction",
+  "lanes": [
+    {
+      "id": "vip",
+      "name": "VIP Guest Concierge",
+      "badge": "Operator Review Required",
+      "description": "Private scheduled matchday planning with Black Executive Vehicle Class eligibility for approved VIP and executive bookings.",
+      "boundary": "Vehicle class and operator assignment require review, quote, payment/deposit approval, and availability confirmation.",
+      "href": "vip/"
+    },
+    {
+      "id": "team-family",
+      "name": "Team Family Support",
+      "badge": "Privacy-Sensitive",
+      "description": "Representative-friendly support for privacy-sensitive family, team-adjacent, or federation-linked planning.",
+      "boundary": "No official team relationship, access, or credential validation is claimed.",
+      "href": "team-family/"
+    },
+    {
+      "id": "media-corporate",
+      "name": "Media / Corporate",
+      "badge": "Quote Required",
+      "description": "Coordinator-led support for media crews, sponsors, executives, groups, equipment, catering, and recurring schedules.",
+      "boundary": "Fleet, provider, invoice, and assignment availability require operator review.",
+      "href": "media-corporate/"
+    },
+    {
+      "id": "team-fan-hubs",
+      "name": "Team Fan Hubs",
+      "badge": "Free Guidance + Activated Planning",
+      "description": "Team, language, route, food, Fan Experience, shared ride, sightseeing, and activated planning support.",
+      "boundary": "Shared ride matching and fulfillment are operator-confirmed and not guaranteed automatically.",
+      "href": "fans/"
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "version": "1.0.0",
+  "governed_action": "dfw_full_information_gateway_and_ad_inventory_mockup_revision_package",
+  "production_status": "blocked",
+  "frontend_implementation_authorized": false,
+  "modules": [
+    {
+      "id": "hero-information-planning-hub",
+      "priority": 1,
+      "name": "Information + Planning Hub Hero",
+      "surface": "homepage",
+      "purpose": "Position DFW Matchday Concierge as a premium public information and planning hub while keeping inquiry primary.",
+      "primary_cta": "Start Inquiry",
+      "secondary_cta": "Open Public Guide",
+      "status_badges": ["Information Only", "Planning Value"],
+      "claim_review_required": true
+    },
+    {
+      "id": "public-sponsor-rail",
+      "priority": 2,
+      "name": "Public Sponsor Rail",
+      "surface": "homepage",
+      "purpose": "Show sponsor-safe premium inventory below the primary CTA path.",
+      "allowed_inventory_classes": ["class-a-founding-premium"],
+      "status_badges": ["Sponsored Placement", "Information Only"],
+      "disclosure_required": true,
+      "claim_review_required": true
+    },
+    {
+      "id": "match-schedule-module",
+      "priority": 3,
+      "name": "Dallas Match Schedule Module",
+      "surface": "public_information_gateway",
+      "purpose": "Provide Dallas match schedule orientation using verified public information sources.",
+      "status_badges": ["Information Only", "Official Source"],
+      "claim_review_required": true
+    },
+    {
+      "id": "airport-arrival-module",
+      "priority": 4,
+      "name": "Airport Arrival Planning Module",
+      "surface": "public_information_gateway",
+      "purpose": "Guide visitors through DFW Airport and Love Field arrival planning without guaranteeing transportation fulfillment.",
+      "status_badges": ["Information Only", "Planning Value", "Availability Required"],
+      "claim_review_required": true
+    },
+    {
+      "id": "stadium-movement-module",
+      "priority": 5,
+      "name": "Stadium Movement Module",
+      "surface": "public_information_gateway",
+      "purpose": "Provide stadium movement and timing guidance while live routing remains blocked unless later approved.",
+      "status_badges": ["Information Only"],
+      "claim_review_required": true
+    },
+    {
+      "id": "fan-festival-module",
+      "priority": 6,
+      "name": "Fan Festival and Public Event Guidance Module",
+      "surface": "public_information_gateway",
+      "purpose": "Route visitors to official-source public fan experience information and planning guidance.",
+      "status_badges": ["Information Only", "Official Source"],
+      "claim_review_required": true
+    },
+    {
+      "id": "hotel-area-module",
+      "priority": 7,
+      "name": "Hotel-Area Planning Module",
+      "surface": "public_information_gateway",
+      "purpose": "Organize visitor hotel-area orientation, nearby food, attractions, airport movement, and stadium connection planning.",
+      "status_badges": ["Information Only", "Affiliate / Referral Link", "Third-Party Provider"],
+      "disclosure_required": true,
+      "claim_review_required": true
+    },
+    {
+      "id": "restaurant-watch-party-module",
+      "priority": 8,
+      "name": "Restaurant and Watch-Party Module",
+      "surface": "public_information_gateway",
+      "purpose": "Create monetizable public food, bar, and watch-party guide surfaces with availability and third-party disclosure.",
+      "status_badges": ["Sponsored Placement", "Third-Party Provider", "Availability Required"],
+      "disclosure_required": true,
+      "claim_review_required": true
+    },
+    {
+      "id": "team-fan-hub-module",
+      "priority": 9,
+      "name": "Team Fan Hub Module",
+      "surface": "team_fan_hub",
+      "purpose": "Serve team and country fan traffic through scalable information, sponsored guide cards, referral cards, and activated planning conversion.",
+      "status_badges": ["Information Only", "Sponsored Placement", "Affiliate / Referral Link", "Planning Value"],
+      "disclosure_required": true,
+      "claim_review_required": true
+    },
+    {
+      "id": "media-corporate-public-planning-module",
+      "priority": 10,
+      "name": "Media / Corporate Public Planning Module",
+      "surface": "public_media_corporate_information_page",
+      "purpose": "Support coordinator-led group planning, quote preparation, schedule intake, vehicle count, equipment, luggage, and catering requests.",
+      "status_badges": ["Operator-Reviewed", "Quote Required", "Availability Required"],
+      "claim_review_required": true
+    },
+    {
+      "id": "partner-advertise-module",
+      "priority": 11,
+      "name": "Partner / Advertise Module",
+      "surface": "partner_advertise_page",
+      "purpose": "Show sponsor and partner inventory classes, qualification fields, inquiry CTA, and claim-safe commercial language.",
+      "status_badges": ["Information Only"],
+      "claim_review_required": true
+    },
+    {
+      "id": "internal-inventory-control-module",
+      "priority": 12,
+      "name": "Internal Inventory Control Module",
+      "surface": "operator_admin_layer",
+      "purpose": "Track sponsor status, placement status, dates, disclosure, approval, claim review, blocked surfaces, and renewal/removal rules.",
+      "status_badges": ["Restricted"],
+      "public_surface_allowed": false,
+      "claim_review_required": true
+    }
+  ]
+}

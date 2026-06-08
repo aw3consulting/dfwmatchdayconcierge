@@ -1,0 +1,19 @@
+{
+  "allowed_statuses": [
+    "Live Capability",
+    "Operator-Assisted Capability",
+    "Development Capability",
+    "Restricted Capability"
+  ],
+  "claims": [
+    {"id":"private-transportation","public_claim":"Private transportation","status":"Live Capability","public_use_rule":"Allowed through direct contact and inquiry flow."},
+    {"id":"airport-transfers","public_claim":"Airport transfers","status":"Live Capability","public_use_rule":"Allowed through direct booking workflow."},
+    {"id":"matchday-logistics","public_claim":"Matchday logistics","status":"Operator-Assisted Capability","public_use_rule":"Allowed with direct coordination language."},
+    {"id":"trip-value-protection","public_claim":"Trip-value protection","status":"Operator-Assisted Capability","public_use_rule":"Allowed as preparation, timing control, and reduced-friction coordination."},
+    {"id":"food-snacks-water-coffee-cooler","public_claim":"Food, snacks, water, coffee, cooler setup, ice, cups, and comfort items","status":"Operator-Assisted Capability","public_use_rule":"Allowed as custom coordination after operator feasibility review."},
+    {"id":"luggage-coordination","public_claim":"Luggage coordination","status":"Operator-Assisted Capability","public_use_rule":"Allowed as planning and handling coordination."},
+    {"id":"scores-and-updates","public_claim":"Scores and updates","status":"Development Capability","public_use_rule":"Do not market as live scores until a controlled update workflow exists."},
+    {"id":"multilingual-support","public_claim":"Multilingual support","status":"Development Capability","public_use_rule":"Do not claim full support until language pages are human reviewed and live."},
+    {"id":"ticket-coordination-boundary","public_claim":"Ticket coordination boundary","status":"Restricted Capability","public_use_rule":"Controlled inquiry language only. Public copy must follow data/ticket-rules.json."}
+  ]
+}
