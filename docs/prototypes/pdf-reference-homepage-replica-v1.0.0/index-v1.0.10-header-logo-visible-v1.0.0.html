@@ -4,12 +4,9 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>DFW Matchday Concierge - v1.0.10 Header Logo Visible Preview</title>
-<meta name="description" content="Controlled v1.0.10 homepage preview that loads the locked homepage and forces the header PNG logo through an absolute CDN asset path for visible browser review." />
+<meta name="description" content="Controlled v1.0.10 homepage preview using one CDN base path for raster assets." />
 <style>
-  html,body{margin:0;min-height:100%;background:#000;color:#f4f7f2;font-family:Arial,Helvetica,sans-serif}
-  .boot{min-height:100vh;display:grid;place-items:center;text-align:center;padding:24px;color:#f0c86b;background:#020b13}
-  .boot b{display:block;margin-bottom:8px;text-transform:uppercase;letter-spacing:.06em}
-  .boot small{color:#c7d5dc}
+html,body{margin:0;min-height:100%;background:#000;color:#f4f7f2;font-family:Arial,Helvetica,sans-serif}.boot{min-height:100vh;display:grid;place-items:center;text-align:center;padding:24px;color:#f0c86b;background:#020b13}.boot b{display:block;margin-bottom:8px;text-transform:uppercase;letter-spacing:.06em}.boot small{color:#c7d5dc}
 </style>
 </head>
 <body>
@@ -17,30 +14,19 @@
 <script>
 (function(){
   var version = String(Date.now());
-  var base = 'https://cdn.jsdelivr.net/gh/aw3consulting/dfwmatchdayconcierge@main/docs/prototypes/pdf-reference-homepage-replica-v1.0.0/';
-  var homepage = base + 'index-v1.0.10.html?v=' + version;
-  var logo = base + 'assets/images/logos/dfw-logo-header-raster-v1.0.2.png?v=' + version;
-
-  function injectVerification(){
-    var script = document.createElement('script');
-    script.textContent = "(function(){function verify(){var img=document.querySelector('.site-header .logo-placeholder img');var ok=!!(img&&img.complete&&img.naturalWidth>0&&img.naturalHeight>0);if(img){img.setAttribute('width','54');img.setAttribute('height','54');img.style.cssText+=';display:block!important;visibility:visible!important;opacity:1!important;width:54px!important;height:54px!important;object-fit:contain!important;filter:none!important;';}window.__DFW_HEADER_LOGO_VISIBLE__=ok;if(!ok){var label=document.createElement('div');label.textContent='HEADER LOGO PNG NOT VISIBLE';label.style.cssText='position:fixed;left:8px;top:64px;z-index:99999;background:#b00020;color:#fff;font:700 11px Arial;padding:6px 8px;border-radius:4px';document.body.appendChild(label);console.error('DFW header logo not visible', img);}else{console.log('DFW header logo visible', {naturalWidth:img.naturalWidth,naturalHeight:img.naturalHeight,src:img.currentSrc||img.src});}}window.addEventListener('load',function(){setTimeout(verify,100);});})();";
-    document.body.appendChild(script);
-  }
-
+  var assetRoot = 'https://cdn.jsdelivr.net/gh/aw3consulting/dfwmatchdayconcierge@main/docs/prototypes/pdf-reference-homepage-replica-v1.0.0/';
+  var homepage = assetRoot + 'index-v1.0.10.html?v=' + version;
   fetch(homepage, {cache:'no-store'})
     .then(function(response){
       if(!response.ok){ throw new Error('Unable to load v1.0.10 homepage: HTTP ' + response.status); }
       return response.text();
     })
     .then(function(html){
-      html = html.replace('<head>', '<head><base href="' + base + '">');
-      html = html.replaceAll('./assets/images/logos/dfw-logo-header-raster-v1.0.2.png', logo);
-      html = html.replaceAll('assets/images/logos/dfw-logo-header-raster-v1.0.2.png', logo);
-      html = html.replace('</body>', '<script>window.__DFW_HEADER_LOGO_PREVIEW_SOURCE__="index-v1.0.10.html";<\/script></body>');
+      html = html.replace(/<base[^>]*>/ig, '');
+      html = html.replace('<head>', '<head><base href="' + assetRoot + '">');
       document.open();
       document.write(html);
       document.close();
-      setTimeout(injectVerification, 0);
     })
     .catch(function(error){
       document.body.innerHTML = '<div class="boot"><div><b>Preview load failed</b><small>' + String(error.message || error) + '</small></div></div>';
