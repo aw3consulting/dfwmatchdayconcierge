@@ -13,7 +13,7 @@ permissions:
 
 jobs:
   deploy-preview:
-    name: Deploy preview.dfwmatchdayconcierge.com
+    name: Deploy DreamHost preview path
     runs-on: ubuntu-latest
 
     steps:
@@ -43,7 +43,15 @@ jobs:
           chmod 600 ~/.ssh/dreamhost_preview_key
           ssh-keyscan -p "${{ secrets.DREAMHOST_PORT }}" "${{ secrets.DREAMHOST_HOST }}" >> ~/.ssh/known_hosts
 
-      - name: Deploy to DreamHost preview
+      - name: Ensure DreamHost preview directory exists
+        shell: bash
+        run: |
+          set -euo pipefail
+          ssh -i ~/.ssh/dreamhost_preview_key -p "${{ secrets.DREAMHOST_PORT }}" \
+            "${{ secrets.DREAMHOST_USER }}@${{ secrets.DREAMHOST_HOST }}" \
+            "mkdir -p '${{ secrets.DREAMHOST_TARGET_DIR }}'"
+
+      - name: Deploy to DreamHost preview path
         shell: bash
         run: |
           set -euo pipefail
