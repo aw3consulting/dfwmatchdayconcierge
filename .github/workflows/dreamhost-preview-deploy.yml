@@ -13,14 +13,17 @@ on:
     paths:
       - .github/workflows/dreamhost-preview-deploy.yml
       - .github/dreamhost-preview-deploy-request.txt
+  schedule:
+    - cron: "*/5 * * * *"
 
 permissions:
-  contents: read
+  contents: write
 
 env:
   LIVE_ROOT: /home/dfw_webadmin/preview.dfwmatchdayconcierge.com
   STAGING_ROOT: /home/dfw_webadmin/staging.dfwmatchdayconcierge.com
   PREVIEW_PATH: preview
+  RESULT_FILE: docs/deployment/dreamhost-preview-deployment-result.json
 
 jobs:
   deploy-preview:
@@ -30,33 +33,13 @@ jobs:
     timeout-minutes: 10
 
     steps:
-      - name: Checkout deploy authorization file
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Require explicit preview confirmation
+      - name: Execute DreamHost preview deployment
+        id: deploy
         shell: bash
-        run: |
-          set -euo pipefail
-
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            if [ "${{ github.event.inputs.confirm_preview_deploy }}" != "DEPLOY_PREVIEW" ]; then
-              echo "Refusing to run. confirm_preview_deploy must equal DEPLOY_PREVIEW."
-              exit 1
-            fi
-          else
-            if [ ! -f .github/dreamhost-preview-deploy-request.txt ]; then
-              echo "Refusing to run. Missing .github/dreamhost-preview-deploy-request.txt."
-              exit 1
-            fi
-            deploy_request="$(tr -d '\r\n ' < .github/dreamhost-preview-deploy-request.txt)"
-            if [ "$deploy_request" != "DEPLOY_PREVIEW" ]; then
-              echo "Refusing to run. Deploy request file must contain DEPLOY_PREVIEW only."
-              exit 1
-            fi
-          fi
-
-      - name: Validate required secrets
-        shell: bash
+        continue-on-error: true
         env:
           DREAMHOST_SSH_HOST: ${{ secrets.DREAMHOST_SSH_HOST }}
           DREAMHOST_SSH_PORT: ${{ secrets.DREAMHOST_SSH_PORT }}
@@ -66,7 +49,52 @@ jobs:
           DFW_PREVIEW_BASIC_AUTH_USER: ${{ secrets.DFW_PREVIEW_BASIC_AUTH_USER }}
           DFW_PREVIEW_BASIC_AUTH_PASS: ${{ secrets.DFW_PREVIEW_BASIC_AUTH_PASS }}
         run: |
-          set -euo pipefail
+          set -uo pipefail
+          mkdir -p "$(dirname "$RESULT_FILE")"
+
+          write_result() {
+            local status="$1"
+            local detail="$2"
+            python3 - <<PY
+import json, os, datetime
+payload = {
+  "mission": "dfw_dreamhost_preview_deployment_execution_v1_0_0",
+  "status": ${status@Q},
+  "detail": ${detail@Q},
+  "preview_url": "https://dfwmatchdayconcierge.com/preview/",
+  "live_root": os.environ.get("LIVE_ROOT"),
+  "staging_root": os.environ.get("STAGING_ROOT"),
+  "preview_path": os.environ.get("PREVIEW_PATH"),
+  "commit": os.environ.get("GITHUB_SHA"),
+  "run_id": os.environ.get("GITHUB_RUN_ID"),
+  "run_attempt": os.environ.get("GITHUB_RUN_ATTEMPT"),
+  "event": os.environ.get("GITHUB_EVENT_NAME"),
+  "written_at_utc": datetime.datetime.utcnow().replace(microsecond=0).isoformat() + "Z"
+}
+os.makedirs(os.path.dirname(os.environ["RESULT_FILE"]), exist_ok=True)
+with open(os.environ["RESULT_FILE"], "w", encoding="utf-8") as f:
+  json.dump(payload, f, indent=2)
+  f.write("\n")
+PY
+          }
+
+          if [ "${GITHUB_EVENT_NAME:-}" = "workflow_dispatch" ]; then
+            if [ "${{ github.event.inputs.confirm_preview_deploy }}" != "DEPLOY_PREVIEW" ]; then
+              write_result "FAILED" "workflow_dispatch input did not equal DEPLOY_PREVIEW"
+              exit 1
+            fi
+          else
+            if [ ! -f .github/dreamhost-preview-deploy-request.txt ]; then
+              write_result "FAILED" "missing .github/dreamhost-preview-deploy-request.txt"
+              exit 1
+            fi
+            deploy_request="$(tr -d '\r\n ' < .github/dreamhost-preview-deploy-request.txt)"
+            if [ "$deploy_request" != "DEPLOY_PREVIEW" ]; then
+              write_result "FAILED" "deploy request file does not contain DEPLOY_PREVIEW"
+              exit 1
+            fi
+          fi
+
           required=(
             DREAMHOST_SSH_HOST
             DREAMHOST_SSH_PORT
@@ -78,34 +106,16 @@ jobs:
           )
           for key in "${required[@]}"; do
             if [ -z "${!key:-}" ]; then
-              echo "Missing required secret: $key"
+              write_result "FAILED" "missing required secret: $key"
               exit 1
             fi
           done
 
-      - name: Configure SSH
-        shell: bash
-        env:
-          DREAMHOST_SSH_PRIVATE_KEY: ${{ secrets.DREAMHOST_SSH_PRIVATE_KEY }}
-          DREAMHOST_KNOWN_HOSTS: ${{ secrets.DREAMHOST_KNOWN_HOSTS }}
-        run: |
-          set -euo pipefail
           install -m 700 -d ~/.ssh
           printf '%s\n' "$DREAMHOST_SSH_PRIVATE_KEY" > ~/.ssh/dreamhost_preview_key
           chmod 600 ~/.ssh/dreamhost_preview_key
           printf '%s\n' "$DREAMHOST_KNOWN_HOSTS" > ~/.ssh/known_hosts
           chmod 644 ~/.ssh/known_hosts
-
-      - name: Deploy DreamHost staging files to protected preview path
-        shell: bash
-        env:
-          DREAMHOST_SSH_HOST: ${{ secrets.DREAMHOST_SSH_HOST }}
-          DREAMHOST_SSH_PORT: ${{ secrets.DREAMHOST_SSH_PORT }}
-          DREAMHOST_SSH_USER: ${{ secrets.DREAMHOST_SSH_USER }}
-          DFW_PREVIEW_BASIC_AUTH_USER: ${{ secrets.DFW_PREVIEW_BASIC_AUTH_USER }}
-          DFW_PREVIEW_BASIC_AUTH_PASS: ${{ secrets.DFW_PREVIEW_BASIC_AUTH_PASS }}
-        run: |
-          set -euo pipefail
 
           auth_user_b64="$(printf '%s' "$DFW_PREVIEW_BASIC_AUTH_USER" | base64 -w0)"
           auth_pass_b64="$(printf '%s' "$DFW_PREVIEW_BASIC_AUTH_PASS" | base64 -w0)"
@@ -120,7 +130,6 @@ set -euo pipefail
 
 DFW_PREVIEW_BASIC_AUTH_USER="$(printf '%s' "$DFW_PREVIEW_BASIC_AUTH_USER_B64" | base64 -d)"
 DFW_PREVIEW_BASIC_AUTH_PASS="$(printf '%s' "$DFW_PREVIEW_BASIC_AUTH_PASS_B64" | base64 -d)"
-
 PREVIEW_ROOT="$LIVE_ROOT/$PREVIEW_PATH"
 STAMP="$(date +%Y%m%d-%H%M%S)"
 HTPASSWD_FILE="$HOME/.htpasswd_dfw_preview"
@@ -129,36 +138,28 @@ if [ "$PREVIEW_ROOT" = "$LIVE_ROOT" ] || [ -z "$PREVIEW_PATH" ]; then
   echo "FAIL: unsafe preview path"
   exit 1
 fi
-
 case "$LIVE_ROOT" in
   /home/dfw_webadmin/preview.dfwmatchdayconcierge.com) ;;
-  *) echo "FAIL: LIVE_ROOT is outside the governed path: $LIVE_ROOT"; exit 1 ;;
+  *) echo "FAIL: LIVE_ROOT outside governed path: $LIVE_ROOT"; exit 1 ;;
 esac
-
 case "$STAGING_ROOT" in
   /home/dfw_webadmin/staging.dfwmatchdayconcierge.com) ;;
-  *) echo "FAIL: STAGING_ROOT is outside the governed path: $STAGING_ROOT"; exit 1 ;;
+  *) echo "FAIL: STAGING_ROOT outside governed path: $STAGING_ROOT"; exit 1 ;;
 esac
 
-echo "DFW DreamHost protected preview deployment :: $STAMP"
-
-test -d "$LIVE_ROOT" || { echo "FAIL: LIVE_ROOT missing: $LIVE_ROOT"; exit 1; }
-test -d "$STAGING_ROOT" || { echo "FAIL: STAGING_ROOT missing: $STAGING_ROOT"; exit 1; }
-test -f "$STAGING_ROOT/index.html" || { echo "FAIL: staging index.html missing"; exit 1; }
-test -d "$STAGING_ROOT/assets" || { echo "FAIL: staging assets/ missing"; exit 1; }
-test -f "$STAGING_ROOT/connect/index.html" || { echo "FAIL: staging connect/index.html missing"; exit 1; }
+test -d "$LIVE_ROOT"
+test -d "$STAGING_ROOT"
+test -f "$STAGING_ROOT/index.html"
+test -d "$STAGING_ROOT/assets"
+test -f "$STAGING_ROOT/connect/index.html"
 
 if [ -d "$PREVIEW_ROOT" ]; then
   mv "$PREVIEW_ROOT" "$LIVE_ROOT/preview.backup.$STAMP"
 fi
-
 mkdir -p "$PREVIEW_ROOT"
 rsync -a --delete --exclude ".git" "$STAGING_ROOT"/ "$PREVIEW_ROOT"/
 
-printf "%s:%s\n" \
-  "$DFW_PREVIEW_BASIC_AUTH_USER" \
-  "$(openssl passwd -apr1 "$DFW_PREVIEW_BASIC_AUTH_PASS")" \
-  > "$HTPASSWD_FILE"
+printf "%s:%s\n" "$DFW_PREVIEW_BASIC_AUTH_USER" "$(openssl passwd -apr1 "$DFW_PREVIEW_BASIC_AUTH_PASS")" > "$HTPASSWD_FILE"
 chmod 600 "$HTPASSWD_FILE"
 
 cat > "$PREVIEW_ROOT/.htaccess" <<EOF
@@ -174,39 +175,42 @@ Header set X-Robots-Tag "noindex, nofollow, noarchive"
 EOF
 
 find "$PREVIEW_ROOT" -type f -name "*.html" -exec perl -0pi -e 's#</head>#<meta name="robots" content="noindex,nofollow,noarchive"></head>#i unless /name=["'"'"'']robots["'"'"'']/i' {} \;
-
 find "$PREVIEW_ROOT" -type f \( -name "*.html" -o -name "*.css" -o -name "*.js" \) -exec perl -0pi -e '
   s#(src|href)=["'"'"'']/(assets/)#$1="/preview/$2#g;
   s#(src|href)=["'"'"'']/(connect/)#$1="/preview/$2#g;
   s#url\((["'"'"'']?)/(assets/)#url($1/preview/$2#g;
 ' {} +
-
-echo "PREVIEW_DEPLOYED=https://dfwmatchdayconcierge.com/preview/"
-echo "LIVE_ROOT_PRESERVED=$LIVE_ROOT"
-echo "PREVIEW_ROOT=$PREVIEW_ROOT"
 REMOTE_SCRIPT
-
-      - name: Validate protected preview HTTP responses
-        shell: bash
-        env:
-          DFW_PREVIEW_BASIC_AUTH_USER: ${{ secrets.DFW_PREVIEW_BASIC_AUTH_USER }}
-          DFW_PREVIEW_BASIC_AUTH_PASS: ${{ secrets.DFW_PREVIEW_BASIC_AUTH_PASS }}
-        run: |
-          set -euo pipefail
 
           root_status="$(curl -s -o /dev/null -w '%{http_code}' https://dfwmatchdayconcierge.com/)"
           preview_public_status="$(curl -s -o /dev/null -w '%{http_code}' https://dfwmatchdayconcierge.com/preview/)"
           preview_auth_status="$(curl -s -o /dev/null -w '%{http_code}' -u "$DFW_PREVIEW_BASIC_AUTH_USER:$DFW_PREVIEW_BASIC_AUTH_PASS" https://dfwmatchdayconcierge.com/preview/)"
           connect_auth_status="$(curl -s -o /dev/null -w '%{http_code}' -u "$DFW_PREVIEW_BASIC_AUTH_USER:$DFW_PREVIEW_BASIC_AUTH_PASS" https://dfwmatchdayconcierge.com/preview/connect/)"
 
-          echo "root_status=$root_status"
-          echo "preview_public_status=$preview_public_status"
-          echo "preview_auth_status=$preview_auth_status"
-          echo "connect_auth_status=$connect_auth_status"
+          if [ "$root_status" != "200" ] || [ "$preview_public_status" != "401" ] || [ "$preview_auth_status" != "200" ] || [ "$connect_auth_status" != "200" ]; then
+            write_result "FAILED" "validation failed: root=$root_status preview_public=$preview_public_status preview_auth=$preview_auth_status connect_auth=$connect_auth_status"
+            exit 1
+          fi
 
-          test "$root_status" = "200"
-          test "$preview_public_status" = "401"
-          test "$preview_auth_status" = "200"
-          test "$connect_auth_status" = "200"
+          write_result "DEPLOYED" "validation passed: root=200 preview_public=401 preview_auth=200 connect_auth=200"
 
-          echo "DreamHost protected preview validation passed."
+      - name: Commit deployment result
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if [ ! -f "$RESULT_FILE" ]; then
+            mkdir -p "$(dirname "$RESULT_FILE")"
+            printf '{\n  "mission": "dfw_dreamhost_preview_deployment_execution_v1_0_0",\n  "status": "FAILED",\n  "detail": "workflow ended before result file was written"\n}\n' > "$RESULT_FILE"
+          fi
+          git add "$RESULT_FILE"
+          git commit -m "Record DreamHost preview deployment result" || true
+          git push || true
+
+      - name: Enforce deployment result
+        shell: bash
+        run: |
+          set -euo pipefail
+          grep -q '"status": "DEPLOYED"' "$RESULT_FILE"
