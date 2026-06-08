@@ -1,0 +1,16 @@
+{
+  "version": "production-image-structure-v1.0.0",
+  "site_root": "/",
+  "image_policy": {
+    "production_image_root": "assets/img/",
+    "allowed_raster_extensions": ["png", "jpg", "jpeg", "webp"],
+    "homepage_dependency_rule": "Production homepage must not load image assets from docs/prototypes or superseded preview folders.",
+    "qr_destination": "https://dfwmatchdayconcierge.com/connect"
+  },
+  "assets": {
+    "brand_header": "assets/img/brand/dfw-logo-header.png",
+    "brand_footer": "assets/img/brand/dfw-logo-footer.png",
+    "hero": "assets/img/hero/dfw-matchday-hero.png",
+    "connect_qr": "assets/img/qr/connect-qr.png"
+  }
+}
