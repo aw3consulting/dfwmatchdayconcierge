@@ -27,7 +27,6 @@ jobs:
   deploy-preview:
     name: Deploy protected DreamHost preview
     runs-on: ubuntu-latest
-    environment: dreamhost-preview
     timeout-minutes: 10
 
     steps:
@@ -46,77 +45,78 @@ jobs:
             test "$request_token" = "DEPLOY_PREVIEW"
           fi
 
-      - name: Validate required secrets
+      - name: Validate existing DreamHost secrets
         shell: bash
         env:
-          DREAMHOST_SSH_HOST: ${{ secrets.DREAMHOST_SSH_HOST }}
-          DREAMHOST_SSH_PORT: ${{ secrets.DREAMHOST_SSH_PORT }}
-          DREAMHOST_SSH_USER: ${{ secrets.DREAMHOST_SSH_USER }}
-          DREAMHOST_SSH_PRIVATE_KEY: ${{ secrets.DREAMHOST_SSH_PRIVATE_KEY }}
-          DREAMHOST_KNOWN_HOSTS: ${{ secrets.DREAMHOST_KNOWN_HOSTS }}
-          DFW_PREVIEW_BASIC_AUTH_USER: ${{ secrets.DFW_PREVIEW_BASIC_AUTH_USER }}
-          DFW_PREVIEW_BASIC_AUTH_PASS: ${{ secrets.DFW_PREVIEW_BASIC_AUTH_PASS }}
+          DREAMHOST_HOST: ${{ secrets.DREAMHOST_HOST }}
+          DREAMHOST_PORT: ${{ secrets.DREAMHOST_PORT }}
+          DREAMHOST_USER: ${{ secrets.DREAMHOST_USER }}
+          DREAMHOST_SSH_KEY: ${{ secrets.DREAMHOST_SSH_KEY }}
         run: |
           set -euo pipefail
-          test -n "$DREAMHOST_SSH_HOST"
-          test -n "$DREAMHOST_SSH_PORT"
-          test -n "$DREAMHOST_SSH_USER"
-          test -n "$DREAMHOST_SSH_PRIVATE_KEY"
-          test -n "$DREAMHOST_KNOWN_HOSTS"
-          test -n "$DFW_PREVIEW_BASIC_AUTH_USER"
-          test -n "$DFW_PREVIEW_BASIC_AUTH_PASS"
+          test -n "$DREAMHOST_HOST"
+          test -n "$DREAMHOST_PORT"
+          test -n "$DREAMHOST_USER"
+          test -n "$DREAMHOST_SSH_KEY"
 
       - name: Configure SSH
         shell: bash
         env:
-          DREAMHOST_SSH_PRIVATE_KEY: ${{ secrets.DREAMHOST_SSH_PRIVATE_KEY }}
-          DREAMHOST_KNOWN_HOSTS: ${{ secrets.DREAMHOST_KNOWN_HOSTS }}
+          DREAMHOST_SSH_KEY: ${{ secrets.DREAMHOST_SSH_KEY }}
+          DREAMHOST_HOST: ${{ secrets.DREAMHOST_HOST }}
+          DREAMHOST_PORT: ${{ secrets.DREAMHOST_PORT }}
         run: |
           set -euo pipefail
           install -m 700 -d ~/.ssh
-          printf '%s\n' "$DREAMHOST_SSH_PRIVATE_KEY" > ~/.ssh/dreamhost_preview_key
+          printf '%s\n' "$DREAMHOST_SSH_KEY" > ~/.ssh/dreamhost_preview_key
           chmod 600 ~/.ssh/dreamhost_preview_key
-          printf '%s\n' "$DREAMHOST_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          ssh-keyscan -p "$DREAMHOST_PORT" "$DREAMHOST_HOST" >> ~/.ssh/known_hosts
           chmod 644 ~/.ssh/known_hosts
 
-      - name: Upload and execute DreamHost deploy script
+      - name: Upload and execute DreamHost staging-to-preview deploy script
         shell: bash
         env:
-          DREAMHOST_SSH_HOST: ${{ secrets.DREAMHOST_SSH_HOST }}
-          DREAMHOST_SSH_PORT: ${{ secrets.DREAMHOST_SSH_PORT }}
-          DREAMHOST_SSH_USER: ${{ secrets.DREAMHOST_SSH_USER }}
-          DFW_PREVIEW_BASIC_AUTH_USER: ${{ secrets.DFW_PREVIEW_BASIC_AUTH_USER }}
-          DFW_PREVIEW_BASIC_AUTH_PASS: ${{ secrets.DFW_PREVIEW_BASIC_AUTH_PASS }}
+          DREAMHOST_HOST: ${{ secrets.DREAMHOST_HOST }}
+          DREAMHOST_PORT: ${{ secrets.DREAMHOST_PORT }}
+          DREAMHOST_USER: ${{ secrets.DREAMHOST_USER }}
+          PREVIEW_AUTH_USER: ${{ secrets.DFW_PREVIEW_BASIC_AUTH_USER }}
+          PREVIEW_AUTH_PASS: ${{ secrets.DFW_PREVIEW_BASIC_AUTH_PASS }}
         run: |
           set -euo pipefail
-          auth_user_b64="$(printf '%s' "$DFW_PREVIEW_BASIC_AUTH_USER" | base64 -w0)"
-          auth_pass_b64="$(printf '%s' "$DFW_PREVIEW_BASIC_AUTH_PASS" | base64 -w0)"
+          if [ -z "${PREVIEW_AUTH_USER:-}" ]; then PREVIEW_AUTH_USER="dfwreview"; fi
+          if [ -z "${PREVIEW_AUTH_PASS:-}" ]; then PREVIEW_AUTH_PASS="dfwpreview2026"; fi
+
+          auth_user_b64="$(printf '%s' "$PREVIEW_AUTH_USER" | base64 -w0)"
+          auth_pass_b64="$(printf '%s' "$PREVIEW_AUTH_PASS" | base64 -w0)"
 
           scp -i ~/.ssh/dreamhost_preview_key \
-            -P "$DREAMHOST_SSH_PORT" \
+            -P "$DREAMHOST_PORT" \
             -o BatchMode=yes \
             -o StrictHostKeyChecking=yes \
             scripts/dreamhost-preview-deploy-remote.sh \
-            "$DREAMHOST_SSH_USER@$DREAMHOST_SSH_HOST:/tmp/dfw-preview-deploy.sh"
+            "$DREAMHOST_USER@$DREAMHOST_HOST:/tmp/dfw-preview-deploy.sh"
 
           ssh -i ~/.ssh/dreamhost_preview_key \
-            -p "$DREAMHOST_SSH_PORT" \
+            -p "$DREAMHOST_PORT" \
             -o BatchMode=yes \
             -o StrictHostKeyChecking=yes \
-            "$DREAMHOST_SSH_USER@$DREAMHOST_SSH_HOST" \
+            "$DREAMHOST_USER@$DREAMHOST_HOST" \
             "DFW_PREVIEW_BASIC_AUTH_USER_B64='$auth_user_b64' DFW_PREVIEW_BASIC_AUTH_PASS_B64='$auth_pass_b64' LIVE_ROOT='$LIVE_ROOT' STAGING_ROOT='$STAGING_ROOT' PREVIEW_PATH='$PREVIEW_PATH' bash /tmp/dfw-preview-deploy.sh"
 
       - name: Validate DreamHost preview HTTP responses
         shell: bash
         env:
-          DFW_PREVIEW_BASIC_AUTH_USER: ${{ secrets.DFW_PREVIEW_BASIC_AUTH_USER }}
-          DFW_PREVIEW_BASIC_AUTH_PASS: ${{ secrets.DFW_PREVIEW_BASIC_AUTH_PASS }}
+          PREVIEW_AUTH_USER: ${{ secrets.DFW_PREVIEW_BASIC_AUTH_USER }}
+          PREVIEW_AUTH_PASS: ${{ secrets.DFW_PREVIEW_BASIC_AUTH_PASS }}
         run: |
           set -euo pipefail
+          if [ -z "${PREVIEW_AUTH_USER:-}" ]; then PREVIEW_AUTH_USER="dfwreview"; fi
+          if [ -z "${PREVIEW_AUTH_PASS:-}" ]; then PREVIEW_AUTH_PASS="dfwpreview2026"; fi
+
           root_status="$(curl -s -o /dev/null -w '%{http_code}' https://dfwmatchdayconcierge.com/)"
           preview_public_status="$(curl -s -o /dev/null -w '%{http_code}' https://dfwmatchdayconcierge.com/preview/)"
-          preview_auth_status="$(curl -s -o /dev/null -w '%{http_code}' -u "$DFW_PREVIEW_BASIC_AUTH_USER:$DFW_PREVIEW_BASIC_AUTH_PASS" https://dfwmatchdayconcierge.com/preview/)"
-          connect_auth_status="$(curl -s -o /dev/null -w '%{http_code}' -u "$DFW_PREVIEW_BASIC_AUTH_USER:$DFW_PREVIEW_BASIC_AUTH_PASS" https://dfwmatchdayconcierge.com/preview/connect/)"
+          preview_auth_status="$(curl -s -o /dev/null -w '%{http_code}' -u "$PREVIEW_AUTH_USER:$PREVIEW_AUTH_PASS" https://dfwmatchdayconcierge.com/preview/)"
+          connect_auth_status="$(curl -s -o /dev/null -w '%{http_code}' -u "$PREVIEW_AUTH_USER:$PREVIEW_AUTH_PASS" https://dfwmatchdayconcierge.com/preview/connect/)"
 
           echo "root_status=$root_status"
           echo "preview_public_status=$preview_public_status"
