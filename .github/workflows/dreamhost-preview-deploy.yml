@@ -88,9 +88,9 @@ PY
               write_result "FAILED" "missing .github/dreamhost-preview-deploy-request.txt"
               exit 1
             fi
-            deploy_request="$(tr -d '\r\n ' < .github/dreamhost-preview-deploy-request.txt)"
+            deploy_request="$(head -n 1 .github/dreamhost-preview-deploy-request.txt | tr -d '\r\n ')"
             if [ "$deploy_request" != "DEPLOY_PREVIEW" ]; then
-              write_result "FAILED" "deploy request file does not contain DEPLOY_PREVIEW"
+              write_result "FAILED" "deploy request first line does not contain DEPLOY_PREVIEW"
               exit 1
             fi
           fi
