@@ -1,0 +1,51 @@
+name: DFW v1.0.10 Preview Image Visibility Correction
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/dfw-v1-0-10-preview-image-visibility-correction.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  correct-preview-images:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Apply rendered image visibility correction
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path('docs/prototypes/pdf-reference-homepage-replica-v1.0.0/index-v1.0.10-production-readiness-preview-full-original-assets-v1.0.0.html')
+          html = p.read_text(encoding='utf-8')
+          marker = 'data-rendered-image-visibility-correction="v1.0.0"'
+          css = '''<style data-rendered-image-visibility-correction="v1.0.0">
+          .hero-section{position:relative!important;overflow:hidden!important}.hero-visual{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important;display:block!important;opacity:.72!important;visibility:visible!important;z-index:0!important}.hero-content{position:relative!important;z-index:1!important}
+          .logo-placeholder,.footer-logo-placeholder,.icon-placeholder,.image-slot,.map-visual,.card-image-slot,.social-icons i{position:relative!important;overflow:hidden!important;background-color:#081f34!important}
+          .logo-placeholder img,.footer-logo-placeholder img,.icon-placeholder img,.image-slot img,.map-visual img,.card-image-slot img,.social-icons img{display:block!important;visibility:visible!important;opacity:1!important;min-width:1px!important;min-height:1px!important;max-width:none!important;filter:none!important;mix-blend-mode:normal!important;position:relative!important;z-index:2!important}
+          .image-slot img,.map-visual img,.card-image-slot img{width:100%!important;height:100%!important;object-fit:cover!important}.icon-placeholder img,.social-icons img,.logo-placeholder img,.footer-logo-placeholder img{width:100%!important;height:100%!important;object-fit:contain!important}
+          .ai-image-slot{min-height:112px!important}.map-visual{min-height:154px!important}.card-image-slot{height:72px!important}.icon-placeholder{height:30px!important;width:36px!important}.social-icons i{width:18px!important;height:18px!important;display:inline-grid!important;place-items:center!important}.footer-logo-placeholder{width:44px!important;height:44px!important}.logo-placeholder{width:54px!important;height:54px!important;background:transparent!important;border:0!important}
+          .image-slot:has(img)::before,.map-visual:has(img)::before,.card-image-slot:has(img)::before,.icon-placeholder:has(img)::before,.footer-logo-placeholder:has(img)::before{content:none!important}
+          </style>'''
+          if marker not in html:
+              html = html.replace('</head>', css + '\n</head>', 1)
+              p.write_text(html, encoding='utf-8')
+          record = Path('docs/dfw-homepage-v1.0.10-production-readiness-preview-rendered-image-visibility-correction-record-v1.0.0.md')
+          record.write_text('# DFW v1.0.10 Preview Rendered Image Visibility Correction Record\n\nStatus: REQUIRED-CORRECTION until served desktop, mobile, image, CSS, and JS validation pass.\n\nRoot cause: embedded image data existed at source level, but visible panels relied on placeholder container CSS without explicit rendered image sizing, object-fit, and overflow rules for the production-readiness embedded image slots. The correction adds same-path CSS forcing required embedded image elements into visible panel geometry.\n\nFiles corrected: production-readiness preview HTML at the governed v1.0.10 path.\n\nUser approval: NOT GRANTED.\n', encoding='utf-8')
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/prototypes/pdf-reference-homepage-replica-v1.0.0/index-v1.0.10-production-readiness-preview-full-original-assets-v1.0.0.html docs/dfw-homepage-v1.0.10-production-readiness-preview-rendered-image-visibility-correction-record-v1.0.0.md
+          if git diff --cached --quiet; then
+            echo "No image visibility changes needed."
+          else
+            git commit -m "Correct v1.0.10 preview rendered image visibility"
+            git push origin HEAD:main
+          fi
