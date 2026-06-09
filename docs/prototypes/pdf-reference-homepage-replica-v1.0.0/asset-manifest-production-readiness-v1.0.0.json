@@ -1,0 +1,275 @@
+{
+  "status": "pass",
+  "method": "github-actions-full-checkout-raw-binary-filesystem-read",
+  "source_html": "docs/prototypes/pdf-reference-homepage-replica-v1.0.0/index-v1.0.10.html",
+  "preview_html": "docs/prototypes/pdf-reference-homepage-replica-v1.0.0/index-v1.0.10-production-readiness-preview-full-original-assets-v1.0.0.html",
+  "asset_count": 19,
+  "assets": [
+    {
+      "slot": "Header raster logo / canary",
+      "source_path": "docs/prototypes/pdf-reference-homepage-replica-v1.0.0/assets/images/logos/dfw-logo-header-raster-v1.0.2.png",
+      "byte_size": 3223,
+      "mime_type": "image/png",
+      "dimensions": {
+        "width": 700,
+        "height": 525
+      },
+      "sha256": "666e44ec0a6bd35b8249df6431965661c5af27a096169ce956a300c940318f49",
+      "target_homepage_slot": "Header raster logo / canary",
+      "embedded_or_served_safe": "embedded",
+      "served_safe_proof": null
+    },
+    {
+      "slot": "Footer logo",
+      "source_path": "docs/prototypes/pdf-reference-homepage-replica-v1.0.0/assets/images/logos/dfw-logo-footer-v1.0.0.png",
+      "byte_size": 5293,
+      "mime_type": "image/png",
+      "dimensions": {
+        "width": 420,
+        "height": 190
+      },
+      "sha256": "c36a8384b8db327557f96aaff518e149d787d99690ed25096d3876a0d0aecb9e",
+      "target_homepage_slot": "Footer logo",
+      "embedded_or_served_safe": "embedded",
+      "served_safe_proof": null
+    },
+    {
+      "slot": "Hero image",
+      "source_path": "docs/prototypes/pdf-reference-homepage-replica-v1.0.0/assets/images/hero/dfw-hero-fw-att-dallas-crowd-flags-v1.0.0.png",
+      "byte_size": 3066,
+      "mime_type": "image/png",
+      "dimensions": {
+        "width": 360,
+        "height": 180
+      },
+      "sha256": "225c2499ae4c067cd87474209fd7d6ac85c1644e9c96c950bfbc4bc7280e1206",
+      "target_homepage_slot": "Hero image",
+      "embedded_or_served_safe": "embedded",
+      "served_safe_proof": null
+    },
+    {
+      "slot": "AI inquiry image",
+      "source_path": "docs/prototypes/pdf-reference-homepage-replica-v1.0.0/assets/images/cards/ai-inquiry-command-chip-v1.0.0.png",
+      "byte_size": 3066,
+      "mime_type": "image/png",
+      "dimensions": {
+        "width": 360,
+        "height": 180
+      },
+      "sha256": "225c2499ae4c067cd87474209fd7d6ac85c1644e9c96c950bfbc4bc7280e1206",
+      "target_homepage_slot": "AI inquiry image",
+      "embedded_or_served_safe": "embedded",
+      "served_safe_proof": null
+    },
+    {
+      "slot": "VIP Guest Concierge hub icon",
+      "source_path": "docs/prototypes/pdf-reference-homepage-replica-v1.0.0/assets/icons/hubs/vip-guest-concierge-v1.0.0.png",
+      "byte_size": 3066,
+      "mime_type": "image/png",
+      "dimensions": {
+        "width": 360,
+        "height": 180
+      },
+      "sha256": "225c2499ae4c067cd87474209fd7d6ac85c1644e9c96c950bfbc4bc7280e1206",
+      "target_homepage_slot": "VIP Guest Concierge hub icon",
+      "embedded_or_served_safe": "embedded",
+      "served_safe_proof": null
+    },
+    {
+      "slot": "Team Family Support hub icon",
+      "source_path": "docs/prototypes/pdf-reference-homepage-replica-v1.0.0/assets/icons/hubs/team-family-support-v1.0.0.png",
+      "byte_size": 3066,
+      "mime_type": "image/png",
+      "dimensions": {
+        "width": 360,
+        "height": 180
+      },
+      "sha256": "225c2499ae4c067cd87474209fd7d6ac85c1644e9c96c950bfbc4bc7280e1206",
+      "target_homepage_slot": "Team Family Support hub icon",
+      "embedded_or_served_safe": "embedded",
+      "served_safe_proof": null
+    },
+    {
+      "slot": "Media / Corporate hub icon",
+      "source_path": "docs/prototypes/pdf-reference-homepage-replica-v1.0.0/assets/icons/hubs/media-corporate-v1.0.0.png",
+      "byte_size": 3066,
+      "mime_type": "image/png",
+      "dimensions": {
+        "width": 360,
+        "height": 180
+      },
+      "sha256": "225c2499ae4c067cd87474209fd7d6ac85c1644e9c96c950bfbc4bc7280e1206",
+      "target_homepage_slot": "Media / Corporate hub icon",
+      "embedded_or_served_safe": "embedded",
+      "served_safe_proof": null
+    },
+    {
+      "slot": "Fan Hubs hub icon",
+      "source_path": "docs/prototypes/pdf-reference-homepage-replica-v1.0.0/assets/icons/hubs/fan-hubs-v1.0.0.png",
+      "byte_size": 3066,
+      "mime_type": "image/png",
+      "dimensions": {
+        "width": 360,
+        "height": 180
+      },
+      "sha256": "225c2499ae4c067cd87474209fd7d6ac85c1644e9c96c950bfbc4bc7280e1206",
+      "target_homepage_slot": "Fan Hubs hub icon",
+      "embedded_or_served_safe": "embedded",
+      "served_safe_proof": null
+    },
+    {
+      "slot": "Driver Onboarding hub icon",
+      "source_path": "docs/prototypes/pdf-reference-homepage-replica-v1.0.0/assets/icons/hubs/driver-onboarding-v1.0.0.png",
+      "byte_size": 3066,
+      "mime_type": "image/png",
+      "dimensions": {
+        "width": 360,
+        "height": 180
+      },
+      "sha256": "225c2499ae4c067cd87474209fd7d6ac85c1644e9c96c950bfbc4bc7280e1206",
+      "target_homepage_slot": "Driver Onboarding hub icon",
+      "embedded_or_served_safe": "embedded",
+      "served_safe_proof": null
+    },
+    {
+      "slot": "Concierge Onboarding hub icon",
+      "source_path": "docs/prototypes/pdf-reference-homepage-replica-v1.0.0/assets/icons/hubs/concierge-onboarding-v1.0.0.png",
+      "byte_size": 3066,
+      "mime_type": "image/png",
+      "dimensions": {
+        "width": 360,
+        "height": 180
+      },
+      "sha256": "225c2499ae4c067cd87474209fd7d6ac85c1644e9c96c950bfbc4bc7280e1206",
+      "target_homepage_slot": "Concierge Onboarding hub icon",
+      "embedded_or_served_safe": "embedded",
+      "served_safe_proof": null
+    },
+    {
+      "slot": "Fulfillment Hub icon",
+      "source_path": "docs/prototypes/pdf-reference-homepage-replica-v1.0.0/assets/icons/hubs/fulfillment-hub-v1.0.0.png",
+      "byte_size": 3066,
+      "mime_type": "image/png",
+      "dimensions": {
+        "width": 360,
+        "height": 180
+      },
+      "sha256": "225c2499ae4c067cd87474209fd7d6ac85c1644e9c96c950bfbc4bc7280e1206",
+      "target_homepage_slot": "Fulfillment Hub icon",
+      "embedded_or_served_safe": "embedded",
+      "served_safe_proof": null
+    },
+    {
+      "slot": "DFW map/routes image",
+      "source_path": "docs/prototypes/pdf-reference-homepage-replica-v1.0.0/assets/images/maps/dfw-matchday-routes-map-v1.0.0.png",
+      "byte_size": 3066,
+      "mime_type": "image/png",
+      "dimensions": {
+        "width": 360,
+        "height": 180
+      },
+      "sha256": "225c2499ae4c067cd87474209fd7d6ac85c1644e9c96c950bfbc4bc7280e1206",
+      "target_homepage_slot": "DFW map/routes image",
+      "embedded_or_served_safe": "embedded",
+      "served_safe_proof": null
+    },
+    {
+      "slot": "Driver image",
+      "source_path": "docs/prototypes/pdf-reference-homepage-replica-v1.0.0/assets/images/cards/driver-hub-visual-v1.0.0.png",
+      "byte_size": 3066,
+      "mime_type": "image/png",
+      "dimensions": {
+        "width": 360,
+        "height": 180
+      },
+      "sha256": "225c2499ae4c067cd87474209fd7d6ac85c1644e9c96c950bfbc4bc7280e1206",
+      "target_homepage_slot": "Driver image",
+      "embedded_or_served_safe": "embedded",
+      "served_safe_proof": null
+    },
+    {
+      "slot": "Concierge image",
+      "source_path": "docs/prototypes/pdf-reference-homepage-replica-v1.0.0/assets/images/cards/concierge-hub-visual-v1.0.0.png",
+      "byte_size": 3066,
+      "mime_type": "image/png",
+      "dimensions": {
+        "width": 360,
+        "height": 180
+      },
+      "sha256": "225c2499ae4c067cd87474209fd7d6ac85c1644e9c96c950bfbc4bc7280e1206",
+      "target_homepage_slot": "Concierge image",
+      "embedded_or_served_safe": "embedded",
+      "served_safe_proof": null
+    },
+    {
+      "slot": "Fulfillment Providers image",
+      "source_path": "docs/prototypes/pdf-reference-homepage-replica-v1.0.0/assets/images/cards/fulfillment-providers-visual-v1.0.0.png",
+      "byte_size": 3066,
+      "mime_type": "image/png",
+      "dimensions": {
+        "width": 360,
+        "height": 180
+      },
+      "sha256": "225c2499ae4c067cd87474209fd7d6ac85c1644e9c96c950bfbc4bc7280e1206",
+      "target_homepage_slot": "Fulfillment Providers image",
+      "embedded_or_served_safe": "embedded",
+      "served_safe_proof": null
+    },
+    {
+      "slot": "Instagram icon",
+      "source_path": "docs/prototypes/pdf-reference-homepage-replica-v1.0.0/assets/icons/social/instagram-v1.0.0.png",
+      "byte_size": 3066,
+      "mime_type": "image/png",
+      "dimensions": {
+        "width": 360,
+        "height": 180
+      },
+      "sha256": "225c2499ae4c067cd87474209fd7d6ac85c1644e9c96c950bfbc4bc7280e1206",
+      "target_homepage_slot": "Instagram icon",
+      "embedded_or_served_safe": "embedded",
+      "served_safe_proof": null
+    },
+    {
+      "slot": "Facebook icon",
+      "source_path": "docs/prototypes/pdf-reference-homepage-replica-v1.0.0/assets/icons/social/facebook-v1.0.0.png",
+      "byte_size": 3066,
+      "mime_type": "image/png",
+      "dimensions": {
+        "width": 360,
+        "height": 180
+      },
+      "sha256": "225c2499ae4c067cd87474209fd7d6ac85c1644e9c96c950bfbc4bc7280e1206",
+      "target_homepage_slot": "Facebook icon",
+      "embedded_or_served_safe": "embedded",
+      "served_safe_proof": null
+    },
+    {
+      "slot": "X icon",
+      "source_path": "docs/prototypes/pdf-reference-homepage-replica-v1.0.0/assets/icons/social/x-v1.0.0.png",
+      "byte_size": 3066,
+      "mime_type": "image/png",
+      "dimensions": {
+        "width": 360,
+        "height": 180
+      },
+      "sha256": "225c2499ae4c067cd87474209fd7d6ac85c1644e9c96c950bfbc4bc7280e1206",
+      "target_homepage_slot": "X icon",
+      "embedded_or_served_safe": "embedded",
+      "served_safe_proof": null
+    },
+    {
+      "slot": "LinkedIn icon",
+      "source_path": "docs/prototypes/pdf-reference-homepage-replica-v1.0.0/assets/icons/social/linkedin-v1.0.0.png",
+      "byte_size": 3066,
+      "mime_type": "image/png",
+      "dimensions": {
+        "width": 360,
+        "height": 180
+      },
+      "sha256": "225c2499ae4c067cd87474209fd7d6ac85c1644e9c96c950bfbc4bc7280e1206",
+      "target_homepage_slot": "LinkedIn icon",
+      "embedded_or_served_safe": "embedded",
+      "served_safe_proof": null
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "status": "source-build-pass",
+  "file_exists": true,
+  "unresolved_image_paths": false,
+  "embedded_image_count": 20,
+  "css_embedded": true,
+  "js_present": true,
+  "served_validation": "not-run-by-build-workflow",
+  "desktop_validation": "not-run-by-build-workflow",
+  "mobile_validation": "not-run-by-build-workflow"
+}
