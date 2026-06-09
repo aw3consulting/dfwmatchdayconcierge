@@ -1,0 +1,183 @@
+name: Build v1.0.10 Production Readiness Preview
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/build-v1-0-10-production-readiness-preview.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  build-preview:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Generate full binary asset manifest and embedded preview
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import base64, hashlib, json, mimetypes, re, sys
+
+          repo = Path('.')
+          base_dir = Path('docs/prototypes/pdf-reference-homepage-replica-v1.0.0')
+          src_html = base_dir / 'index-v1.0.10.html'
+          out_html = base_dir / 'index-v1.0.10-production-readiness-preview-full-original-assets-v1.0.0.html'
+          manifest_path = base_dir / 'asset-manifest-production-readiness-v1.0.0.json'
+          validation_path = base_dir / 'production-readiness-build-validation-v1.0.0.json'
+          required_slots = [
+            'Header raster logo / canary','Footer logo','Hero image','AI inquiry image',
+            'VIP Guest Concierge hub icon','Team Family Support hub icon','Media / Corporate hub icon','Fan Hubs hub icon',
+            'Driver Onboarding hub icon','Concierge Onboarding hub icon','Fulfillment Hub icon','DFW map/routes image',
+            'Driver image','Concierge image','Fulfillment Providers image','Instagram icon','Facebook icon','X icon','LinkedIn icon'
+          ]
+          required_by_path = {
+            'assets/images/logos/dfw-logo-header-raster-v1.0.2.png':'Header raster logo / canary',
+            'assets/images/logos/dfw-logo-footer-v1.0.0.png':'Footer logo',
+            'assets/images/hero/dfw-hero-fw-att-dallas-crowd-flags-v1.0.0.png':'Hero image',
+            'assets/images/cards/ai-inquiry-command-chip-v1.0.0.png':'AI inquiry image',
+            'assets/icons/hubs/vip-guest-concierge-v1.0.0.png':'VIP Guest Concierge hub icon',
+            'assets/icons/hubs/team-family-support-v1.0.0.png':'Team Family Support hub icon',
+            'assets/icons/hubs/media-corporate-v1.0.0.png':'Media / Corporate hub icon',
+            'assets/icons/hubs/fan-hubs-v1.0.0.png':'Fan Hubs hub icon',
+            'assets/icons/hubs/driver-onboarding-v1.0.0.png':'Driver Onboarding hub icon',
+            'assets/icons/hubs/concierge-onboarding-v1.0.0.png':'Concierge Onboarding hub icon',
+            'assets/icons/hubs/fulfillment-hub-v1.0.0.png':'Fulfillment Hub icon',
+            'assets/images/maps/dfw-matchday-routes-map-v1.0.0.png':'DFW map/routes image',
+            'assets/images/cards/driver-hub-visual-v1.0.0.png':'Driver image',
+            'assets/images/cards/concierge-hub-visual-v1.0.0.png':'Concierge image',
+            'assets/images/cards/fulfillment-providers-visual-v1.0.0.png':'Fulfillment Providers image',
+            'assets/icons/social/instagram-v1.0.0.png':'Instagram icon',
+            'assets/icons/social/facebook-v1.0.0.png':'Facebook icon',
+            'assets/icons/social/x-v1.0.0.png':'X icon',
+            'assets/icons/social/linkedin-v1.0.0.png':'LinkedIn icon'
+          }
+
+          if not src_html.exists():
+            raise SystemExit(f'MISSING_SOURCE_HTML {src_html}')
+          html = src_html.read_text(encoding='utf-8')
+
+          # Inline approved CSS so preview is not dependent on stylesheet path loading.
+          def css_repl(match):
+            href = match.group(1)
+            css_path = (base_dir / href.replace('./','')).resolve()
+            if not css_path.exists():
+              raise SystemExit(f'MISSING_CSS {css_path}')
+            return '<style data-embedded-source="%s">\n%s\n</style>' % (href, css_path.read_text(encoding='utf-8'))
+          html = re.sub(r'<link href="\./([^"]+\.css)" rel="stylesheet"\s*/?>', css_repl, html)
+
+          manifest = []
+          embedded = {}
+          missing = []
+          def png_dimensions(data: bytes):
+            if data[:8] != b'\x89PNG\r\n\x1a\n':
+              return None, None
+            return int.from_bytes(data[16:20], 'big'), int.from_bytes(data[20:24], 'big')
+
+          # Build manifest for required paths.
+          for rel, slot in required_by_path.items():
+            p = base_dir / rel
+            if not p.exists():
+              missing.append({'slot': slot, 'source_path': str(p), 'error': 'missing'})
+              continue
+            data = p.read_bytes()
+            w, h = png_dimensions(data)
+            mime = mimetypes.guess_type(str(p))[0] or 'application/octet-stream'
+            sha = hashlib.sha256(data).hexdigest()
+            b64 = base64.b64encode(data).decode('ascii')
+            embedded[rel] = f'data:{mime};base64,{b64}'
+            manifest.append({
+              'slot': slot,
+              'source_path': str(p),
+              'byte_size': len(data),
+              'mime_type': mime,
+              'dimensions': {'width': w, 'height': h},
+              'sha256': sha,
+              'target_homepage_slot': slot,
+              'embedded_or_served_safe': 'embedded',
+              'served_safe_proof': None
+            })
+
+          if missing:
+            manifest_path.write_text(json.dumps({'status':'failed','missing':missing,'assets':manifest}, indent=2), encoding='utf-8')
+            raise SystemExit('MISSING_REQUIRED_ASSETS ' + json.dumps(missing))
+
+          seen_slots = {item['slot'] for item in manifest}
+          missing_slots = [s for s in required_slots if s not in seen_slots]
+          if missing_slots:
+            raise SystemExit('MISSING_REQUIRED_SLOTS ' + json.dumps(missing_slots))
+
+          # Embed every PNG src referenced by the source HTML.
+          def src_repl(match):
+            prefix, quote, src = match.group(1), match.group(2), match.group(3)
+            if not src.lower().endswith('.png'):
+              return match.group(0)
+            norm = src.replace('./','')
+            if norm not in embedded:
+              p = base_dir / norm
+              if not p.exists():
+                raise SystemExit(f'PNG_REFERENCE_MISSING {src}')
+              data = p.read_bytes()
+              mime = mimetypes.guess_type(str(p))[0] or 'image/png'
+              embedded[norm] = f'data:{mime};base64,' + base64.b64encode(data).decode('ascii')
+              w, h = png_dimensions(data)
+              manifest.append({
+                'slot': 'Additional image referenced by v1.0.10 source',
+                'source_path': str(p),
+                'byte_size': len(data),
+                'mime_type': mime,
+                'dimensions': {'width': w, 'height': h},
+                'sha256': hashlib.sha256(data).hexdigest(),
+                'target_homepage_slot': 'Additional image referenced by v1.0.10 source',
+                'embedded_or_served_safe': 'embedded',
+                'served_safe_proof': None
+              })
+            return f'{prefix}{quote}{embedded[norm]}{quote}'
+          html = re.sub(r'(\bsrc=)([\"\'])(\.\/[^\"\']+?\.png)\2', src_repl, html)
+
+          if re.search(r'\bsrc=[\"\']\.\/[^\"\']+?\.(png|jpg|jpeg|webp)[\"\']', html, re.I):
+            raise SystemExit('UNRESOLVED_IMAGE_PATH_REFERENCE')
+          if 'data:image/png;base64,' not in html:
+            raise SystemExit('NO_EMBEDDED_IMAGES')
+
+          html = html.replace('<title>DFW Matchday Concierge - Preview Fixed Prototype v1.0.10</title>', '<title>DFW Matchday Concierge - v1.0.10 Production Readiness Preview Full Original Assets</title>')
+          html = html.replace('</head>', '<meta name="robots" content="noindex,nofollow"/>\n<meta name="dfw-production-readiness-preview" content="full-original-assets; generated-from-v1.0.10; not production-approved"/>\n</head>')
+          html = html.replace('<body>', '<body data-preview-build="production-readiness-full-original-assets-v1.0.0">')
+          html = html.replace('<a class="skip-link"', '<div style="position:sticky;top:0;z-index:9999;background:#4b1208;color:#fff;text-align:center;padding:8px 12px;font:700 11px Arial,sans-serif;letter-spacing:.04em;text-transform:uppercase">Production-readiness preview candidate — full original assets embedded — not production approved</div><a class="skip-link"', 1)
+
+          out_html.write_text(html, encoding='utf-8')
+          manifest_path.write_text(json.dumps({'status':'pass','method':'github-actions-full-checkout-raw-binary-filesystem-read','source_html':str(src_html),'preview_html':str(out_html),'asset_count':len(manifest),'assets':manifest}, indent=2), encoding='utf-8')
+          validation_path.write_text(json.dumps({
+            'status':'source-build-pass',
+            'file_exists': out_html.exists(),
+            'unresolved_image_paths': False,
+            'embedded_image_count': html.count('data:image/png;base64,'),
+            'css_embedded': '<style data-embedded-source=' in html,
+            'js_present': '<script' in html,
+            'served_validation': 'not-run-by-build-workflow',
+            'desktop_validation': 'not-run-by-build-workflow',
+            'mobile_validation': 'not-run-by-build-workflow'
+          }, indent=2), encoding='utf-8')
+          PY
+
+      - name: Commit generated preview and manifest
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/prototypes/pdf-reference-homepage-replica-v1.0.0/index-v1.0.10-production-readiness-preview-full-original-assets-v1.0.0.html \
+                  docs/prototypes/pdf-reference-homepage-replica-v1.0.0/asset-manifest-production-readiness-v1.0.0.json \
+                  docs/prototypes/pdf-reference-homepage-replica-v1.0.0/production-readiness-build-validation-v1.0.0.json
+          if git diff --cached --quiet; then
+            echo "No generated changes to commit."
+          else
+            git commit -m "Build v1.0.10 production readiness preview from original assets"
+            git push origin main
+          fi
