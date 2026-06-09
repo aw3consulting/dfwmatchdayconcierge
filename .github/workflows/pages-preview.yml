@@ -2,7 +2,7 @@ name: Pages Preview
 
 on:
   push:
-    branches: [main, gh-pages]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -17,9 +17,10 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout corrected preview source from main
+        uses: actions/checkout@v4
         with:
-          ref: gh-pages
+          ref: main
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
