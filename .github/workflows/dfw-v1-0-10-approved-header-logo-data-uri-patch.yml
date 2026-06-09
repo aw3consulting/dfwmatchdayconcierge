@@ -1,0 +1,84 @@
+name: DFW v1.0.10 Approved Header Logo Data URI Patch
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/dfw-v1-0-10-approved-header-logo-data-uri-patch.yml
+      - tools/dfw/patch_v1_0_10_approved_header_logo_boundary.py
+      - docs/prototypes/pdf-reference-homepage-replica-v1.0.0/approved-header-logo-patch-trigger-v1.0.0.txt
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+environment:
+  name: github-pages
+
+concurrency:
+  group: dfw-v1-0-10-approved-header-logo-data-uri-patch
+  cancel-in-progress: false
+
+jobs:
+  patch-deploy-and-prove-source:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Patch approved header logo and pending asset boundary
+        run: |
+          python3 tools/dfw/patch_v1_0_10_approved_header_logo_boundary.py
+
+      - name: Commit patched preview HTML and record
+        id: commit_patch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/prototypes/pdf-reference-homepage-replica-v1.0.0/index-v1.0.10-production-readiness-preview-full-original-assets-v1.0.0.html
+          git add docs/dfw-homepage-v1.0.10-repo-native-actions-approved-header-logo-data-uri-patch-and-preview-proof-record-v1.0.0.md
+          if git diff --cached --quiet; then
+            echo "patch_commit_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+            echo "No source changes to commit; using current HEAD."
+          else
+            git commit -m "Embed approved header logo and pending asset boundary"
+            git push origin main
+            echo "patch_commit_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload patched Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Deploy patched preview to Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Source and URL proof summary
+        run: |
+          TARGET="docs/prototypes/pdf-reference-homepage-replica-v1.0.0/index-v1.0.10-production-readiness-preview-full-original-assets-v1.0.0.html"
+          URL="https://aw3consulting.github.io/dfwmatchdayconcierge/docs/prototypes/pdf-reference-homepage-replica-v1.0.0/index-v1.0.10-production-readiness-preview-full-original-assets-v1.0.0.html"
+          echo "Patch commit SHA: ${{ steps.commit_patch.outputs.patch_commit_sha }}"
+          echo "Deployment page URL: ${{ steps.deployment.outputs.page_url }}"
+          test -f "$TARGET"
+          grep -q 'data:image/png;base64,' "$TARGET"
+          grep -q 'data-asset-approval-boundary="approved-header-logo-only"' "$TARGET"
+          grep -q 'APPROVED HEADER LOGO EMBEDDED' "$TARGET"
+          if grep -q 'FULL ORIGINAL ASSETS EMBEDDED' "$TARGET"; then
+            echo "FAIL: misleading wording remains"
+            exit 1
+          fi
+          if grep -E 'assets/images/logos/dfw-logo-header-raster-v1\.0\.[23]\.png|raw\.githubusercontent\.com/.*/dfw-logo-header-raster-v1\.0\.[23]\.png' "$TARGET"; then
+            echo "FAIL: old header logo path remains"
+            exit 1
+          fi
+          curl -I --retry 12 --retry-delay 10 --retry-all-errors "$URL"
