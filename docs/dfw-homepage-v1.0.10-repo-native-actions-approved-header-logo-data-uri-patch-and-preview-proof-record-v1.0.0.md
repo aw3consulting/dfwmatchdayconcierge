@@ -2,7 +2,7 @@
 
 Mission: `dfw_homepage_v1_0_10_repo_native_actions_approved_header_logo_data_uri_patch_and_preview_proof_v1_0_0`
 
-Date: 2026-06-10 00:17:05Z
+Date: 2026-06-10 00:18:11Z
 
 Status: REQUIRED-CORRECTION until Pages deployment, HTTP 200, desktop/mobile/rendered/CSS/JS validation, and user approval gates pass.
 
@@ -62,8 +62,8 @@ PASS at source level. Misleading `FULL ORIGINAL ASSETS EMBEDDED` wording was rep
 
 ## Source hash evidence
 
-- Original target HTML sha256 before patch: `2de87f13208fd93bee0f90929c18e17819f2703cfa02a5106b5a9dce7f78103c`
-- Patched target HTML sha256 after patch: `b2b753f4a1de151ca61e6237e7feae42f11dddf9dd2dea555f40e39ee8017751`
+- Original target HTML sha256 before patch: `b2b753f4a1de151ca61e6237e7feae42f11dddf9dd2dea555f40e39ee8017751`
+- Patched target HTML sha256 after patch: `aaa4ff0c8bf0aa55a01a8e15e6f2422505e12a1339c3fc2e3988427d51cd0b5d`
 
 ## Remaining proof gates
 
