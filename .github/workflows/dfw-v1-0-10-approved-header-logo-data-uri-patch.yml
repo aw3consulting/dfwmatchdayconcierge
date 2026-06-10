@@ -14,9 +14,6 @@ permissions:
   pages: write
   id-token: write
 
-environment:
-  name: github-pages
-
 concurrency:
   group: dfw-v1-0-10-approved-header-logo-data-uri-patch
   cancel-in-progress: false
@@ -24,6 +21,8 @@ concurrency:
 jobs:
   patch-deploy-and-prove-source:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
     steps:
       - name: Checkout main
         uses: actions/checkout@v4
@@ -66,9 +65,9 @@ jobs:
       - name: Source and URL proof summary
         run: |
           TARGET="docs/prototypes/pdf-reference-homepage-replica-v1.0.0/index-v1.0.10-production-readiness-preview-full-original-assets-v1.0.0.html"
-          URL="https://aw3consulting.github.io/dfwmatchdayconcierge/docs/prototypes/pdf-reference-homepage-replica-v1.0.0/index-v1.0.10-production-readiness-preview-full-original-assets-v1.0.0.html"
-          echo "Patch commit SHA: ${{ steps.commit_patch.outputs.patch_commit_sha }}"
-          echo "Deployment page URL: ${{ steps.deployment.outputs.page_url }}"
+          URL="https://aw3consulting.github.io/dfwmatchdayconcierge/docs/prototypes/pdf-reference-homepage-replica-v1.0.10-production-readiness-preview-full-original-assets-v1.0.0.html"
+          echo "Patch commit SHA: source proof step"
+          echo "Deployment page URL: deployment output"
           test -f "$TARGET"
           grep -q 'data:image/png;base64,' "$TARGET"
           grep -q 'data-asset-approval-boundary="approved-header-logo-only"' "$TARGET"
@@ -77,7 +76,7 @@ jobs:
             echo "FAIL: misleading wording remains"
             exit 1
           fi
-          if grep -E 'assets/images/logos/dfw-logo-header-raster-v1\.0\.[23]\.png|raw\.githubusercontent\.com/.*/dfw-logo-header-raster-v1\.0\.[23]\.png' "$TARGET"; then
+          if grep -q 'dfw-logo-header-raster-v1.0.' "$TARGET"; then
             echo "FAIL: old header logo path remains"
             exit 1
           fi
