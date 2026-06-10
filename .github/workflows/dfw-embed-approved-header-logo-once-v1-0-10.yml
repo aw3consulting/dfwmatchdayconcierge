@@ -89,14 +89,6 @@ jobs:
           )
 
           anchor_pattern = re.compile(
-              r'<a class="logo-cell" href="#top" aria-label="DFW Matchday Concierge">\s*'
-              r'<img\s+class="site-logo approved-header-logo-img"\s+'
-              r'src="(?:assets/images/logos/dfw-logo-footer-v1\.0\.0\.png|data:image/png;base64,[^"]+)"\s+'
-              r'alt="DFW Matchday Concierge"\s+width="76"\s+height="54"\s+decoding="async">\s*'</n              r'</a>',
-              flags=re.S,
-          )
-          # Fallback pattern tolerates line breaks produced by earlier patch commits.
-          anchor_pattern = re.compile(
               r'<a class="logo-cell" href="#top" aria-label="DFW Matchday Concierge">.*?</a>',
               flags=re.S,
           )
