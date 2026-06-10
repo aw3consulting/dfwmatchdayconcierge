@@ -1,0 +1,133 @@
+name: DFW Embed Approved Header Logo Once v1.0.10
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/dfw-embed-approved-header-logo-once-v1-0-10.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  embed-approved-header-logo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Replace only the header logo src with approved embedded PNG data URI
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+
+          target = Path('docs/prototypes/pdf-reference-homepage-replica-v1.0.0/index-v1.0.10-production-readiness-preview-full-original-assets-v1.0.0.html')
+          b64_source = Path('docs/prototypes/pdf-reference-homepage-replica-v1.0.0/assets/approved/approved-header-logo-transparent-display-embedded-v1.0.0.base64.txt')
+          old_src = 'assets/images/logos/dfw-logo-footer-v1.0.0.png'
+          required_title = 'DFW Matchday Concierge - Preview Fixed Prototype v1.0.10'
+          css_1 = '<link rel="stylesheet" href="assets/css/replica-v1.0.7.css">'
+          css_2 = '<link rel="stylesheet" href="assets/css/replica-v1.0.10.css">'
+
+          if not target.exists():
+              raise SystemExit(f'MISSING_TARGET {target}')
+          if not b64_source.exists():
+              raise SystemExit(f'MISSING_APPROVED_HEADER_LOGO_BASE64 {b64_source}')
+
+          html = target.read_text(encoding='utf-8')
+          before = html
+          b64 = ''.join(b64_source.read_text(encoding='utf-8').split())
+          if len(b64) < 100:
+              raise SystemExit('APPROVED_HEADER_LOGO_BASE64_TOO_SHORT')
+          data_uri = 'data:image/png;base64,' + b64
+
+          title_count = html.count(f'<title>{required_title}</title>')
+          if title_count != 1:
+              raise SystemExit(f'TITLE_GATE_FAIL {title_count}')
+          if css_1 not in html or css_2 not in html:
+              raise SystemExit('CSS_REFERENCE_GATE_FAIL')
+
+          header_match = re.search(r'(<header\b[^>]*class="site-header"[^>]*>)(.*?)(</header>)', html, flags=re.S)
+          if not header_match:
+              raise SystemExit('HEADER_NOT_FOUND')
+          header = header_match.group(2)
+          if old_src not in header:
+              raise SystemExit('OLD_HEADER_LOGO_PATH_NOT_FOUND_IN_HEADER')
+          if 'data:image/png;base64,' in header:
+              raise SystemExit('HEADER_ALREADY_CONTAINS_DATA_URI_BEFORE_PATCH')
+          if '.logo-placeholder' in header or 'logo-placeholder' in header:
+              raise SystemExit('HEADER_LOGO_PLACEHOLDER_PRESENT_BEFORE_PATCH')
+
+          required_logo = (
+              '<a class="logo-cell" href="#top" aria-label="DFW Matchday Concierge">\n'
+              '  <img\n'
+              '    class="site-logo approved-header-logo-img"\n'
+              f'    src="{data_uri}"\n'
+              '    alt="DFW Matchday Concierge"\n'
+              '    width="76"\n'
+              '    height="54"\n'
+              '    decoding="async">\n'
+              '</a>'
+          )
+
+          old_anchor_pattern = re.compile(
+              r'<a class="logo-cell" href="#top" aria-label="DFW Matchday Concierge">\s*'
+              r'<img\s+class="site-logo approved-header-logo-img"\s+'
+              r'src="assets/images/logos/dfw-logo-footer-v1\.0\.0\.png"\s+'
+              r'alt="DFW Matchday Concierge"\s+width="76"\s+height="54"\s+decoding="async">\s*'
+              r'</a>',
+              flags=re.S
+          )
+          new_header, count = old_anchor_pattern.subn(required_logo, header, count=1)
+          if count != 1:
+              raise SystemExit(f'HEADER_REPLACEMENT_COUNT_FAIL {count}')
+
+          html = html[:header_match.start(2)] + new_header + html[header_match.end(2):]
+
+          patched_header = re.search(r'(<header\b[^>]*class="site-header"[^>]*>)(.*?)(</header>)', html, flags=re.S).group(2)
+          gates = {
+              'header_data_uri_count': patched_header.count('data:image/png;base64,'),
+              'header_old_path_count': patched_header.count(old_src),
+              'header_logo_placeholder_count': patched_header.count('logo-placeholder') + patched_header.count('.logo-placeholder'),
+              'title_count': html.count(f'<title>{required_title}</title>'),
+              'css_1_count': html.count(css_1),
+              'css_2_count': html.count(css_2),
+          }
+          expected = {
+              'header_data_uri_count': 1,
+              'header_old_path_count': 0,
+              'header_logo_placeholder_count': 0,
+              'title_count': 1,
+              'css_1_count': 1,
+              'css_2_count': 1,
+          }
+          if gates != expected:
+              raise SystemExit(f'SOURCE_GATE_FAIL gates={gates} expected={expected}')
+
+          # Guard against broad template changes by requiring the only old path removal to be in the header.
+          non_header_before = before[:header_match.start(2)] + before[header_match.end(2):]
+          non_header_after = html[:header_match.start(2)] + html[header_match.start(2)+len(new_header):]
+          if non_header_before != non_header_after:
+              raise SystemExit('NON_HEADER_CONTENT_CHANGED')
+
+          target.write_text(html, encoding='utf-8')
+          print('SOURCE_GATES_PASS')
+          print(gates)
+          PY
+
+      - name: Commit target file only
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/prototypes/pdf-reference-homepage-replica-v1.0.0/index-v1.0.10-production-readiness-preview-full-original-assets-v1.0.0.html
+          if git diff --cached --quiet; then
+            echo "No target change to commit."
+          else
+            git commit -m "Embed approved homepage header logo data URI"
+            git push origin main
+          fi
