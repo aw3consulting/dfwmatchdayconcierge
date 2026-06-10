@@ -19,16 +19,24 @@ jobs:
         with:
           ref: main
 
-      - name: Replace only the header logo src with approved embedded PNG data URI
+      - name: Install Pillow for browser-safe approved logo normalization
+        shell: bash
+        run: python3 -m pip install --quiet pillow
+
+      - name: Replace only the header logo src with browser-safe approved embedded PNG data URI
         shell: bash
         run: |
           python3 - <<'PY'
           from pathlib import Path
+          import base64
+          import hashlib
+          from io import BytesIO
           import re
+          from PIL import Image
 
           target = Path('docs/prototypes/pdf-reference-homepage-replica-v1.0.0/index-v1.0.10-production-readiness-preview-full-original-assets-v1.0.0.html')
           b64_source = Path('docs/prototypes/pdf-reference-homepage-replica-v1.0.0/assets/approved/approved-header-logo-transparent-display-embedded-v1.0.0.base64.txt')
-          old_src = 'assets/images/logos/dfw-logo-footer-v1.0.0.png'
+          old_path_src = 'assets/images/logos/dfw-logo-footer-v1.0.0.png'
           required_title = 'DFW Matchday Concierge - Preview Fixed Prototype v1.0.10'
           css_1 = '<link rel="stylesheet" href="assets/css/replica-v1.0.7.css">'
           css_2 = '<link rel="stylesheet" href="assets/css/replica-v1.0.10.css">'
@@ -40,27 +48,37 @@ jobs:
 
           html = target.read_text(encoding='utf-8')
           before = html
-          b64 = ''.join(b64_source.read_text(encoding='utf-8').split())
-          if len(b64) < 100:
-              raise SystemExit('APPROVED_HEADER_LOGO_BASE64_TOO_SHORT')
-          data_uri = 'data:image/png;base64,' + b64
 
-          title_count = html.count(f'<title>{required_title}</title>')
-          if title_count != 1:
-              raise SystemExit(f'TITLE_GATE_FAIL {title_count}')
-          if css_1 not in html or css_2 not in html:
+          # Read the approved transparent logo source, decode, and normalize into a small browser-safe PNG.
+          approved_b64 = ''.join(b64_source.read_text(encoding='utf-8').split())
+          approved_png = base64.b64decode(approved_b64, validate=True)
+          approved_sha = hashlib.sha256(approved_png).hexdigest()
+          approved_img = Image.open(BytesIO(approved_png)).convert('RGBA')
+          if approved_img.size != (1333, 1000):
+              raise SystemExit(f'UNEXPECTED_APPROVED_LOGO_SIZE {approved_img.size}')
+
+          target_w, target_h = 304, 216
+          scale = min(target_w / approved_img.width, target_h / approved_img.height)
+          resized_size = (round(approved_img.width * scale), round(approved_img.height * scale))
+          resized = approved_img.resize(resized_size, Image.Resampling.LANCZOS)
+          canvas = Image.new('RGBA', (target_w, target_h), (0, 0, 0, 0))
+          canvas.alpha_composite(resized, ((target_w - resized_size[0]) // 2, (target_h - resized_size[1]) // 2))
+          out = BytesIO()
+          canvas.save(out, format='PNG', optimize=True)
+          browser_safe_png = out.getvalue()
+          data_uri = 'data:image/png;base64,' + base64.b64encode(browser_safe_png).decode('ascii')
+
+          if html.count(f'<title>{required_title}</title>') != 1:
+              raise SystemExit('TITLE_GATE_FAIL')
+          if html.count(css_1) != 1 or html.count(css_2) != 1:
               raise SystemExit('CSS_REFERENCE_GATE_FAIL')
 
           header_match = re.search(r'(<header\b[^>]*class="site-header"[^>]*>)(.*?)(</header>)', html, flags=re.S)
           if not header_match:
               raise SystemExit('HEADER_NOT_FOUND')
           header = header_match.group(2)
-          if old_src not in header:
-              raise SystemExit('OLD_HEADER_LOGO_PATH_NOT_FOUND_IN_HEADER')
-          if 'data:image/png;base64,' in header:
-              raise SystemExit('HEADER_ALREADY_CONTAINS_DATA_URI_BEFORE_PATCH')
-          if '.logo-placeholder' in header or 'logo-placeholder' in header:
-              raise SystemExit('HEADER_LOGO_PLACEHOLDER_PRESENT_BEFORE_PATCH')
+          if 'logo-placeholder' in header or '.logo-placeholder' in header:
+              raise SystemExit('HEADER_LOGO_PLACEHOLDER_PRESENT')
 
           required_logo = (
               '<a class="logo-cell" href="#top" aria-label="DFW Matchday Concierge">\n'
@@ -74,15 +92,15 @@ jobs:
               '</a>'
           )
 
-          old_anchor_pattern = re.compile(
+          anchor_pattern = re.compile(
               r'<a class="logo-cell" href="#top" aria-label="DFW Matchday Concierge">\s*'
               r'<img\s+class="site-logo approved-header-logo-img"\s+'
-              r'src="assets/images/logos/dfw-logo-footer-v1\.0\.0\.png"\s+'
+              r'src="(?:assets/images/logos/dfw-logo-footer-v1\.0\.0\.png|data:image/png;base64,[^"]+)"\s+'
               r'alt="DFW Matchday Concierge"\s+width="76"\s+height="54"\s+decoding="async">\s*'
               r'</a>',
-              flags=re.S
+              flags=re.S,
           )
-          new_header, count = old_anchor_pattern.subn(required_logo, header, count=1)
+          new_header, count = anchor_pattern.subn(required_logo, header, count=1)
           if count != 1:
               raise SystemExit(f'HEADER_REPLACEMENT_COUNT_FAIL {count}')
 
@@ -91,7 +109,7 @@ jobs:
           patched_header = re.search(r'(<header\b[^>]*class="site-header"[^>]*>)(.*?)(</header>)', html, flags=re.S).group(2)
           gates = {
               'header_data_uri_count': patched_header.count('data:image/png;base64,'),
-              'header_old_path_count': patched_header.count(old_src),
+              'header_old_path_count': patched_header.count(old_path_src),
               'header_logo_placeholder_count': patched_header.count('logo-placeholder') + patched_header.count('.logo-placeholder'),
               'title_count': html.count(f'<title>{required_title}</title>'),
               'css_1_count': html.count(css_1),
@@ -108,15 +126,16 @@ jobs:
           if gates != expected:
               raise SystemExit(f'SOURCE_GATE_FAIL gates={gates} expected={expected}')
 
-          # Guard against broad template changes by requiring the only old path removal to be in the header.
-          non_header_before = before[:header_match.start(2)] + before[header_match.end(2):]
-          non_header_after = html[:header_match.start(2)] + html[header_match.start(2)+len(new_header):]
-          if non_header_before != non_header_after:
+          old_header = header_match.group(2)
+          old_full_header = header_match.group(0)
+          new_full_header = header_match.group(1) + new_header + header_match.group(3)
+          if before.replace(old_full_header, new_full_header, 1) != html:
               raise SystemExit('NON_HEADER_CONTENT_CHANGED')
 
           target.write_text(html, encoding='utf-8')
           print('SOURCE_GATES_PASS')
           print(gates)
+          print({'approved_source_sha256': approved_sha, 'browser_safe_png_bytes': len(browser_safe_png), 'browser_safe_canvas': [target_w, target_h]})
           PY
 
       - name: Commit target file only
@@ -128,6 +147,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No target change to commit."
           else
-            git commit -m "Embed approved homepage header logo data URI"
+            git commit -m "Normalize approved embedded header logo for browser render"
             git push origin main
           fi
