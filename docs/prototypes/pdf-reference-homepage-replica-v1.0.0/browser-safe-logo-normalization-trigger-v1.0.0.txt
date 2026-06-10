@@ -1,0 +1,2 @@
+trigger=browser-safe-approved-header-logo-normalization
+reason=user-rendered-screenshot-shows-broken-embedded-header-logo
