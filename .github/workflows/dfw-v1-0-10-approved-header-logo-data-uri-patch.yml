@@ -65,7 +65,10 @@ jobs:
       - name: Source and URL proof summary
         run: |
           TARGET="docs/prototypes/pdf-reference-homepage-replica-v1.0.0/index-v1.0.10-production-readiness-preview-full-original-assets-v1.0.0.html"
-          URL="https://aw3consulting.github.io/dfwmatchdayconcierge/docs/prototypes/pdf-reference-homepage-replica-v1.0.10-production-readiness-preview-full-original-assets-v1.0.0.html"
+          PAGE_ROOT="https://aw3consulting.github.io/dfwmatchdayconcierge"
+          PAGE_DIR="docs/prototypes/pdf-reference-homepage-replica-v1.0.0"
+          PAGE_FILE="index-v1.0.10-production-readiness-preview-full-original-assets-v1.0.0.html"
+          URL="$PAGE_ROOT/$PAGE_DIR/$PAGE_FILE"
           echo "Patch commit SHA: source proof step"
           echo "Deployment page URL: deployment output"
           test -f "$TARGET"
