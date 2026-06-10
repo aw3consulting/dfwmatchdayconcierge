@@ -1,0 +1,96 @@
+name: DFW v1.0.10 Exact Visual Copy Clean Template Rebuild
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/dfw-v1-0-10-exact-visual-copy-clean-template-rebuild.yml
+      - tools/dfw/rebuild_v1_0_10_exact_visual_copy_clean_template.py
+      - docs/prototypes/pdf-reference-homepage-replica-v1.0.0/assets/approved/approved-header-logo-transparent-display-embedded-v1.0.0.base64.txt
+      - docs/prototypes/pdf-reference-homepage-replica-v1.0.0/exact-visual-copy-clean-rebuild-trigger-v1.0.0.txt
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: dfw-v1-0-10-exact-visual-copy-clean-template-rebuild
+  cancel-in-progress: false
+
+jobs:
+  rebuild-validate-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Rebuild active preview template
+        run: python3 tools/dfw/rebuild_v1_0_10_exact_visual_copy_clean_template.py
+
+      - name: Commit rebuilt template and record
+        id: commit_rebuild
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/prototypes/pdf-reference-homepage-replica-v1.0.0/index-v1.0.10-production-readiness-preview-generated-diagnostic-preserved-v1.0.0.html
+          git add docs/prototypes/pdf-reference-homepage-replica-v1.0.0/index-v1.0.10-production-readiness-preview-full-original-assets-v1.0.0.html
+          git add docs/dfw-homepage-v1.0.10-exact-visual-copy-clean-template-rebuild-execution-record-v1.0.0.md
+          if git diff --cached --quiet; then
+            echo "rebuild_commit_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+          else
+            git commit -m "Rebuild v1.0.10 clean visual-copy homepage template"
+            git push origin main
+            echo "rebuild_commit_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Source proof checks
+        run: |
+          TARGET="docs/prototypes/pdf-reference-homepage-replica-v1.0.0/index-v1.0.10-production-readiness-preview-full-original-assets-v1.0.0.html"
+          DIAG="docs/prototypes/pdf-reference-homepage-replica-v1.0.0/index-v1.0.10-production-readiness-preview-generated-diagnostic-preserved-v1.0.0.html"
+          test -f "$TARGET"
+          test -f "$DIAG"
+          grep -q 'class="site-logo"' "$TARGET"
+          grep -q 'src="data:image/png;base64,' "$TARGET"
+          grep -q 'Pending Approved Asset' "$TARGET"
+          grep -q 'data-template="v1.0.10-clean-visual-copy"' "$TARGET"
+          if grep -q 'Raster asset canary' "$TARGET"; then
+            echo "FAIL: canary image remains"
+            exit 1
+          fi
+          if grep -q 'dfw-logo-header-raster-v1.0.' "$TARGET"; then
+            echo "FAIL: old header logo path remains"
+            exit 1
+          fi
+          if grep -q 'FULL ORIGINAL ASSETS EMBEDDED' "$TARGET"; then
+            echo "FAIL: misleading full-original-assets wording remains"
+            exit 1
+          fi
+          echo "Rebuild commit SHA: ${{ steps.commit_rebuild.outputs.rebuild_commit_sha }}"
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Deploy Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: HTTP proof
+        run: |
+          PAGE_ROOT="https://aw3consulting.github.io/dfwmatchdayconcierge"
+          PAGE_DIR="docs/prototypes/pdf-reference-homepage-replica-v1.0.0"
+          PAGE_FILE="index-v1.0.10-production-readiness-preview-full-original-assets-v1.0.0.html"
+          URL="$PAGE_ROOT/$PAGE_DIR/$PAGE_FILE"
+          echo "Deployment page URL: ${{ steps.deployment.outputs.page_url }}"
+          curl -I --retry 12 --retry-delay 10 --retry-all-errors "$URL"
