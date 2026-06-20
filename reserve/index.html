@@ -4,10 +4,27 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Reserve a Ride | DFW Matchday Concierge</title>
-  <meta name="description" content="Reserve a premium private ride and Dallas fan-experience support for airport arrivals, stadium movement, Fan Festival, Fort Worth, Arlington, Dallas restaurants, and DFW experiences.">
+  <meta name="description" content="Reserve a premium private ride and Dallas fan-experience support with pickup, return, airport, stadium, Fan Festival, Dallas, Fort Worth, Arlington, and DFW experience planning.">
   <link rel="canonical" href="https://dfwmatchdayconcierge.com/reserve/">
   <link rel="stylesheet" href="../assets/site.css">
-  <script defer src="../assets/site.js"></script>
+  <style>
+    .reserve-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:22px;align-items:start}
+    .reserve-panel{border:1px solid var(--line);background:rgba(0,0,0,.25);border-radius:12px;padding:18px;margin:16px 0}
+    .reserve-panel h3{font-size:13px;letter-spacing:.18em;text-transform:uppercase;margin:0 0 12px;color:#fff}
+    .reserve-panel p{color:var(--soft);margin:0 0 12px}
+    .field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .field-check{display:flex;align-items:flex-start;gap:10px;border:1px solid var(--line);border-radius:10px;padding:14px;background:rgba(0,0,0,.22);color:var(--silver)}
+    .field-check input{width:auto;margin-top:4px}
+    .field-check span{font-size:13px;color:var(--soft)}
+    .conditional-panel{display:none}
+    .conditional-panel.active{display:block}
+    .helper-list{display:grid;gap:10px;margin-top:12px}
+    .helper-item{border:1px solid var(--line);border-radius:10px;padding:13px 14px;background:rgba(0,0,0,.22)}
+    .helper-item strong{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:#fff;margin-bottom:4px}
+    .helper-item span{display:block;color:var(--soft);font-size:13px}
+    .fine-print{font-size:13px;color:var(--soft);margin-top:14px}
+    @media (max-width:980px){.reserve-grid,.field-row{grid-template-columns:1fr}}
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -17,50 +34,311 @@
       <a class="btn" href="tel:+12148926827">Call Now</a>
     </div>
   </header>
+
   <main>
     <section class="page-hero">
       <div class="container">
         <div class="kicker">Reserve a Ride</div>
-        <h1>Start with your first ride. Plan the return before the day gets complicated.</h1>
-        <p>Use this entry page for premium private ride and fan-experience requests across Dallas, Fort Worth, Arlington, DFW Airport, Love Field, stadium movement, Fan Festival, restaurants, and selected DFW experiences.</p>
+        <h1>Start with your pickup. Protect the return.</h1>
+        <p>Reserve premium private ride and fan-experience support across Dallas, Fort Worth, Arlington, DFW Airport, Love Field, stadium movement, Fan Festival, restaurants, and selected DFW experiences.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#reserve-form">Start Reserve Request</a>
+          <a class="btn" href="tel:+12148926827">Call 214-892-6827</a>
+        </div>
       </div>
     </section>
-    <section class="section">
-      <div class="container two-col">
+
+    <section class="section" id="reserve-form">
+      <div class="container reserve-grid">
         <div class="form-card">
-          <div class="kicker">Ride Request</div>
-          <h2 class="serif" style="font-size:34px;text-transform:uppercase;letter-spacing:.05em;margin:12px 0 10px;">Reserve a Ride</h2>
-          <p style="color:var(--soft);margin-top:0;">This Phase 2 entry form opens your email app with the details already structured. Phase 3 will expand this page with full Pickup + Return and conditional ride logic.</p>
-          <form class="form-grid" data-inquiry-form>
-            <div class="field"><label for="service">Ride Type</label><select id="service" name="service"><option value="ride">Private Ride Request</option><option value="airport">Airport Arrival / Departure</option><option value="matchday">Stadium or Matchday Ride</option><option value="hospitality">Fan Experience Support</option><option value="group">Group and VIP Transportation</option><option value="luggage">Luggage Coordination</option></select></div>
-            <div class="field"><label for="name">Name</label><input id="name" name="name" autocomplete="name" required></div>
-            <div class="field"><label for="phone">Phone / WhatsApp</label><input id="phone" name="phone" autocomplete="tel"></div>
-            <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email"></div>
-            <div class="field"><label for="location">Pickup / Location</label><input id="location" name="location" placeholder="DFW Airport, Love Field, hotel, stadium, restaurant, private address"></div>
-            <div class="field"><label for="datetime">Pickup Date / Time</label><input id="datetime" name="datetime" placeholder="Date, time, flight arrival, match time, or flexible window"></div>
-            <div class="field"><label for="details">Ride + Return Details</label><textarea id="details" name="details" placeholder="Drop-off, passenger count, luggage count, staying area, return needed, match/Fan Festival/restaurant plan, airport return, and next ride you may need."></textarea></div>
+          <div class="kicker">Pickup + Return Request</div>
+          <h2 class="serif" style="font-size:34px;text-transform:uppercase;letter-spacing:.05em;margin:12px 0 10px;">Ride Details</h2>
+          <p style="color:var(--soft);margin-top:0;">This static form prepares an email request for operator review. A ride is not confirmed until accepted directly with timing, price, route, and service terms.</p>
+
+          <form class="form-grid" data-reserve-form>
+            <div class="reserve-panel">
+              <h3>Guest Contact</h3>
+              <div class="field-row">
+                <div class="field"><label for="name">Name</label><input id="name" name="name" autocomplete="name" required></div>
+                <div class="field"><label for="phone">Phone / WhatsApp</label><input id="phone" name="phone" autocomplete="tel" required></div>
+              </div>
+              <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email"></div>
+            </div>
+
+            <div class="reserve-panel">
+              <h3>Primary Ride</h3>
+              <div class="field"><label for="rideType">Primary Ride Type</label><select id="rideType" name="rideType" required>
+                <option value="">Select ride type</option>
+                <option value="Airport Arrival">Airport Arrival</option>
+                <option value="Airport Departure">Airport Departure</option>
+                <option value="Stadium / Matchday Pickup + Return">Stadium / Matchday Pickup + Return</option>
+                <option value="Fan Festival / Fair Park Pickup + Return">Fan Festival / Fair Park Pickup + Return</option>
+                <option value="Watch Event Pickup + Return">Watch Event Pickup + Return</option>
+                <option value="Dallas Restaurant / Nightlife Ride">Dallas Restaurant / Nightlife Ride</option>
+                <option value="Fort Worth / Stockyards / Rodeo Ride">Fort Worth / Stockyards / Rodeo Ride</option>
+                <option value="Arlington / Stadium Area Ride">Arlington / Stadium Area Ride</option>
+                <option value="DFW Experience Ride">DFW Experience Ride</option>
+                <option value="Custom Ride Request">Custom Ride Request</option>
+              </select></div>
+              <div class="field-row">
+                <div class="field"><label for="pickupDate">Pickup Date</label><input id="pickupDate" name="pickupDate" type="date" required></div>
+                <div class="field"><label for="pickupTime">Pickup Time</label><input id="pickupTime" name="pickupTime" type="time" required></div>
+              </div>
+              <div class="field"><label for="pickupLocation">Pickup Location</label><input id="pickupLocation" name="pickupLocation" placeholder="Airport, hotel, stadium area, restaurant, venue, private address" required></div>
+              <div class="field"><label for="dropoffLocation">Drop-off Location</label><input id="dropoffLocation" name="dropoffLocation" placeholder="Hotel, stadium, Fan Festival, restaurant, Stockyards, airport, custom stop" required></div>
+              <div class="field-row">
+                <div class="field"><label for="passengerCount">Passenger Count</label><input id="passengerCount" name="passengerCount" type="number" min="1" max="7" placeholder="1-7" required></div>
+                <div class="field"><label for="luggageCount">Luggage Count</label><input id="luggageCount" name="luggageCount" type="number" min="0" placeholder="Checked bags + carry-ons"></div>
+              </div>
+            </div>
+
+            <div class="reserve-panel">
+              <h3>Return + Next Leg</h3>
+              <div class="field"><label for="returnNeeded">Return Needed?</label><select id="returnNeeded" name="returnNeeded" required>
+                <option value="">Select return status</option>
+                <option value="Yes - reserve pickup + return">Yes — reserve pickup + return</option>
+                <option value="Not sure - help me plan return">Not sure — help me plan return</option>
+                <option value="No - one-way request">No — one-way request</option>
+              </select></div>
+              <div class="field-row">
+                <div class="field"><label for="returnPickupLocation">Return Pickup Location</label><input id="returnPickupLocation" name="returnPickupLocation" placeholder="Same as drop-off, hotel, Texas Live area, Fair Park exit area, restaurant, airport"></div>
+                <div class="field"><label for="returnPickupTime">Return Time or Flexible Window</label><input id="returnPickupTime" name="returnPickupTime" placeholder="Exact time, after match, after dinner, flexible 30-60 min window"></div>
+              </div>
+              <div class="field"><label for="nextLeg">Next Ride or Experience You May Need</label><select id="nextLeg" name="nextLeg">
+                <option value="">Select if known</option>
+                <option value="Airport return">Airport return</option>
+                <option value="Stadium ride">Stadium ride</option>
+                <option value="Fan Festival ride">Fan Festival ride</option>
+                <option value="Fort Worth ride">Fort Worth ride</option>
+                <option value="Dallas ride">Dallas ride</option>
+                <option value="Arlington ride">Arlington ride</option>
+                <option value="Restaurant / nightlife continuation">Restaurant / nightlife continuation</option>
+                <option value="Not sure - ask for recommendation">Not sure — ask for recommendation</option>
+              </select></div>
+            </div>
+
+            <div class="reserve-panel">
+              <h3>Stay Area + Event Context</h3>
+              <div class="field-row">
+                <div class="field"><label for="stayingArea">Staying Area</label><select id="stayingArea" name="stayingArea" required>
+                  <option value="">Select area</option>
+                  <option value="Dallas">Dallas</option>
+                  <option value="Fort Worth">Fort Worth</option>
+                  <option value="Arlington">Arlington</option>
+                  <option value="DFW Airport area">DFW Airport area</option>
+                  <option value="Love Field area">Love Field area</option>
+                  <option value="Frisco / Plano / North Dallas">Frisco / Plano / North Dallas</option>
+                  <option value="Not sure yet">Not sure yet</option>
+                </select></div>
+                <div class="field"><label for="lodgingArea">Hotel or Lodging Area</label><input id="lodgingArea" name="lodgingArea" placeholder="Hotel name, neighborhood, or lodging area"></div>
+              </div>
+              <div class="field"><label for="eventContext">Match / Team / Event / Experience</label><input id="eventContext" name="eventContext" placeholder="Match, team, Fan Festival, watch event, restaurant, Stockyards, airport, custom plan"></div>
+              <div class="field-row">
+                <div class="field"><label for="arrivalFlight">Arrival Flight if Airport Arrival</label><input id="arrivalFlight" name="arrivalFlight" placeholder="Airline, flight number, arrival airport/time"></div>
+                <div class="field"><label for="departureFlight">Departure Flight if Airport Return</label><input id="departureFlight" name="departureFlight" placeholder="Airline, flight number, departure airport/time"></div>
+              </div>
+            </div>
+
+            <div class="reserve-panel conditional-panel" data-route-panel="airport-arrival">
+              <h3>Airport Arrival Prompts</h3>
+              <p>Airport arrivals should not stop at the first transfer. Capture the airport return and the next event or experience ride early.</p>
+              <div class="field"><label for="airportArrivalPrompt">Airport Arrival Add-On Interest</label><select id="airportArrivalPrompt" name="airportArrivalPrompt"><option value="">Select if applicable</option><option>Airport return before departure</option><option>Stadium pickup + return</option><option>Fan Festival pickup + return</option><option>Dallas / Fort Worth / Arlington experience ride</option><option>Short essentials stop if timing allows</option></select></div>
+            </div>
+
+            <div class="reserve-panel conditional-panel" data-route-panel="airport-departure">
+              <h3>Airport Departure Prompts</h3>
+              <p>Departure rides should protect timing, luggage count, pickup buffer, and terminal details.</p>
+              <div class="field"><label for="airportDeparturePrompt">Departure Planning Need</label><select id="airportDeparturePrompt" name="airportDeparturePrompt"><option value="">Select if applicable</option><option>Extra airport pickup buffer</option><option>Luggage-heavy pickup planning</option><option>Restaurant stop before airport if timing allows</option><option>Terminal / airline confirmation needed</option></select></div>
+            </div>
+
+            <div class="reserve-panel conditional-panel" data-route-panel="stadium">
+              <h3>Stadium / Matchday Prompts</h3>
+              <p>Stadium rides should strongly default to pickup + return because post-match movement can be crowded, confusing, and time-sensitive.</p>
+              <div class="field"><label for="stadiumPrompt">Matchday Return Planning</label><select id="stadiumPrompt" name="stadiumPrompt"><option value="">Select if applicable</option><option>Pickup + return with flexible return window</option><option>Texas Live / nearby area coordination when available</option><option>Pre-match restaurant stop</option><option>Post-match food stop</option><option>Group timing support</option></select></div>
+            </div>
+
+            <div class="reserve-panel conditional-panel" data-route-panel="fanfest">
+              <h3>Fan Festival / Fair Park Prompts</h3>
+              <p>Fan Festival should not be treated as a simple drop-off. Schedule return planning before entering the event area.</p>
+              <div class="field"><label for="fanFestivalPrompt">Fan Festival Return Planning</label><select id="fanFestivalPrompt" name="fanFestivalPrompt"><option value="">Select if applicable</option><option>Scheduled return</option><option>Flexible pickup window</option><option>Fair Park exit planning</option><option>Post-Festival dinner stop</option><option>Dallas hotel return</option><option>Airport return</option></select></div>
+            </div>
+
+            <div class="reserve-panel conditional-panel" data-route-panel="restaurant">
+              <h3>Restaurant / Nightlife Prompts</h3>
+              <p>Restaurant rides should capture the return, continuation, or airport return if departure is near.</p>
+              <div class="field"><label for="restaurantPrompt">Restaurant Continuation</label><select id="restaurantPrompt" name="restaurantPrompt"><option value="">Select if applicable</option><option>Return to hotel</option><option>Continue to stadium</option><option>Continue to Fan Festival</option><option>Continue to Fort Worth / Dallas</option><option>Airport return if departure is near</option></select></div>
+            </div>
+
+            <div class="reserve-panel conditional-panel" data-route-panel="fort-worth">
+              <h3>Fort Worth Prompts</h3>
+              <p>Fort Worth is a proven priority lane. Capture Stockyards, rodeo, Dallas, stadium, and airport return opportunities.</p>
+              <div class="field"><label for="fortWorthPrompt">Fort Worth Interest</label><select id="fortWorthPrompt" name="fortWorthPrompt"><option value="">Select if applicable</option><option>Stockyards</option><option>Rodeo / entertainment area</option><option>Downtown Fort Worth return</option><option>Dallas ride</option><option>Stadium ride</option><option>Airport return</option></select></div>
+            </div>
+
+            <div class="reserve-panel conditional-panel" data-route-panel="arlington">
+              <h3>Arlington Prompts</h3>
+              <p>Arlington is a bridge market and should route guests to both Fort Worth and Dallas.</p>
+              <div class="field"><label for="arlingtonPrompt">Arlington Next Step</label><select id="arlingtonPrompt" name="arlingtonPrompt"><option value="">Select if applicable</option><option>Stadium / Texas Live area</option><option>Fort Worth Stockyards</option><option>Dallas restaurants</option><option>Fan Festival / Fair Park</option><option>Airport return</option></select></div>
+            </div>
+
+            <div class="reserve-panel conditional-panel" data-route-panel="dallas">
+              <h3>Dallas Prompts</h3>
+              <p>Dallas rides should suggest Fort Worth, stadium, Fan Festival, or airport return when relevant.</p>
+              <div class="field"><label for="dallasPrompt">Dallas Next Step</label><select id="dallasPrompt" name="dallasPrompt"><option value="">Select if applicable</option><option>Fort Worth Stockyards / rodeo</option><option>Stadium ride</option><option>Fan Festival ride</option><option>Airport return</option><option>Katy Trail / restaurant continuation</option></select></div>
+            </div>
+
+            <div class="reserve-panel" data-addon-panel>
+              <h3>Conditional Add-Ons</h3>
+              <p>Add-ons appear only after a primary ride type is selected. They must match the actual ride stage and are subject to review.</p>
+              <div class="field"><label for="addonInterest">Add-On Interest Based on Selected Ride Type</label><select id="addonInterest" name="addonInterest" disabled>
+                <option value="">Select primary ride type first</option>
+              </select></div>
+            </div>
+
+            <div class="reserve-panel">
+              <h3>Permission + Acknowledgment</h3>
+              <label class="field-check"><input type="checkbox" name="alternateDriverPermission" value="Yes"><span><strong>Alternate driver permission:</strong> If the owner is unavailable, I give permission for DFW Matchday Concierge to attempt a similar-class alternate driver connection. I understand alternate availability, price, timing, and confirmation are not guaranteed.</span></label>
+              <label class="field-check"><input type="checkbox" name="limitedAvailabilityAck" value="Acknowledged" required><span><strong>Limited availability acknowledgment:</strong> I understand this request is not confirmed until accepted directly with timing, pricing, route, vehicle fit, and service terms.</span></label>
+              <label class="field-check"><input type="checkbox" name="noAffiliationAck" value="Acknowledged"><span><strong>Independent service acknowledgment:</strong> I understand DFW Matchday Concierge is an independent private ride and fan-experience service and does not claim official tournament, team, stadium, venue, airport, or organizer affiliation.</span></label>
+            </div>
+
+            <div class="field"><label for="notes">Additional Notes</label><textarea id="notes" name="notes" placeholder="Anything else: timing sensitivity, mobility considerations, child seats if supplied by guest, privacy needs, route preferences, food stop, water/ice/cooler request after ride context, or special instructions."></textarea></div>
+            <input type="hidden" id="source" name="source" value="">
             <button class="btn primary" type="submit">Prepare Reserve Request</button>
+            <p class="fine-print">Static-form limitation: this page prepares an email request. It does not confirm live availability, process payment, dispatch a ride, or guarantee alternate fulfillment.</p>
           </form>
         </div>
+
         <aside class="connect-card">
-          <div class="kicker">Pickup + Return</div>
-          <h2>Recommended ride pattern.</h2>
-          <div class="connect-actions">
-            <div class="action-link"><strong>Airport Arrival</strong><span>Add airport return, stadium ride, Fan Festival, Dallas, Fort Worth, or Arlington experience.</span></div>
-            <div class="action-link"><strong>Stadium / Matchday</strong><span>Reserve pickup + return before post-match movement gets crowded or confusing.</span></div>
-            <div class="action-link"><strong>Fan Festival / Fair Park</strong><span>Plan scheduled return or flexible pickup before entering the event area.</span></div>
-            <div class="action-link"><strong>DFW Experiences</strong><span>Fort Worth, Dallas restaurants, Arlington, Katy Trail, WinStar, or custom request by review.</span></div>
+          <div class="kicker">Conversion Logic</div>
+          <h2>Every ride is a movement chain.</h2>
+          <div class="helper-list">
+            <div class="helper-item"><strong>Airport Arrival</strong><span>Ask for hotel drop-off, airport return, stadium ride, Fan Festival ride, and Dallas/Fort Worth/Arlington experience ride.</span></div>
+            <div class="helper-item"><strong>Stadium</strong><span>Plan pickup + return before post-match crowds and route confusion begin.</span></div>
+            <div class="helper-item"><strong>Fan Festival</strong><span>Do not rely on drop-off only. Schedule the return or flexible pickup before entering Fair Park.</span></div>
+            <div class="helper-item"><strong>Fort Worth</strong><span>Priority lane for Stockyards, rodeo, Downtown Fort Worth, Arlington return, Dallas ride, stadium, and airport return.</span></div>
+            <div class="helper-item"><strong>Dallas / Arlington</strong><span>Dallas guests should see Fort Worth prompts. Arlington guests should see both Dallas and Fort Worth.</span></div>
           </div>
           <div style="height:24px"></div>
           <div class="contact-panel">
             <div class="contact-line"><strong>QR Route</strong><span>/connect → /reserve</span></div>
-            <div class="contact-line"><strong>Availability</strong><span>Requests are reviewed by timing, itinerary, vehicle fit, route, and confirmed terms.</span></div>
+            <div class="contact-line"><strong>Primary CTA</strong><span>Reserve a Ride</span></div>
             <div class="contact-line"><strong>Affiliation</strong><span>Independent service. No official tournament, team, venue, airport, or organizer affiliation claimed.</span></div>
           </div>
         </aside>
       </div>
     </section>
   </main>
-  <footer class="footer"><div class="container"><small>© 2026 DFW Matchday Concierge. All rights reserved.</small></div></footer>
+
+  <footer class="footer"><div class="container"><small>© 2026 DFW Matchday Concierge. Independent premium private ride and fan-experience service.</small></div></footer>
+
+  <script>
+    (function(){
+      const form = document.querySelector('[data-reserve-form]');
+      if (!form) return;
+      const rideType = form.querySelector('#rideType');
+      const addon = form.querySelector('#addonInterest');
+      const source = form.querySelector('#source');
+      const params = new URLSearchParams(window.location.search);
+      source.value = params.get('source') || params.get('service') || 'reserve-page';
+      const service = params.get('service');
+      const serviceMap = { ride:'Custom Ride Request', airport:'Airport Arrival', matchday:'Stadium / Matchday Pickup + Return', hospitality:'DFW Experience Ride', group:'Stadium / Matchday Pickup + Return', luggage:'Airport Arrival' };
+      if (service && serviceMap[service]) rideType.value = serviceMap[service];
+
+      const panels = Array.from(document.querySelectorAll('[data-route-panel]'));
+      const addonOptions = {
+        'Airport Arrival':['Airport return','Stadium pickup + return','Fan Festival pickup + return','Dallas / Fort Worth / Arlington experience ride','Short essentials stop if timing allows','Luggage support tied to ride'],
+        'Airport Departure':['Extra airport pickup buffer','Luggage-heavy pickup planning','Restaurant stop before airport if timing allows','Terminal / airline confirmation'],
+        'Stadium / Matchday Pickup + Return':['Flexible return window','Texas Live / nearby coordination when available','Pre-match restaurant stop','Post-match food stop','Group timing support'],
+        'Fan Festival / Fair Park Pickup + Return':['Scheduled return','Flexible pickup window','Fair Park exit planning','Post-Festival dinner stop','Airport return'],
+        'Watch Event Pickup + Return':['Return to hotel','Continue to restaurant','Continue to Fort Worth / Dallas','Airport return'],
+        'Dallas Restaurant / Nightlife Ride':['Return to hotel','Continue to stadium','Continue to Fan Festival','Continue to Fort Worth','Airport return'],
+        'Fort Worth / Stockyards / Rodeo Ride':['Stockyards','Rodeo / entertainment area','Dallas ride','Stadium ride','Airport return'],
+        'Arlington / Stadium Area Ride':['Dallas ride','Fort Worth ride','Stadium / Texas Live area','Airport return'],
+        'DFW Experience Ride':['Pickup + return','Next restaurant stop','Hotel return','Airport return','Custom timing support'],
+        'Custom Ride Request':['Return trip','Airport return','Stadium ride','Fan Festival ride','Fort Worth ride','Dallas ride']
+      };
+      function panelKeys(value){
+        const keys = [];
+        if (value.includes('Airport Arrival')) keys.push('airport-arrival');
+        if (value.includes('Airport Departure')) keys.push('airport-departure');
+        if (value.includes('Stadium') || value.includes('Matchday')) keys.push('stadium');
+        if (value.includes('Fan Festival')) keys.push('fanfest');
+        if (value.includes('Restaurant') || value.includes('Nightlife')) keys.push('restaurant','dallas');
+        if (value.includes('Fort Worth') || value.includes('Stockyards') || value.includes('Rodeo')) keys.push('fort-worth');
+        if (value.includes('Arlington')) keys.push('arlington');
+        if (value.includes('Dallas')) keys.push('dallas');
+        if (value.includes('Experience')) keys.push('dallas','fort-worth','arlington');
+        return keys;
+      }
+      function updateConditionalLogic(){
+        const value = rideType.value;
+        const active = panelKeys(value);
+        panels.forEach(panel => panel.classList.toggle('active', active.includes(panel.getAttribute('data-route-panel'))));
+        addon.innerHTML = '';
+        if (!value) {
+          addon.disabled = true;
+          addon.append(new Option('Select primary ride type first',''));
+          return;
+        }
+        addon.disabled = false;
+        addon.append(new Option('Select if applicable',''));
+        (addonOptions[value] || addonOptions['Custom Ride Request']).forEach(label => addon.append(new Option(label,label)));
+      }
+      rideType.addEventListener('change', updateConditionalLogic);
+      updateConditionalLogic();
+
+      form.addEventListener('submit', event => {
+        event.preventDefault();
+        if (!form.reportValidity()) return;
+        const data = new FormData(form);
+        const lines = [
+          'DFW Matchday Concierge — Reserve a Ride Request','',
+          'Guest Contact',
+          `Name: ${data.get('name') || ''}`,
+          `Phone / WhatsApp: ${data.get('phone') || ''}`,
+          `Email: ${data.get('email') || ''}`,'',
+          'Primary Ride',
+          `Ride Type: ${data.get('rideType') || ''}`,
+          `Pickup Date: ${data.get('pickupDate') || ''}`,
+          `Pickup Time: ${data.get('pickupTime') || ''}`,
+          `Pickup Location: ${data.get('pickupLocation') || ''}`,
+          `Drop-off Location: ${data.get('dropoffLocation') || ''}`,
+          `Passenger Count: ${data.get('passengerCount') || ''}`,
+          `Luggage Count: ${data.get('luggageCount') || ''}`,'',
+          'Return + Next Leg',
+          `Return Needed: ${data.get('returnNeeded') || ''}`,
+          `Return Pickup Location: ${data.get('returnPickupLocation') || ''}`,
+          `Return Time / Window: ${data.get('returnPickupTime') || ''}`,
+          `Next Ride / Experience: ${data.get('nextLeg') || ''}`,'',
+          'Stay + Event Context',
+          `Staying Area: ${data.get('stayingArea') || ''}`,
+          `Hotel / Lodging Area: ${data.get('lodgingArea') || ''}`,
+          `Match / Team / Event / Experience: ${data.get('eventContext') || ''}`,
+          `Arrival Flight: ${data.get('arrivalFlight') || ''}`,
+          `Departure Flight: ${data.get('departureFlight') || ''}`,'',
+          'Conditional Prompts',
+          `Airport Arrival: ${data.get('airportArrivalPrompt') || ''}`,
+          `Airport Departure: ${data.get('airportDeparturePrompt') || ''}`,
+          `Stadium / Matchday: ${data.get('stadiumPrompt') || ''}`,
+          `Fan Festival / Fair Park: ${data.get('fanFestivalPrompt') || ''}`,
+          `Restaurant / Nightlife: ${data.get('restaurantPrompt') || ''}`,
+          `Fort Worth: ${data.get('fortWorthPrompt') || ''}`,
+          `Arlington: ${data.get('arlingtonPrompt') || ''}`,
+          `Dallas: ${data.get('dallasPrompt') || ''}`,
+          `Conditional Add-On Interest: ${data.get('addonInterest') || ''}`,'',
+          'Permission + Acknowledgment',
+          `Alternate Driver Permission: ${data.get('alternateDriverPermission') ? 'Yes' : 'No'}`,
+          `Limited Availability Acknowledgment: ${data.get('limitedAvailabilityAck') ? 'Acknowledged' : 'Not acknowledged'}`,
+          `Independent Service Acknowledgment: ${data.get('noAffiliationAck') ? 'Acknowledged' : 'Not acknowledged'}`,
+          `Source: ${data.get('source') || ''}`,'',
+          'Additional Notes',
+          data.get('notes') || ''
+        ];
+        const subject = `DFW Reserve a Ride — ${data.get('rideType') || 'Ride Request'}`;
+        window.location.href = `mailto:concierge@dfwmatchdayconcierge.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join('\n'))}`;
+      });
+    })();
+  </script>
 </body>
 </html>
