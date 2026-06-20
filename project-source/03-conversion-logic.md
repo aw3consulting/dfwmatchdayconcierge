@@ -6,6 +6,12 @@ This file defines the operating and conversion logic for the site.
 
 It is a governing source-authority file.
 
+## Owner Correction — Public Positioning
+
+DFW Matchday Concierge must be presented publicly as a premium private ride and ultimate fan experience in Dallas/Fort Worth.
+
+Do not use “single-operator, single-vehicle private ride reservation” as the marketing label. The operating constraints may inform availability, confirmation, and claim control, but the public experience should feel premium, local, useful, and visitor-aware.
+
 ## Core Conversion Rule
 
 The site must not treat a ride request as a one-off transaction.
@@ -53,7 +59,17 @@ Do not use “Book a Ride” as a public CTA.
 
 ## QR Rule
 
-The QR code must link directly to the Reserve a Ride page.
+The final QR destination remains:
+
+`/connect`
+
+The `/connect` path must immediately route to:
+
+`/reserve`
+
+The active Reserve a Ride page is:
+
+`/reserve`
 
 The QR code must not link to:
 
@@ -62,22 +78,10 @@ The QR code must not link to:
 - Fan hub.
 - Team page.
 - Informational page.
+- Sponsor page.
 - Multi-step funnel before reservation.
 
-Recommended route:
-
-/reserve
-
-Optional campaign routes:
-
-/reserve?source=card
-/reserve?source=hotel-concierge
-/reserve?source=stadium
-/reserve?source=fanfest
-/reserve?source=stockyards
-/reserve?source=airport
-/reserve?source=terryblacks
-/reserve?source=katytrail
+Optional campaign/source parameters may be supported from `/connect` or `/reserve` when possible, but QR destination must not drift from `/connect` without owner approval.
 
 ## Pickup + Return Rule
 
@@ -316,6 +320,20 @@ Logical prompts:
 - Food/rest stop if needed.
 
 Do not create open-ended one-way casino drop-off logic unless owner approves.
+
+## About Page Logic
+
+An `/about` page is required to qualify the premium private ride and fan-experience service.
+
+The page may use owner-approved operator experience:
+
+- 19 years living abroad.
+- 14 countries visited as a first-time visitor.
+- More than 15,000 rides completed in the greater DFW metroplex.
+- Firsthand understanding of arriving in a new country for the first time.
+- Deep practical familiarity with DFW roads and movement patterns.
+
+The About page must not invent official affiliations, licensing, insurance, safety certification, fleet capacity, or guaranteed fulfillment claims.
 
 ## Stadium Public Copy Logic
 
