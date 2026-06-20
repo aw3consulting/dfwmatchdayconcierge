@@ -2,17 +2,20 @@
 
 ## Status
 
-This file defines the required site capabilities for the single-operator DFW Matchday Concierge update.
+This file defines the required site capabilities for the premium private ride and fan-experience update.
 
 It is a governing source-authority file.
 
 ## Core Capability Goal
 
-The site must convert visitors into private ride reservation requests and capture return and next-leg opportunities.
+The site must convert visitors into premium private ride reservation requests and capture return and next-leg opportunities.
 
 The site must support:
 
 - Reserve a Ride.
+- `/connect` as the final QR destination.
+- Immediate `/connect` routing to `/reserve`.
+- `/reserve` as the active Reserve a Ride page.
 - Pickup + Return.
 - Airport return capture.
 - Stadium return capture.
@@ -22,8 +25,15 @@ The site must support:
 - Limited availability.
 - Alternate driver permission.
 - Source tracking when available.
+- About page qualification.
 - Team/tournament content as ride-support content.
 - Controlled sponsor inventory.
+
+## Public Positioning Capability
+
+The site must present DFW Matchday Concierge as a premium private ride and ultimate fan experience in Dallas/Fort Worth.
+
+Do not market the public site as a “single-operator, single-vehicle private ride reservation” product. Operational limits may be disclosed as limited availability and operator-assisted confirmation, but the front-facing promise should emphasize premium private rides, DFW road knowledge, visitor support, and fan-experience planning.
 
 ## Required Global CTA Capability
 
@@ -43,7 +53,13 @@ Primary CTA must route to the Reserve a Ride page.
 
 ## Required QR Capability
 
-The QR code must route directly to the Reserve a Ride page.
+The final QR destination is:
+
+`/connect`
+
+The `/connect` page must immediately route to:
+
+`/reserve`
 
 The Reserve page must be mobile-friendly and fast to complete.
 
@@ -104,25 +120,47 @@ The site must support these pages or equivalent sections:
 
 1. Home.
 2. Reserve a Ride.
-3. Airport.
-4. Stadium.
-5. Fan Festival / Fair Park.
-6. Dallas Area.
-7. Fort Worth Area.
-8. Arlington Area.
-9. DFW Experiences.
-10. Team Pages.
-11. Tournament Calendar.
-12. Sponsors / Advertise.
-13. FAQ.
+3. Connect redirect.
+4. About.
+5. Airport.
+6. Stadium.
+7. Fan Festival / Fair Park.
+8. Dallas Area.
+9. Fort Worth Area.
+10. Arlington Area.
+11. DFW Experiences.
+12. Team Pages.
+13. Tournament Calendar.
+14. Sponsors / Advertise.
+15. FAQ.
 
 ## Home Page Capability
 
-The homepage must communicate single-operator private SUV service, 2026 Black Tahoe, limited availability, Reserve a Ride CTA, Pickup + Return default, airport/stadium/Fan Festival/watch-event/experience lanes, Dallas/Fort Worth/Arlington routing, 3-day advance reservation recommendation, no official affiliation, and direct route to Reserve page.
+The homepage must communicate premium private ride and fan-experience support, 2026 Black Tahoe, limited availability, Reserve a Ride CTA, Pickup + Return default, airport/stadium/Fan Festival/watch-event/experience lanes, Dallas/Fort Worth/Arlington routing, 3-day advance reservation recommendation when appropriate, no official affiliation, and direct route to Reserve page.
 
 ## Reserve Page Capability
 
 The Reserve page must be the main conversion page and must capture the first ride, return trip, next possible ride, airport return, conditional add-ons, limited availability acknowledgment, and alternate driver permission.
+
+Phase 2 may create the route and a basic reserve entry page. Phase 3 owns the deeper Reserve form logic rebuild.
+
+## Connect Page Capability
+
+The `/connect` route exists for QR continuity only and must immediately route to `/reserve`.
+
+Do not let `/connect` become a generic menu, sponsor page, fan hub, or multi-option landing page unless owner explicitly approves.
+
+## About Page Capability
+
+The About page must qualify the premium concierge experience using owner-approved operator experience:
+
+- 19 years living abroad.
+- 14 countries visited as a first-time visitor.
+- More than 15,000 rides completed in the greater DFW metroplex.
+- Firsthand understanding of traveling to a country for the first time.
+- Practical DFW road knowledge from traveling on, near, and around nearly every major road in the DFW area.
+
+The page must not imply official affiliation, guaranteed fulfillment, fleet capacity, licensing, insurance, safety certifications, or background claims unless separately owner-approved and verified.
 
 ## Airport Page Capability
 
