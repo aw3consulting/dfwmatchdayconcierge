@@ -6,24 +6,31 @@ This file defines what the site is becoming.
 
 It is a governing source-authority file and must be followed during implementation.
 
-## Target Business Model
+## Owner Correction — Public Positioning
 
-DFW Matchday Concierge is now a single-operator, single-vehicle private ride reservation and fan-support site.
+DFW Matchday Concierge must not be publicly marketed as a “single-operator, single-vehicle private ride reservation” product.
 
-The site is built around:
+The public positioning is:
 
-- One operator.
-- One 2026 Black Tahoe.
-- Premium private ride reservations.
-- Dallas/Fort Worth match visitor support.
-- Airport arrival and departure rides.
-- Stadium pickup + return rides.
-- FIFA Fan Festival / Fair Park pickup + return rides.
-- Area watch-event rides.
-- Fort Worth, Dallas, and Arlington experience routes.
+**DFW Matchday Concierge is a premium private ride and ultimate fan experience in Dallas/Fort Worth.**
+
+The experience is built for first-time visitors, matchday guests, VIPs, families, media/corporate guests, and fans who need confident Dallas/Fort Worth movement, local orientation, private ride planning, and operator-assisted fan-experience support.
+
+## Operating Reality
+
+The operating model remains constrained and controlled:
+
+- Premium private ride service.
+- 2026 Black Tahoe as the primary ride vehicle.
+- Operator-assisted planning and confirmation.
 - Limited availability.
 - Direct reservation conversion.
+- Pickup + Return as the preferred ride pattern.
 - Next-leg conversion after the first ride.
+- Dallas, Fort Worth, and Arlington routing.
+- Airport, stadium, Fan Festival, watch-event, restaurant, and selected DFW experience rides.
+
+Do not turn the public site into a marketplace, fleet platform, generic tourism portal, or sponsor-driven media site.
 
 ## Primary Business Goal
 
@@ -33,25 +40,25 @@ Capture the first ride, secure the return trip, and convert the guest into the n
 
 The site must not behave like a generic service menu.
 
-The site must behave like a reservation funnel that asks:
+The site must behave like a premium reservation and experience funnel that asks:
 
-- Where are you now?
-- Where are you going?
+- Where are you staying?
+- Where are you going first?
 - How are you getting back?
-- What next ride do you need while you are in DFW?
+- What next ride or experience do you need while you are in DFW?
 - Do you need your airport return before leaving?
 
 ## What This Site Is
 
 The site is:
 
-- A premium private SUV reservation site.
-- A single-operator ride booking/fan support site.
-- A direct lead-capture and reservation system.
-- A Dallas/Fort Worth match visitor transportation support tool.
-- A controlled platform for airport, stadium, Fan Festival, watch-event, and selected local experience rides.
+- A premium private ride and fan-experience site for Dallas/Fort Worth match visitors.
+- A direct Reserve a Ride conversion path.
+- A Dallas/Fort Worth match visitor transportation and experience support tool.
+- A controlled platform for airport, stadium, Fan Festival, watch-event, restaurant, and selected local experience rides.
 - A booking funnel that prioritizes Pickup + Return.
 - A field-validated operating tool.
+- An independent concierge experience for DFW visitors.
 
 ## What This Site Is Not
 
@@ -81,27 +88,29 @@ Do not use rejected Tahoe PNG assets.
 
 If a vehicle image is used, it must be a clean, verified, vehicle-only source image, a properly composed photo, or an approved transparent asset that does not cut off text, page content, destinations, or location names.
 
-## Driver
+## Operator Qualification
 
-Driver details must be owner-approved.
+An `/about` page is authorized and required to qualify the concierge experience.
+
+Owner-approved operator qualification points:
+
+- 19 years of living abroad.
+- First-time visitor experience across 14 countries.
+- More than 15,000 rides completed in the greater DFW metroplex.
+- Practical understanding of what it feels like to travel to a country for the first time.
+- Deep DFW route familiarity from traveling on, near, and around nearly every major road in the DFW area.
+
+These qualifications may be used to explain why the service can support travelers, first-time visitors, airport arrivals, matchday guests, and fan-experience planning.
 
 Do not invent:
 
-- Ride counts.
 - License claims.
 - Insurance claims.
 - Safety certifications.
 - Background claims.
 - Official affiliations.
 - Fleet claims.
-- Multi-driver capacity.
-
-Approved general positioning:
-
-- Experienced Dallas/Fort Worth private ride operator.
-- Local matchday transportation support.
-- Airport, stadium, Fan Festival, watch-event, and DFW experience routing.
-- Single-operator service with limited availability.
+- Guaranteed alternate driver capacity.
 
 ## Core Public CTA
 
@@ -123,15 +132,27 @@ Approved CTA labels include:
 - Request Alternate Driver.
 - View Ride Options.
 
+## QR Destination
+
+The final QR destination remains:
+
+`/connect`
+
+The `/connect` path must immediately route to `/reserve`.
+
+The active Reserve a Ride destination is:
+
+`/reserve`
+
+Do not route QR traffic to the homepage, sponsor page, generic fan page, generic information hub, or multi-option landing page unless owner explicitly approves.
+
 ## Limited Availability Positioning
 
-The site must state clearly:
-
-This is a single-operator private SUV service with limited availability. Advance reservations are strongly encouraged, especially around matchdays, Fan Festival events, airport arrivals, and evening ride windows.
+The site may state clearly that premium private ride and fan-experience availability is limited.
 
 Suggested public language:
 
-This is a single-operator private SUV service with limited availability. Reservations are encouraged at least 3 days in advance when possible. A ride request is not confirmed until accepted and confirmed directly.
+Premium private ride and fan-experience requests are reviewed by availability, timing, itinerary details, vehicle fit, and confirmed service terms. Advance reservations are encouraged, especially around matchdays, Fan Festival events, airport arrivals, and evening ride windows.
 
 ## Alternate Driver Positioning
 
@@ -185,12 +206,6 @@ They must be conditional deep-link add-ons that appear only after a primary ride
 Add-ons must be logical for the route stage.
 
 Do not offer generic add-ons that do not match the guest’s situation.
-
-Example correction:
-
-Do not lead airport-arrival users with cooler service.
-
-Do lead airport-arrival users toward hotel drop-off, luggage support, future stadium ride, future Fan Festival ride, and airport return.
 
 ## Sponsor Target
 
